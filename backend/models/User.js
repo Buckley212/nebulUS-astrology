@@ -5,8 +5,9 @@ const userSchema = new Schema({
     imageUrl: String,
     email: { type: String, unique: true },
     name: String,
-    googleId: String
-
+    googleId: String,
+    DOB: Date,
+    username: String
 })
 
 const User = model('User', userSchema)
