@@ -53,27 +53,27 @@ router.post(`/logMeIn`, async (req, res) => {
 })
 
 
-router.get("/birthchart", async (req, res) => {
-    const date = new Date(req.query.time);
-    const { latitude, longitude } = req.query;
+// router.get("/birthchart", async (req, res) => {
+//     const date = new Date(req.query.time);
+//     const { latitude, longitude } = req.query;
 
-    const planets = ChartCalc.planets(date);
-    const aspects = ChartCalc.apects(planets);
-    const houses = ChartCalc.houses(date, {
-        latitude: parseFloat(latitude),
-        longitude: parseFloat(longitude)
-    })
+//     const planets = ChartCalc.planets(date);
+//     const aspects = ChartCalc.apects(planets);
+//     const houses = ChartCalc.houses(date, {
+//         latitude: parseFloat(latitude),
+//         longitude: parseFloat(longitude)
+//     })
     
-    res.status(200).json({
-        data: {
-            astros: {
-                ...planets,
-            },
-            ...houses,
-            aspects
-        },
-    });
-});
+//     res.status(200).json({
+//         data: {
+//             astros: {
+//                 ...planets,
+//             },
+//             ...houses,
+//             aspects
+//         },
+//     });
+// });
 
 
 
