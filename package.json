@@ -12,6 +12,7 @@
     "author": "",
     "license": "ISC",
     "dependencies": {
-        "nodemon": "^2.0.7"
+        "nodemon": "^2.0.7",
+        "react-datepicker": "^3.8.0"
     }
 }
