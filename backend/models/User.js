@@ -5,7 +5,8 @@ const userSchema = new Schema({
     imageUrl: String,
     email: { type: String, unique: true },
     name: String,
-    googleId: String
+    googleId: String,
+    chart: Array
 
 })
 

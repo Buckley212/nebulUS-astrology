@@ -3,6 +3,7 @@ const jwt = require('jsonwebtoken')
 const router = express.Router()
 const Message = require('../models/Message')
 const User = require('../models/User')
+const ChartCalc = require('../ChartCalc');
 
 
 router.post(`/add-message`, authorize, (req, res) => {
@@ -51,6 +52,28 @@ router.post(`/logMeIn`, async (req, res) => {
 
 })
 
+
+router.get("/birthchart", async (req, res) => {
+    const date = new Date(req.query.time);
+    const { latitude, longitude } = req.query;
+
+    const planets = ChartCalc.planets(date);
+    const aspects = ChartCalc.apects(planets);
+    const houses = ChartCalc.houses(date, {
+        latitude: parseFloat(latitude),
+        longitude: parseFloat(longitude)
+    })
+    
+    res.status(200).json({
+        data: {
+            astros: {
+                ...planets,
+            },
+            ...houses,
+            aspects
+        },
+    });
+});
 
 
 
