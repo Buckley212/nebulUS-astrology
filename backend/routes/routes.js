@@ -52,6 +52,9 @@ router.post(`/logMeIn`, async (req, res) => {
 
 })
 
+router.post('/submitDate', (req, res) => {
+    console.log(req.body);
+})
 
 // router.get("/birthchart", async (req, res) => {
 //     const date = new Date(req.query.time);

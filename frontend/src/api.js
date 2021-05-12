@@ -35,8 +35,12 @@ const actions = {
         let res = await axios.post(`${serverUrl}/logMeIn`, profileObj)
         localStorage.setItem('token', res.data.token)
         return res.data.user
-    }
+    },
 
+    submitDate: async ({ date, time }) => {
+        let res = await axios.post(`${serverUrl}/submitDate`, { date , time})
+        return res.data
+    }
 
 }
 
