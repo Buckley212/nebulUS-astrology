@@ -7,14 +7,15 @@ function Profile(props) {
 
     const { user } = useContext(TheContext)
     const [myMessages, setMyMessages] = useState([])
+    const [chart, setChart] = useState({});
     const [date, setDate] = useState(new Date());
     const [time, setTime] = useState();
-    useEffect(() => {
-        actions.getMyMessages().then(messages => {
-            if (!messages.err)
-                setMyMessages(messages)
-        })
-    }, [])
+    // useEffect(() => {
+    //     actions.getMyMessages().then(messages => {
+    //         if (!messages.err)
+    //             setMyMessages(messages)
+    //     })
+    // }, [])
 
     // function getLocation() {
     //     if (navigator.geolocation) {
@@ -27,40 +28,49 @@ function Profile(props) {
     const handleSubmit = e => {
         e.preventDefault();
         const origin = new Origin({
-            year: 2020,
-            month: 11, // 0 = January, 11 = December!
-            date: 1,
-            hour: 16,
-            minute: 30,
-            latitude: 40.0,
-            longitude: -70.0,
-          });
-        actions.submitDate({ date, time }).then(res => console.log(res.data))
-        
+            year: parseInt(date.slice(0, 4)),
+            month: (parseInt(date.slice(5, 7))-1), // 0 = January, 11 = December!
+            date: parseInt(date.slice(8, 10)),
+            hour: parseInt(time.slice(0, 1)),
+            minute: parseInt(time.slice(0, 1)),
+            latitude: 25.6668494,
+            longitude: -80.42151369999999,
+        });
+          
+        //{ date: '2021-05-03', time: '13:26' }
+          
+        const horoscope = new Horoscope({
+            origin: origin,
+            houseSystem: "whole-sign",
+            zodiac: "tropical",
+            aspectPoints: ['bodies', 'moon', 'sun', 'points', 'angles'],
+            aspectWithPoints: ['bodies', 'moon', 'points', 'angles'],
+            aspectTypes: ["major", "minor"],
+            customOrbs: {},
+            language: 'en'
+            });
+        console.log(horoscope.CelestialBodies, origin)
+        const userChart = { chart: horoscope.CelestialBodies, userId: user?.googleId }
+        actions.submitDate(userChart).then(res => {
+            console.log(res.data.chart);
+        })
     }
-    const origin = new Origin({
-        year: 1983,
-        month: 2, // 0 = January, 11 = December!
-        date: 13,
-        hour: 5,
-        minute: 42,
-        latitude: 39.299236,
-        longitude: -76.609383,
-    });
-    //{ date: '2021-05-03', time: '13:26' }
     
-    const horoscope = new Horoscope({
-        origin: origin,
-        houseSystem: "whole-sign",
-        zodiac: "tropical",
-        aspectPoints: ['bodies', 'moon', 'sun', 'points', 'angles'],
-        aspectWithPoints: ['bodies', 'moon', 'points', 'angles'],
-        aspectTypes: ["major", "minor"],
-        customOrbs: {},
-        language: 'en'
-    });
-    
-    console.log(horoscope.CelestialBodies,  origin)
+    const revealChart = () => {
+        if (user?.chart !== undefined) {
+            return <div className="chart">
+                <p>Sun: {user?.chart?.sun.Sign.label}</p>
+                <p>Moon: {user?.chart?.moon.Sign.label}</p>
+                <p>Rising: {user?.chart?.mercury.Sign.label}</p>
+            </div>
+        } else if (user?.chart?.length === undefined) {
+            return <form onSubmit={handleSubmit}>
+                <input type="date" onChange={e => setDate(e.target.value)} />
+                <input type="time" onChange={e => setTime(e.target.value)} />
+                <button>Submit</button>
+            </form>
+        }
+    }
 
     return (
         <div>
@@ -68,18 +78,8 @@ function Profile(props) {
             {<img src={user?.imageUrl} />}
             {user?.email}
 
-            {myMessages.map(({ message, _id }) => <li key={_id}>{message}</li>)}
-            {/* <DatePicker
-                selected={startDate}
-                onChange={date => setStartDate(date)}
-                showTimeInput
-                customTimeInput={<ExampleCustomTimeInput />}/> */}
-            <form onSubmit={handleSubmit}>
-                <input type="date" onChange={e => setDate(e.target.value)} />
-                <input type="time" onChange={e => setTime(e.target.value)} />
-                
-                <button>Submit</button>
-            </form>
+            {/* {myMessages.map(({ message, _id }) => <li key={_id}>{message}</li>)} */}
+            {revealChart()}
         </div>
     );
 }

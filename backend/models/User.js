@@ -6,10 +6,10 @@ const userSchema = new Schema({
     email: { type: String, unique: true },
     name: String,
     googleId: String,
-    DOB: Date,
+    chart: Object,
     username: String
 })
 
 const User = model('User', userSchema)
 
-module.exports = User
+module.exports = User;
