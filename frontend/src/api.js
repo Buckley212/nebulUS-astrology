@@ -37,8 +37,8 @@ const actions = {
         return res.data.user
     },
 
-    submitDate: async ({chart, userId}) => {
-        let res = await axios.post(`${serverUrl}/submitDate`, {chart, userId})
+    submitDate: async ({chart, userId, rising}) => {
+        let res = await axios.post(`${serverUrl}/submitDate`, {chart, userId, rising})
         return res.data
     }
 

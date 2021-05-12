@@ -7,7 +7,6 @@ function Profile(props) {
 
     const { user } = useContext(TheContext)
     const [myMessages, setMyMessages] = useState([])
-    const [chart, setChart] = useState({});
     const [date, setDate] = useState(new Date());
     const [time, setTime] = useState();
     // useEffect(() => {
@@ -31,7 +30,7 @@ function Profile(props) {
             year: parseInt(date.slice(0, 4)),
             month: (parseInt(date.slice(5, 7))-1), // 0 = January, 11 = December!
             date: parseInt(date.slice(8, 10)),
-            hour: parseInt(time.slice(0, 1)),
+            hour: parseInt(time.slice(0, 2)),
             minute: parseInt(time.slice(0, 1)),
             latitude: 25.6668494,
             longitude: -80.42151369999999,
@@ -49,8 +48,7 @@ function Profile(props) {
             customOrbs: {},
             language: 'en'
             });
-        console.log(horoscope.CelestialBodies, origin)
-        const userChart = { chart: horoscope.CelestialBodies, userId: user?.googleId }
+        const userChart = { chart: horoscope.CelestialBodies, userId: user?.googleId, rising: horoscope._ascendant }
         actions.submitDate(userChart).then(res => {
             console.log(res.data.chart);
         })
@@ -61,9 +59,9 @@ function Profile(props) {
             return <div className="chart">
                 <p>Sun: {user?.chart?.sun.Sign.label}</p>
                 <p>Moon: {user?.chart?.moon.Sign.label}</p>
-                <p>Rising: {user?.chart?.mercury.Sign.label}</p>
+                <p>Rising: {user?.rising?.Sign.label}</p>
             </div>
-        } else if (user?.chart?.length === undefined) {
+        } else if (user?.chart === undefined) {
             return <form onSubmit={handleSubmit}>
                 <input type="date" onChange={e => setDate(e.target.value)} />
                 <input type="time" onChange={e => setTime(e.target.value)} />

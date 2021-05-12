@@ -45,14 +45,14 @@ router.post(`/logMeIn`, async (req, res) => {
     }
 
     //No matter what i have a user and now I can create the jwt token 
-    jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
+    jwt.sign({ user }, 'secret key', { expiresIn: '365d' }, (err, token) => {
         res.json({ user, token })
     })
 
 })
 
 router.post('/submitDate', async(req, res) => {
-    await User.findOneAndUpdate({googleId: req.body.userId},{chart: req.body.chart})
+    await User.findOneAndUpdate({googleId: req.body.userId},{chart: req.body.chart , rising: req.body.rising})
     console.log(req.body.chart);
 })
 
