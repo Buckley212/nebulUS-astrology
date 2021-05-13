@@ -29,16 +29,16 @@ function Profile(props) {
         e.preventDefault();
         const origin = new Origin({
             year: parseInt(date.slice(0, 4)),
-            month: (parseInt(date.slice(5, 7))-1), // 0 = January, 11 = December!
+            month: (parseInt(date.slice(5, 7)) - 1), // 0 = January, 11 = December!
             date: parseInt(date.slice(8, 10)),
             hour: parseInt(time.slice(0, 1)),
             minute: parseInt(time.slice(0, 1)),
-            latitude: 25.6668494,
-            longitude: -80.42151369999999,
+            latitude: 36.14330291748047,
+            longitude: -95.96489715576172,
         });
-          
+
         //{ date: '2021-05-03', time: '13:26' }
-          
+
         const horoscope = new Horoscope({
             origin: origin,
             houseSystem: "whole-sign",
@@ -48,16 +48,17 @@ function Profile(props) {
             aspectTypes: ["major", "minor"],
             customOrbs: {},
             language: 'en'
-            });
+        });
         console.log(horoscope.CelestialBodies, origin)
         const userChart = { chart: horoscope.CelestialBodies, userId: user?.googleId }
         actions.submitDate(userChart).then(res => {
             console.log(res.data.chart);
         })
     }
-    
+
     const revealChart = () => {
         if (user?.chart !== undefined) {
+            console.log(user.chart)
             return <div className="chart">
                 <p>Sun: {user?.chart?.sun.Sign.label}</p>
                 <p>Moon: {user?.chart?.moon.Sign.label}</p>
