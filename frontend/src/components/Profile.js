@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
-import actions from './api';
-import TheContext from './TheContext';
+import actions from '../services/api';
+import TheContext from '../services/TheContext';
 import axios from 'axios';
 import { Origin, Horoscope } from "circular-natal-horoscope-js";
 
@@ -34,7 +34,6 @@ function Profile(props) {
             })
     })
     const handleSubmit = e => {
-        e.preventDefault();
 
         const origin = new Origin({
             year: parseInt(date.slice(0, 4)),
@@ -46,7 +45,7 @@ function Profile(props) {
             longitude: loc.lng,
         });
           
-        //{ date: '2021-05-03', time: '13:26' }
+        //Sample output of date and time object { date: '2021-05-03', time: '13:26' }
           
         const horoscope = new Horoscope({
             origin: origin,

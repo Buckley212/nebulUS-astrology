@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import actions from './api'
+import actions from './services/api'
 
 function Home(props) {
 

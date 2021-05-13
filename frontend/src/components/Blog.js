@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
-import TheContext from './TheContext'
+import TheContext from '../services/TheContext'
 import axios from 'axios'
-import actions from './api'
+import actions from '../services/api'
 import Auth from './Auth'
 
 

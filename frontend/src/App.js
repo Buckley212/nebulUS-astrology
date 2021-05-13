@@ -1,13 +1,13 @@
 import logo from './logo.svg';
 import './App.css';
 import { useEffect, useState, useContext } from 'react'
-import TheContext from './TheContext'
+import TheContext from './services/TheContext'
 import { Switch, Link, Route } from 'react-router-dom'
 import Home from './Home'
-import Profile from './Profile';
-import Blog from './Blog';
+import Profile from './components/Profile';
+import Blog from './components/Blog';
 import Auth from './Auth';
-import actions from './api';
+import actions from './services/api';
 import { Origin, Horoscope } from "circular-natal-horoscope-js";
 
 function App() {
@@ -28,29 +28,6 @@ function App() {
     setUser(null)
     localStorage.removeItem('token')
   }
-
-  // const origin = new Origin({
-  //     year: 1983,
-  //     month: 2, // 0 = January, 11 = December!
-  //     date: 13,
-  //     hour: 5,
-  //     minute: 42,
-  //     latitude: 39.299236,
-  //     longitude: -76.609383,
-  // });
-  
-  // const horoscope = new Horoscope({
-  //     origin: origin,
-  //     houseSystem: "whole-sign",
-  //     zodiac: "tropical",
-  //     aspectPoints: ['bodies', 'moon', 'sun', 'points', 'angles'],
-  //     aspectWithPoints: ['bodies', 'moon', 'points', 'angles'],
-  //     aspectTypes: ["major", "minor"],
-  //     customOrbs: {},
-  //     language: 'en'
-  // });
-  
-  // console.log(horoscope.CelestialBodies,  origin)
 
   return (
     <TheContext.Provider value={context}>
