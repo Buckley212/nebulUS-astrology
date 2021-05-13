@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import actions from './api';
 import TheContext from './TheContext';
+import axios from 'axios';
 import { Origin, Horoscope } from "circular-natal-horoscope-js";
 
 function Profile(props) {
@@ -9,6 +10,7 @@ function Profile(props) {
     const [myMessages, setMyMessages] = useState([])
     const [date, setDate] = useState(new Date());
     const [time, setTime] = useState();
+    const [place, setPlace] = useState();
     // useEffect(() => {
     //     actions.getMyMessages().then(messages => {
     //         if (!messages.err)
@@ -24,16 +26,24 @@ function Profile(props) {
     //     }
     // }      
 
+    const [loc, setLoc] = useState({});
+    useEffect(() => {
+        axios.get(`https://iron-cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?${place}`)
+            .then(res => {
+                setLoc(res.data.results.geometry.location)
+            })
+    })
     const handleSubmit = e => {
         e.preventDefault();
+
         const origin = new Origin({
             year: parseInt(date.slice(0, 4)),
             month: (parseInt(date.slice(5, 7))-1), // 0 = January, 11 = December!
             date: parseInt(date.slice(8, 10)),
             hour: parseInt(time.slice(0, 2)),
-            minute: parseInt(time.slice(0, 1)),
-            latitude: 25.6668494,
-            longitude: -80.42151369999999,
+            minute: parseInt(time.slice(0, 2)),
+            latitude: loc.lat,
+            longitude: loc.lng,
         });
           
         //{ date: '2021-05-03', time: '13:26' }
@@ -65,6 +75,7 @@ function Profile(props) {
             return <form onSubmit={handleSubmit}>
                 <input type="date" onChange={e => setDate(e.target.value)} />
                 <input type="time" onChange={e => setTime(e.target.value)} />
+                <input type="text" onChange={e =>setPlace(e.target.value)} />
                 <button>Submit</button>
             </form>
         }
