@@ -55,7 +55,7 @@ function App() {
   return (
     <TheContext.Provider value={context}>
       <div className="App">
-        <h1>Hacker Blog </h1>
+ 
         {user?.name && (
           <div>
             <p>Welcome {user?.name}</p>
@@ -64,12 +64,30 @@ function App() {
         )}
 
 
-        < nav >
+        {/* <nav>
           <Link to='/'>Home</Link>
           <Link to='/blog'>Blog</Link>
           <Link to='/profile'>Profile</Link>
 
-        </nav>
+        </nav> */}
+        <div className="navbar">
+      <ul>
+        <li>
+        <section className="logobox"><img className="logo" src=
+        "nebulUS2.png"/>
+        <span className="noto">Nebul<span className="notothin">US</span></span>
+        </section></li>
+        <li> Profile</li>
+        <li> Map</li>
+      </ul>
+ </div>
+
+<div className="homecontent">
+<span>
+  <img src="nightsky.png" className="nightsky"/>
+</span>
+<span className="txtspan">Here at nebulUS we want to help you explore the galaxy of yourself and build your very own constellations of friends! Input your birthday to get started ★</span>
+</div>
 
         <Switch>
           <Route exact path="/" component={Home} />
