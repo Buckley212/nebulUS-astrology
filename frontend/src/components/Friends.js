@@ -13,7 +13,7 @@ const Friends = props => {
     useEffect(() => {
         actions.getFriends({ userId: user?.googleId }).then((res) => {
             console.log(res);
-            setFriends(res);
+            setFriends(res.data);
         })
     }, [])
 
