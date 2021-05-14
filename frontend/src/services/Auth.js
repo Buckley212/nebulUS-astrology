@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { GoogleLogin } from 'react-google-login';
-import actions from './services/api'
+import actions from './api'
 
 
 

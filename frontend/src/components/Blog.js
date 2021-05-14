@@ -1,8 +1,7 @@
 import React, { useState, useContext } from 'react';
-import TheContext from '../services/TheContext'
-import axios from 'axios'
-import actions from '../services/api'
-import Auth from './Auth'
+import TheContext from '../services/TheContext';
+import actions from '../services/api';
+import Auth from '../services/Auth';
 
 
 function Blog(props) {
