@@ -88,3 +88,19 @@ background-color: #6d95c4;
 .txtspan{
   width:45%;
 }
+.submit {
+  font-family: 'Raleway', sans-serif;
+    border: none;
+    outline: none;
+    height: 5vh;
+    background: #1c8adb;
+    color: black;
+    font-size: 18px;
+    border-radius: 20px;
+    margin-top: 3%;
+}
+.submit:hover{
+  background: green;
+  cursor: pointer;
+
+}

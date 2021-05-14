@@ -59,7 +59,11 @@ function App() {
 <span>
   <img src="/resources/nightsky.png" className="nightsky" alt="logo"/>
 </span>
-<span className="txtspan">Here at nebulUS we want to help you explore the galaxy of yourself and build your very own constellations of friends! Input your birthday to get started ★</span>
+<span className="txtspan">Here at nebulUS we want to help you explore the galaxy of yourself and build your very own constellations of friends! Input your birthday to get started ★
+<br/>
+<button className='submit'>
+  <Link to='/blog'  style={{ textDecoration: "none" }}> Login</Link>
+</button></span>
 </div>
 
         <Switch>
