@@ -38,18 +38,19 @@ const actions = {
         return res.data.user
     },
 
-    submitDate: async ({chart, userId, rising}) => {
-        let res = await axios.post(`${serverUrl}/submitDate`, {chart, userId, rising}, createHeaders())
+    submitDate: async ({ chart, userId, rising }) => {
+        let res = await axios.post(`${serverUrl}/submitDate`, { chart, userId, rising }, createHeaders())
         return res.data
     },
 
-    addFriend: async ({friend, userId}) => {
-        let res = await axios.post(`${serverUrl}/addFriend`, {friend, userId}, createHeaders())
+    addFriend: async ({ friend, userId }) => {
+        let res = await axios.post(`${serverUrl}/addFriend`, { friend, userId }, createHeaders())
         return res.data
     },
 
     getFriends: async ({ userId }) => {
-        let res = await axios.get(`${serverUrl}/getFriends`, { userId }, createHeaders())
+        let res = await axios.get(`${serverUrl}/getFriends`, createHeaders())
+        console.log(res)
         return res.data
     }
 }
