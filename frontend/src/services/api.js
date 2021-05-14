@@ -1,5 +1,5 @@
 //All of your API calls are going to be in here.
-import axios from 'axios'
+import axios from 'axios';
 
 console.log(process.env)
 //Where your server/backend lives
@@ -12,7 +12,7 @@ const createHeaders = () => {
         }
     }
 }
-
+console.log(createHeaders());
 const actions = {
 
     getUser: async () => {
@@ -33,15 +33,25 @@ const actions = {
 
     logIn: async ({ profileObj }) => {
         let res = await axios.post(`${serverUrl}/logMeIn`, profileObj)
+        console.log(res);
         localStorage.setItem('token', res.data.token)
         return res.data.user
     },
 
     submitDate: async ({chart, userId, rising}) => {
-        let res = await axios.post(`${serverUrl}/submitDate`, {chart, userId, rising})
+        let res = await axios.post(`${serverUrl}/submitDate`, {chart, userId, rising}, createHeaders())
+        return res.data
+    },
+
+    addFriend: async ({friend, userId}) => {
+        let res = await axios.post(`${serverUrl}/addFriend`, {friend, userId}, createHeaders())
+        return res.data
+    },
+
+    getFriends: async ({ userId }) => {
+        let res = await axios.get(`${serverUrl}/getFriends`, { userId }, createHeaders())
         return res.data
     }
-
 }
 
 export default actions

@@ -21,6 +21,8 @@ router.get(`/get-user`, authorize, async (req, res) => {
 
 
 
+
+
 router.get(`/get-messages`, (req, res) => {
     Message.find().then(messages => res.json(messages))
 })
@@ -52,10 +54,28 @@ router.post(`/logMeIn`, async (req, res) => {
 })
 
 router.post('/submitDate', async(req, res) => {
-    await User.findOneAndUpdate({googleId: req.body.userId},{chart: req.body.chart , rising: req.body.rising})
+    await User.findOneAndUpdate({googleId: req.body.userId},{chart: req.body.chart , rising: req.body.rising}, {new: true})
     console.log(req.body.chart);
 })
 
+router.post('/addFriend', async (req, res) => {
+    const added = await User.findOne({ email: req.body.friend },{googleId: 1});
+    if (added) {
+        await User.findOneAndUpdate({ googleId: req.body.userId }, { $push: { friends: added.googleId } }, {new: true})
+        console.log(req)
+    }
+})
+
+router.get('/getFriends', authorize, async (req, res) => {
+    // const user = await User.findOne({ googleId: req.body.userId })
+    // let friendList = [];
+    // user.friends.forEach(friend => friendList.push(Users.findOne({ googleId: friend.googleId })))
+    // res.json(friendList)
+    // console.log(user)
+    let friends = await User.find({ "googleId": { "$in": res.locals.user.friends } });
+    console.log(friends)
+    res.json(friends);
+})
 
 function authorize(req, res, next) {
     console.log('monkey in the mittle', req.headers)

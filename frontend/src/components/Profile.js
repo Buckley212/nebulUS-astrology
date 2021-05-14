@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Origin, Horoscope } from "circular-natal-horoscope-js";
 import Auth from '../services/Auth';
 
-function Profile(props) {
+const Profile = props => {
     const { user, setUser } = useContext(TheContext)
 
     // const [myMessages, setMyMessages] = useState([])
@@ -28,12 +28,12 @@ function Profile(props) {
     // }      
 
     const [loc, setLoc] = useState({});
-    useEffect(() => {
-        axios.get(`https://iron-cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?${place}`)
-            .then(res => {
-                setLoc(res.data.results.geometry.location)
-            })
-    })
+    // useEffect(() => {
+    //     // axios.get(`https://iron-cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?${place}`)
+    //     //     .then(res => {
+    //     //         setLoc(res.data.results.geometry.location)
+    //         })
+    // })
     const handleSubmit = e => {
 
         const origin = new Origin({

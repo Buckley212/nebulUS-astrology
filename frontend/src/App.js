@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Profile from './components/Profile';
 import Blog from './components/Blog';
 import actions from './services/api';
+import Friends from './components/Friends';
 
 function App() {
 
@@ -37,27 +38,21 @@ function App() {
           </div>
         )}
 
-
         <nav className="navbar">
           <section className="logobox">
             <img className="logo" src="/resources/nebulUS2.png" alt="logo" />
             <span className="noto">Nebul<span className="notothin">US</span></span>
           </section>
           <Link to='/'>Home</Link>
-          <Link to='/blog'>Blog</Link>
+          <Link to='/friends'>Friends</Link>
           <Link to='/profile'>Profile</Link>
         </nav>
 
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/blog" component={Blog} />
+          <Route exact path="/friends" component={Friends} />
           <Route exact path="/profile" component={Profile} />
-
         </Switch>
-
-
-
-
       </div>
     </TheContext.Provider >
   );
