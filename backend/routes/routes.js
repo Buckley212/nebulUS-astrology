@@ -3,7 +3,6 @@ const jwt = require("jsonwebtoken");
 const router = express.Router();
 const Message = require("../models/Message");
 const User = require("../models/User");
-// const ChartCalc = require('../ChartCalc');
 
 router.post(`/add-message`, authorize, (req, res) => {
   let msg = req.body;
@@ -46,31 +45,13 @@ router.post(`/logMeIn`, async (req, res) => {
   });
 });
 
-router.post("/submitDate", (req, res) => {
-  console.log(req.body);
+router.post("/submitDate", async (req, res) => {
+  await User.findOneAndUpdate(
+    { googleId: req.body.userId },
+    { chart: req.body.chart }
+  );
+  console.log(req.body.chart);
 });
-
-// router.get("/birthchart", async (req, res) => {
-//     const date = new Date(req.query.time);
-//     const { latitude, longitude } = req.query;
-
-//     const planets = ChartCalc.planets(date);
-//     const aspects = ChartCalc.apects(planets);
-//     const houses = ChartCalc.houses(date, {
-//         latitude: parseFloat(latitude),
-//         longitude: parseFloat(longitude)
-//     })
-
-//     res.status(200).json({
-//         data: {
-//             astros: {
-//                 ...planets,
-//             },
-//             ...houses,
-//             aspects
-//         },
-//     });
-// });
 
 function authorize(req, res, next) {
   console.log("monkey in the mittle", req.headers);

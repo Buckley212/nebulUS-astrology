@@ -22,11 +22,11 @@ const actions = {
         let messages = await axios.get(`${serverUrl}/get-messages`)
         return messages.data
     },
-    getMyMessages: async () => {
-        let messages = await axios.get(`${serverUrl}/get-my-messages`, createHeaders())
-        console.log(messages)
-        return messages.data
-    },
+    // getMyMessages: async () => {
+    //     let messages = await axios.get(`${serverUrl}/get-my-messages`, createHeaders())
+    //     console.log(messages)
+    //     return messages.data
+    // },
     addMessage: async ({ message }) => {
         return await axios.post(`${serverUrl}/add-message`, { message }, createHeaders())
     },
@@ -37,8 +37,8 @@ const actions = {
         return res.data.user
     },
 
-    submitDate: async ({ date, time }) => {
-        let res = await axios.post(`${serverUrl}/submitDate`, { date , time})
+    submitDate: async ({chart, userId}) => {
+        let res = await axios.post(`${serverUrl}/submitDate`, {chart, userId})
         return res.data
     }
 

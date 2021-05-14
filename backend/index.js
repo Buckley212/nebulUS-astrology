@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 mongoose
   .connect(
     process.env.MONGODB_URI ||
-      `mongodb+srv://team:chat2021@cluster0.2mhfj.mongodb.net/final`,
+      "mongodb+srv://team:chat2021@cluster0.2mhfj.mongodb.net/final",
     { useNewUrlParser: true, useUnifiedTopology: true }
   )
   .then((x) => console.log(`Connected to ${x.connections[0].name}`))
