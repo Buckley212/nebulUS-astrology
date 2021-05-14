@@ -66,7 +66,7 @@ router.post('/addFriend', async (req, res) => {
     }
 })
 
-router.get('/getFriends', authorize, async (req, res) => {
+router.post('/getFriends', authorize, async (req, res) => {
     // const user = await User.findOne({ googleId: req.body.userId })
     // let friendList = [];
     // user.friends.forEach(friend => friendList.push(Users.findOne({ googleId: friend.googleId })))

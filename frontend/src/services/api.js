@@ -49,7 +49,7 @@ const actions = {
     },
 
     getFriends: async ({ userId }) => {
-        let res = await axios.get(`${serverUrl}/getFriends`, { userId }, createHeaders())
+        let res = await axios.post(`${serverUrl}/getFriends`, { userId }, createHeaders())
         return res.data
     }
 }

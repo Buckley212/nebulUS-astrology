@@ -12,10 +12,7 @@ mongoose
 
 app.use(express.json())
 
-app.use(cors({
-    credentials: true,
-    origin: ['http://localhost:3000', 'https://iron-clad.netlify.com'], //Swap this with the client url
-}))
+app.use(cors())
 
 
 app.use('/api', require('./routes/routes.js'))
