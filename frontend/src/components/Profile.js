@@ -3,10 +3,11 @@ import actions from '../services/api';
 import TheContext from '../services/TheContext';
 import axios from 'axios';
 import { Origin, Horoscope } from "circular-natal-horoscope-js";
+import Auth from '../services/Auth';
 
 function Profile(props) {
+    const { user, setUser } = useContext(TheContext)
 
-    const { user } = useContext(TheContext)
     // const [myMessages, setMyMessages] = useState([])
     const [date, setDate] = useState(new Date());
     const [time, setTime] = useState();
@@ -117,12 +118,18 @@ function Profile(props) {
 
     return (
         <div>
-            Profile {user?.name}
-            {<img src={user?.imageUrl} alt="profile avi" />}
-            {user?.email}
+            <p>Profile</p> {user?.name}
+            
+            {user?.name ?
+                <section>
+                    <img src={user?.imageUrl} alt="profile avi" />
+                    <p>{user?.email}</p>
 
-            {/* {myMessages.map(({ message, _id }) => <li key={_id}>{message}</li>)} */}
-            {revealChart()}
+                    {revealChart()}
+                </section>
+                :
+                <Auth setUser = { setUser } />
+            }
         </div>
     );
 }

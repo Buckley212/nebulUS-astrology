@@ -33,38 +33,20 @@ function App() {
         {user?.name && (
           <div>
             <p>Welcome {user?.name}</p>
-            <button onClick={handleLogout}>Log out</button>
+            <button onClick={handleLogout}><Link to ="/home">Log out</Link></button>
           </div>
         )}
 
 
-        <nav>
+        <nav className="navbar">
+          <section className="logobox">
+            <img className="logo" src="/resources/nebulUS2.png" alt="logo" />
+            <span className="noto">Nebul<span className="notothin">US</span></span>
+          </section>
           <Link to='/'>Home</Link>
           <Link to='/blog'>Blog</Link>
           <Link to='/profile'>Profile</Link>
-
         </nav>
-        <div className="navbar">
-      <ul>
-        <li>
-        <section className="logobox"><img className="logo" src="/resources/nebulUS2.png" alt="logo"/>
-        <span className="noto">Nebul<span className="notothin">US</span></span>
-        </section></li>
-        <li> Profile</li>
-        <li> Map</li>
-      </ul>
- </div>
-
-<div className="homecontent">
-<span>
-  <img src="/resources/nightsky.png" className="nightsky" alt="logo"/>
-</span>
-<span className="txtspan">Here at nebulUS we want to help you explore the galaxy of yourself and build your very own constellations of friends! Input your birthday to get started ★
-<br/>
-<button className='submit'>
-  <Link to='/blog'  style={{ textDecoration: "none" }}> Login</Link>
-</button></span>
-</div>
 
         <Switch>
           <Route exact path="/" component={Home} />
