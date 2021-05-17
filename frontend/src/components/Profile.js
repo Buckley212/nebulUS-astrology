@@ -12,6 +12,14 @@ const Profile = props => {
     const [date, setDate] = useState(new Date());
     const [time, setTime] = useState();
     const [place, setPlace] = useState();
+    const [friends, setFriends] = useState();
+    
+    useEffect(() => {
+        actions.getFriends({ userId: user?.googleId }).then((res) => {
+            console.log(res);
+            setFriends(res);
+        })
+    }, [])
     // useEffect(() => {
     //     actions.getMyMessages().then(messages => {
     //         if (!messages.err)
@@ -63,6 +71,7 @@ const Profile = props => {
                 <p>Sun: {user?.chart?.sun.Sign.label}</p>
                 <p>Moon: {user?.chart?.moon.Sign.label}</p>
                 <p>Rising: {user?.rising?.Sign.label}</p>
+                {friends?.map(a => <p>{a.name}</p>)}
             </div>
         } else if (user?.chart === undefined) {
             return <form onSubmit={handleSubmit}>

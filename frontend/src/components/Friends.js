@@ -13,7 +13,7 @@ const Friends = props => {
     useEffect(() => {
         actions.getFriends({ userId: user?.googleId }).then((res) => {
             console.log(res);
-            setFriends(res);
+            setFriends(res.data);
         })
     }, [])
 
@@ -32,7 +32,7 @@ const Friends = props => {
                 <button>Submit</button>
             </form>
             <ul>
-                {friends.map(a => <li><p>{a.name}</p></li>)}
+                {friends?.map(a => <li><p>{a.name}</p></li>)}
             </ul>
         </div>
     )
