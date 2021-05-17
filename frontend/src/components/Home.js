@@ -4,7 +4,7 @@ import TheContext from '../services/TheContext';
 import { Link } from 'react-router-dom';
 import Auth from '../services/Auth';
 
-function Home(props) {
+const Home = props => {
 
     const { user, setUser } = useContext(TheContext)
 

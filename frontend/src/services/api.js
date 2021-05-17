@@ -1,5 +1,5 @@
 //All of your API calls are going to be in here.
-import axios from 'axios'
+import axios from 'axios';
 
 console.log(process.env)
 //Where your server/backend lives
@@ -12,7 +12,6 @@ const createHeaders = () => {
         }
     }
 }
-
 const actions = {
 
     getUser: async () => {
@@ -37,11 +36,21 @@ const actions = {
         return res.data.user
     },
 
-    submitDate: async ({chart, userId, rising}) => {
-        let res = await axios.post(`${serverUrl}/submitDate`, {chart, userId, rising})
+    submitDate: async ({ chart, userId, rising }) => {
+        let res = await axios.post(`${serverUrl}/submitDate`, { chart, userId, rising }, createHeaders())
+        return res.data
+    },
+
+    addFriend: async ({ friend, userId }) => {
+        let res = await axios.post(`${serverUrl}/addFriend`, { friend, userId }, createHeaders())
+        return res.data
+    },
+
+    getFriends: async ({ userId }) => {
+        let res = await axios.get(`${serverUrl}/getFriends`, createHeaders())
+        console.log(res)
         return res.data
     }
-
 }
 
 export default actions

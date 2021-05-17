@@ -7,7 +7,8 @@ const userSchema = new Schema({
     name: String,
     googleId: String,
     chart: Object,
-    rising: Object
+    rising: Object,
+    friends: [String]
 })
 
 const User = model('User', userSchema)

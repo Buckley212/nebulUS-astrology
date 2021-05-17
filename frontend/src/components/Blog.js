@@ -4,7 +4,7 @@ import actions from '../services/api';
 import Auth from '../services/Auth';
 
 
-function Blog(props) {
+const Blog = props => {
 
     const [message, setMessage] = useState('')
 

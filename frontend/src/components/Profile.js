@@ -5,7 +5,7 @@ import axios from 'axios';
 import { Origin, Horoscope } from "circular-natal-horoscope-js";
 import Auth from '../services/Auth';
 
-function Profile(props) {
+const Profile = props => {
     const { user, setUser } = useContext(TheContext)
 
     // const [myMessages, setMyMessages] = useState([])
@@ -18,14 +18,6 @@ function Profile(props) {
     //             setMyMessages(messages)
     //     })
     // }, [])
-
-    // function getLocation() {
-    //     if (navigator.geolocation) {
-    //       navigator.geolocation.getCurrentPosition(showPosition);
-    //     } else { 
-    //       x.innerHTML = "Geolocation is not supported by this browser.";
-    //     }
-    // }      
 
     const [loc, setLoc] = useState({});
     useEffect(() => {
