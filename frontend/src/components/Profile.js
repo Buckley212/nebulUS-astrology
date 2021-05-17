@@ -45,9 +45,9 @@ function Profile(props) {
             latitude: loc.lat,
             longitude: loc.lng,
         });
-          
+
         //Sample output of date and time object { date: '2021-05-03', time: '13:26' }
-          
+
         const horoscope = new Horoscope({
             origin: origin,
             houseSystem: "whole-sign",
@@ -68,9 +68,11 @@ function Profile(props) {
         if (user?.chart !== undefined) {
             console.log(user.chart)
             return <div className="chart">
-                <p>Sun: {user?.chart?.sun.Sign.label}</p>
-                <p>Moon: {user?.chart?.moon.Sign.label}</p>
-                <p>Rising: {user?.rising?.Sign.label}</p>
+                <form>
+                    <p>Sun: {user?.chart?.sun.Sign.label}</p>
+                    <p>Moon: {user?.chart?.moon.Sign.label}</p>
+                    <p>Rising: {user?.rising?.Sign.label}</p>
+                </form>
             </div>
         } else if (user?.chart === undefined) {
             return <form onSubmit={handleSubmit}>
@@ -119,7 +121,7 @@ function Profile(props) {
     return (
         <div>
             <p>Profile</p> {user?.name}
-            
+
             {user?.name ?
                 <section>
                     <img src={user?.imageUrl} alt="profile avi" />
@@ -128,7 +130,7 @@ function Profile(props) {
                     {revealChart()}
                 </section>
                 :
-                <Auth setUser = { setUser } />
+                <Auth setUser={setUser} />
             }
         </div>
     );
