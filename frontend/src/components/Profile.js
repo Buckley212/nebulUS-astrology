@@ -19,21 +19,13 @@ const Profile = props => {
     //     })
     // }, [])
 
-    // function getLocation() {
-    //     if (navigator.geolocation) {
-    //       navigator.geolocation.getCurrentPosition(showPosition);
-    //     } else { 
-    //       x.innerHTML = "Geolocation is not supported by this browser.";
-    //     }
-    // }      
-
     const [loc, setLoc] = useState({});
-    // useEffect(() => {
-    //     // axios.get(`https://iron-cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?${place}`)
-    //     //     .then(res => {
-    //     //         setLoc(res.data.results.geometry.location)
-    //         })
-    // })
+    useEffect(() => {
+        axios.get(`https://iron-cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?${place}`)
+            .then(res => {
+                setLoc(res.data.results.geometry.location)
+            })
+    })
     const handleSubmit = e => {
 
         const origin = new Origin({

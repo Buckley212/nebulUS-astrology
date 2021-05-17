@@ -12,7 +12,6 @@ const createHeaders = () => {
         }
     }
 }
-console.log(createHeaders());
 const actions = {
 
     getUser: async () => {
@@ -33,7 +32,6 @@ const actions = {
 
     logIn: async ({ profileObj }) => {
         let res = await axios.post(`${serverUrl}/logMeIn`, profileObj)
-        console.log(res);
         localStorage.setItem('token', res.data.token)
         return res.data.user
     },
