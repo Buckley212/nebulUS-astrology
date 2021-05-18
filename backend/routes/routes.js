@@ -11,16 +11,12 @@ router.all('/', function(req, res, next) {
 });
   
 router.post(`/add-message`, authorize, (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     let msg = req.body
     msg.ownerId = res.locals.user._id
     Message.create(msg).then(message => res.json(message))
 })
 
 router.get(`/getUser`, authorize, async (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     //console.log("in get user after next", res.locals.user._id)
     jwt.verify(req.token, 'secretkey', (err, authData) => {
         if (err) {
@@ -42,27 +38,19 @@ router.get(`/getUser`, authorize, async (req, res) => {
 
 
 router.get(`/get-messages`, (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     Message.find().then(messages => res.json(messages))
 })
 
 router.get(`/get-my-messages`, authorize, (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     Message.find({ ownerId: res.locals.user._id }).then(messages => res.json(messages))
 })
 
 
 router.get(`/`, (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     res.json({ serverWorks: true })
 })
 
 router.post(`/logMeIn`, async (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
 
     //Find user
     let user = await User.findOne({ email: req.body.email })
@@ -80,8 +68,6 @@ router.post(`/logMeIn`, async (req, res) => {
 })
 
 router.post('/submitDate', async (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     await User.findOneAndUpdate({ googleId: req.body.userId }, { chart: req.body.chart, rising: req.body.rising }, { new: true })
     console.log(req.body.chart);
 })
@@ -97,8 +83,6 @@ router.post('/addFriend', async (req, res) => {
 })
 
 router.get('/getFriends', authorize, async (req, res) => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     const me = await User.findById(res.locals.user._id)
     const friends = await User.find({ "googleId": { "$in": me.friends } });
 
@@ -106,8 +90,6 @@ router.get('/getFriends', authorize, async (req, res) => {
 })
 
 function authorize(req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     console.log('monkey in the mittle', req.headers)
     const bearerHeader = req.headers['authorization'];
     // Check if bearer is undefined
