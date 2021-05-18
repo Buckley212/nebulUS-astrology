@@ -4,33 +4,24 @@ const router = express.Router()
 const Message = require('../models/Message')
 const User = require('../models/User')
 
-router.all('/', function(req, res, next) {
+router.all('/', function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     next();
 });
-  
+
 router.post(`/add-message`, authorize, (req, res) => {
     let msg = req.body
     msg.ownerId = res.locals.user._id
     Message.create(msg).then(message => res.json(message))
 })
 
-router.get(`/getUser`, authorize, async (req, res) => {
-    //console.log("in get user after next", res.locals.user._id)
-    jwt.verify(req.token, 'secretkey', (err, authData) => {
-        if (err) {
-          res.status(403).json(err);
-        } else {
-          User.findById(authData.user._id)
-            .then((user) => {
-              res.status(200).json(user);
-            })
-            .catch((err) => res.status(500).json(err));
-        }
-    });
-})
+router.get(`/get-user`, authorize, async (req, res) => {
 
+    console.log("in get user after next", res.locals.user._id)
+    let user = await User.findById(res.locals.user._id)
+    res.json(user)
+})
 
 
 
@@ -83,28 +74,53 @@ router.post('/addFriend', async (req, res) => {
 })
 
 router.get('/getFriends', authorize, async (req, res) => {
-    const me = await User.findById(res.locals.user._id)
-    const friends = await User.find({ "googleId": { "$in": me.friends } });
+    console.log(res.local)
+    // const me = await User.findById(res.locals.user._id)
+    // const friends = await User.find({ "googleId": { "$in": me.friends } });
 
-    res.json(friends);
+    // res.json(friends);
 })
+
+// function authorize(req, res, next) {
+//     console.log('monkey in the mittle', req.headers)
+//     const bearerHeader = req.headers['authorization'];
+//     // Check if bearer is undefined
+//     if (typeof bearerHeader !== 'undefined') {
+//         // Split at the space
+//         const bearer = bearerHeader.split(' ');
+//         // Get token from array
+//         const bearerToken = bearer[1];
+//         // Set the token
+//         req.token = bearerToken;
+//         // Next middleware
+//         next();
+//     } else {
+//         // Forbidden
+//         res.status(403); //.json({err:'not logged in'});
+//     }
+// }
+
 
 function authorize(req, res, next) {
     console.log('monkey in the mittle', req.headers)
-    const bearerHeader = req.headers['authorization'];
-    // Check if bearer is undefined
-    if (typeof bearerHeader !== 'undefined') {
-    // Split at the space
-        const bearer = bearerHeader.split(' ');
-    // Get token from array
-        const bearerToken = bearer[1];
-    // Set the token
-        req.token = bearerToken;
-    // Next middleware
-        next();
+    if (req.headers.authorization) {
+        let token = req.headers.authorization.split(' ')[1]
+        console.log(token)
+        jwt.verify(token, 'secret key', async (err, data) => {
+            if (!err) {
+                console.log(data)
+                res.locals.user = data.user
+                next()
+            } else {
+                console.error(err)
+                res.json({ err })
+            }
+        })
     } else {
-    // Forbidden
-        res.status(403); //.json({err:'not logged in'});
-  }
+        res.status(403).json({ message: 'You dont have no token' })
+    }
 }
+
+
+
 module.exports = router
