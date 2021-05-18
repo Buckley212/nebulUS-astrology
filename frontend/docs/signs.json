@@ -1,0 +1,117 @@
+{
+
+    "Sun" :{ 
+        "Capricorn": {
+            "Type": "Cardinal Earth",
+            "Ruler": "Saturn",
+            "Keywords": "Authority, Mastery, Completion, Organization",
+            "Strengths": "Capable, hard-working, serious, practical, prudent, trustworthy, fun",
+            "Weaknesses": "Miserly, restrictive, cold, unsympathetic, reckless ambition, fearful"
+        },
+        "Libra": {
+            "Type": "Cardinal Air",
+            "Ruler": "Venus",
+            "Keywords": "Diplomacy,  Balance, Justice, Partnership",
+            "Strengths": "Impartial, balanced, gracious, refined, artistic, relationship-oriented, charming",
+            "Weaknesses": "Indecisive, insecure, pleasure-seeking, people-pleasing, passive-aggressive"
+        },
+        "Virgo": {
+            "Type": "Mutable Earth", 
+            "Ruler": "Mercury",
+            "Keywords": "Discrimination, Service, Practicality, Analysis",
+            "Strengths": "helpful, modest, sharp, discerning, calm, organized, responsible, close to nature.",
+            "Weaknesses": "critical, lazy, servile, scattered, forgetful, confused, nervous, stressed."
+        },
+        "Leo": {
+            "Type": "Fixed Fire",
+            "Ruler": "The Sun",
+            "Keywords": "Creativity, Love, Warmth, Self-Expression, Leadership",
+            "Strengths": "Confident, self-expressive, loyal, honourable, affectionate, regal, romantic, fun",
+            "Weaknesses": "Vain, selfish, arrogant, hedonistic, dictatorial, extravagant, superficial, snobbish"
+        },
+        "Gemini": {
+            "Type": "Mutable Air",
+            "Ruler": "Mercury",
+            "Keywords": "Communication, Interaction, Exchange",
+            "Strengths": "Lighthearted, cheerful, intelligent, adept, versatile, responsive, dexterity, sociable, engaged",
+            "Weaknesses": "Superficial, silly, gossip, unfocussed, nervous, unemotional, cold, erratic"
+        },
+        "Taurus": {
+            "Type": "Fixed Earth",
+            "Ruler": "Venus",
+            "Keywords": "Stability, Structure, Security, Reliability, Sensuality",
+            "Strengths": "Steadfast, loyal, calm, affectionate, practical, productive",
+            "Weaknesses": "Stubborn, unreasonable, overindulgent, stingy, rigid, dull, materialistic"
+        },
+        "Scorpio": {
+            "Type": "Fixed Water",
+            "Ruler": "Mars",
+            "Keywords": "Transformation, Intensity, Purification, Power",
+            "Strengths": "Creativity, healing, transformation, regeneration, loyal, focussed, pure, intimate, erotic",
+            "Weaknesses": "Destructive, annihilation, cruel, seductive, manipulative, controlling, betrayal, possessiveness"
+        },
+        "Sagittarius": {
+            "Type": "Mutable Fire",
+            "Ruler": "Jupiter",
+            "Keywords": "Inspiration, Truth, Expansion, Meaning",
+            "Strengths": "Inspired, seeking knowledge, visionary, fortunate, joyful, purposeful, philosophical, adventurous",
+            "Weaknesses": "Unprincipled, narrow, fanatic, reckless, gluttonous, coarse, rude, amoral"
+        },
+        "Aquarius": {
+            "Type": "Fixed Air",
+            "Ruler": "Saturn",
+            "Keywords": "Idealism, Community, Liberty, Equality, Science",
+            "Strengths": "Socially aware, humanitarian, egalitarian, civilized, impartial, outgoing, unconventional",
+            "Weaknesses": "Cold, critical, aloof, overly rational, erratic, blinded by science and reason"
+        },
+        "Cancer": {
+            "Type": "Cardinal Water",
+            "Ruler": "The Moon",
+            "Keywords": "Nurturing, Enclosing, Protecting, Intuiting",
+            "Strengths": "sensitive, emotional intelligence, nurturing, psychic, family oriented, empathetic, reliable",
+            "Weaknesses": "hyper-sensitive, overly emotional, extreme selfishness, fearful, overprotective, smothering"
+        },
+        "Aries": {
+            "Type": "Cardinal Fire",
+            "Ruler": "Mars",
+            "Keywords": "Activity, Initiation, Energy, Impulse",
+            "Strengths": "courage, bold, inspiring, intuitive, decisive, direct, devoted to an Ideal",
+            "Weaknesses": "foolhardy, egotistic, selfish, self-oriented, unthinking, impulsive, zealot"
+        },
+        "Pisces": {
+            "Type": "Mutable Water",
+            "Ruler": "Jupiter",
+            "Keywords": "Service, Sacrifice, Compassion, Mysticism",
+            "Strengths": "Empathy, intuition, sensitivity, service, imaginative, extremely creative, devotional",
+            "Weaknesses": "Ungrounded, victim, suffering through sacrifice, addictive, critical, afraid, lost"
+        }
+    },
+    "Moon": {
+        "Capricorn": "Born with the Moon in Capricorn, you are likely to be innately responsible, pragmatic and measured in the ways that you respond. Capricorn is an Earth sign, and so pertains to the tangible and practical dimensions of life. Capricorn is also known as a Cardinal sign, which implies a need to take action. When practicality and activity combine, the urge to master material resources is usually present. With the Moon in Capricorn, you are likely to have an innately serious and responsible nature, seeking to make the most of whatever resources you have at your disposal.",
+        "Libra": "Born with the Moon in Libra, you are likely to have a deep need for peace and harmony in your life. Libra is an Air sign, governing communication, the exchange of information or ideas, and the protocols around which relationship occurs. Accordingly, you may find that you have an innate need to connect with the world around you, and may have a talent for creating rapport with others. Libra is also a Cardinal sign, highlighting the need to act. The action  required is whatever is needed to restore balance. Libra is symbolized by the Scales.",
+        "Virgo": "Whilst your Sun Sign describes qualities you are learning to develop and become, your Moon in Virgo describes who you already are. With the Moon in the practical and systematic sign of Virgo, you are likely to be someone who is highly appreciative of structure, organization and detail. You will find your life works better with well-established systems in your personal and professional life. Virgo is an Earth sign, and so pertains to tangible or physical things. It is also known as a Mutable sign, which infers a need for variety and change.",
+        "Leo": "Whilst your Sun Sign describes qualities you are learning to develop and become, the Moon in Leo describes who you already are. With the Moon in the dramatic, generous and fun-loving sign of Leo, you are likely to have an innate need to approach life from a place of fun, passion and creative self-expression. Leo is a Fire sign, and so pertains to spirit and inspiration. On an emotional level, you are likely to be warm, generous and innately confident. Leo is also a Fixed sign, implying constancy and perseverance. When you love, you love intensely.",
+        "Gemini": "Whilst your Sun Sign describes qualities you are learning to develop and become, your Moon Sign describes those that you already are. Born with the Moon in Gemini, you are likely to be a curious individual, with an active, versatile mind. Gemini is an Air sign, governing communication, the exchange of information or ideas, and the protocols with which social organization occurs. Accordingly, you may find that you have an innate need to know as much as possible about the world around you, and may have a talent for numbers, speech or the written word.",
+        "Taurus": "With the Moon in the sign of Taurus, you are likely to have an innate need for security and comfort. Taurus is an Earth sign, and so pertains to the tangible, material aspects of life. You are likely to find that you relate easily to the physical plane, and find much comfort in what you can see, hear, smell, touch and taste.",
+        "Scorpio": "Born with the Moon in Scorpio, you are likely to be sensitive and loyal, but have intense emotional needs. Scorpio is a Water sign, which relates to the emotional, psychological and spiritual dimensions of life. You are likely to give the impression of being perceptive, powerful, and transformational. Scorpio is also a Fixed sign, suggesting that when you align your emotions with something you desire – be that a friend/lover or an anticipated outcome – you will be constant, enduring and unwilling to let go.",
+        "Sagittarius": "Born with the Moon in Sagittarius, you are likely to be innately optimistic, expansive and positive in your point of view. Sagittarius is a Fire sign, and so accentuates the passionate, idealistic and creative dimensions of life. Sagittarius is also Mutable in action, which means you are likely to have an innate need for variety and change. When passion and variety combine, there is often a deep calling for freedom.",
+        "Aquarius": "With the Moon in the conceptual and humanitarian sign of Aquarius, you are likely to be a unique and somewhat progressive individual. There may be something about you that somehow “separates” you from everybody else. Aquarius is an Air sign, and so pertains to ideas, concepts and communication. It also relates to the social side of life in terms of the protocol that guides how we interact with each other.",
+        "Cancer": "Born with the Moon in Cancer, you are likely to have an innate need to nurture, support and protect. Cancer is a Water sign, and so, pertains to the emotional, psychological and spiritual dimensions of life. Your empathy for others is likely to be strong, and you will have an intuitive ability to sense what others need.",
+        "Aries": "Born with the Moon in the sign of Aries, you are likely to have a pronounced need for independence, as well as an assertive streak. Aries is a Fire sign, governing impulses, initiative and action. Accordingly, you are likely to feel at your best when you involved with exciting, challenging or new experiences – anything that lets you express your pioneering side.",
+        "Pisces": "When the Moon is found in Pisces, the emotions are likely to be pronounced. Pisces is the final sign of The Zodiac, and has much to do with sensitivity – to oneself, to other people, and to the mysterious, unseen forces that shape our world. With the Moon in Pisces, you are likely to be a highly impressionable individual – strongly influenced by the compassionate, creative, imaginative, romantic and idealistic aspects of life."
+    },
+    "Rising": {
+        "Capricorn": "Born with Capricorn rising (or on the Ascendant), you may notice a duality in your nature between someone who is, on the one hand, serious, organized and capable, and on the other, uncertain about their ability to achieve all the things they want.",
+        "Libra": "Born with Libra on your Ascendant (or Rising), life is likely to be experienced as a constant series of choices. It is important for you to consider everything from its various points of view.",
+        "Virgo": "Born with with Virgo on your Ascendant (or Rising), you are likely to view the world through the lens of mental analysis, with a view toward organization.",
+        "Leo": "Born with Leo on your Ascendant (or Rising) you are likely to find that life presents you with the opportunity to become a leader or express your creativity somehow.",
+        "Gemini": "Born with Gemini on your Ascendant (or Rising), you are likely to approach life with a genuine sense of inquisitiveness. You are gifted with a natural sense of curiosity and desire to understand how people or things work.",
+        "Taurus": "Born with Taurus on your Ascendant (or Rising) you are likely to prefer the slow and steady approach to life. Taurus is a practical and conservative sign. Wherever possible, you will feel better if moving forward in a methodical, systematic way.",
+        "Scorpio": "Born with Scorpio on your Ascendant (or Rising) you are likely to experience life as a constant series of obstacles or crises in which you learn about the nature of power through transformation.",
+        "Sagittarius": "Born with Sagittarius on your Ascendant (or Rising) you are likely to experience your life as a quest, challenge or search for adventure where the prize you seek is meaning.",
+        "Aquarius": "Born with Aquarius on your Ascendant (or Rising), you will find a clearer sense of individuality is gained by stepping back to look at life from an objective perspective. A detached point of view allows for a logical assessment of the circumstances around you, giving you the ability to find, at times, lightning fast resolution to key issues.",
+        "Cancer": "Born with Cancer on your Ascendant (or Rising), self-realization comes through a sophisticated attunement to your highly developed feeling nature. You make sense of life through instinct and emotion.",
+        "Aries": "Born with Aries on your Ascendant (or Rising), you are likely to approach life in a straight-forward and direct manner. Aries is a physical and dynamic energy. Accordingly, you are likely to love a challenge, enjoy being busy and will generally move toward your goals without delay.",
+        "Pisces": "Born with Pisces on your Ascendant (or Rising) you are likely to be an especially sensitive individual, with an ability to “pick up on” the unseen influences in your surroundings. Your sensitivity is in fact both your gift and your challenge."
+    }
+}
