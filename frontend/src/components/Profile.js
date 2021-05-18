@@ -6,26 +6,26 @@ import { Origin, Horoscope } from "circular-natal-horoscope-js";
 import Auth from '../services/Auth';
 
 const Profile = props => {
+    
     const { user, setUser } = useContext(TheContext)
-
-    // const [myMessages, setMyMessages] = useState([])
+    const [myMessages, setMyMessages] = useState([])
     const [date, setDate] = useState(new Date());
     const [time, setTime] = useState();
     const [place, setPlace] = useState();
-    const [friends, setFriends] = useState();
+    const [friends, setFriends] = useState([]);
     
     useEffect(() => {
         actions.getFriends({ userId: user?.googleId }).then((res) => {
             console.log(res);
-            setFriends(res);
+            setFriends(res.data);
         })
     }, [])
-    // useEffect(() => {
-    //     actions.getMyMessages().then(messages => {
-    //         if (!messages.err)
-    //             setMyMessages(messages)
-    //     })
-    // }, [])
+    useEffect(() => {
+        actions.getMyMessages().then(messages => {
+            if (!messages.err)
+                setMyMessages(messages)
+        })
+    }, [])
 
     const [loc, setLoc] = useState({});
     useEffect(() => {
@@ -83,39 +83,6 @@ const Profile = props => {
         }
     }
 
-    // const properties = {
-    //     zodiac: {
-    //         ascendant: {
-    //             sign: 3,      // Sets ascendant by sign. See src/zodiac.js.
-    //             degree: 15    // Sets degree offset for ascendant sign.
-    //         }
-    //     },
-    //     planets: {        // Sets degree of planets.
-    //         sun: 65,
-    //         mercury: 12,
-    //         venus: 151.31,
-    //         mars: 231,
-    //         moon: 188,
-    //         jupiter: 311,
-    //         saturn: 100,
-    //         uranus: 199,
-    //         neptune: 278,
-    //         pluto: 31
-    //     },
-    //     houses: {
-    //         hasHouses: true,
-    //         axes: {
-    //             axis2to8: 27,   // Sets degree of axis.
-    //             axis3to9: 56,
-    //             axis4to10: 81,
-    //             axis5to11: 114,
-    //             axis6to12: 156
-    //         }
-    //     }
-    // };
-    // const h = new zastro.Horoscope(properties);
-    // const drawn = h.draw("#horoscope");
-    // console.log("Hurray! You have drawn your horoscope.", drawn);
 
     return (
         <div>
