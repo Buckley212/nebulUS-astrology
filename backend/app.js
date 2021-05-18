@@ -21,17 +21,18 @@ app.use(express.json())
 
 app.use(cors({
     credentials: true,
-    origin: ['http://localhost:3000', 'https://nebulus-astrology.netlify.com'], //Swap this with the client url
+    origin: ['http://localhost:3000', 'http://nebulus-astrology.netlify.com'], //Swap this with the client url
     })
 )
 
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "https://nebulus-astrology.netlify.com");
+  res.setHeader("Access-Control-Allow-Origin", "http://nebulus-astrology.netlify.com");
   res.header(
     "Access-Control-Allow-Headers",
     "Origin, X-Requested-With, Content-Type, Accept"
   );
   next();
+})
 
 app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.use('/api', require('./routes/routes.js'))
