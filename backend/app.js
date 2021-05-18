@@ -13,7 +13,10 @@ mongoose
   .then(x => console.log(`Connected to ${x.connections[0].name}`))
   .catch(() => console.error("Error connecting to Mongo"))
 
-app.use(cors())
+app.use(cors({
+  credentials: true,
+  origin: "https://nebulus-astrology.netlify.app"
+}))
 
 console.log('hmm')
 const app_name = require('./package.json').name;
