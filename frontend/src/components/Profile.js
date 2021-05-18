@@ -5,10 +5,10 @@ import axios from 'axios';
 import { Origin, Horoscope } from "circular-natal-horoscope-js";
 import Auth from '../services/Auth';
 
-const Profile = props => {
+const Profile = () => {
     
     const { user, setUser } = useContext(TheContext)
-    const [myMessages, setMyMessages] = useState([])
+    // const [myMessages, setMyMessages] = useState([])
     const [date, setDate] = useState(new Date());
     const [time, setTime] = useState();
     const [place, setPlace] = useState();
@@ -20,12 +20,12 @@ const Profile = props => {
             setFriends(res.data);
         })
     }, [])
-    useEffect(() => {
-        actions.getMyMessages().then(messages => {
-            if (!messages.err)
-                setMyMessages(messages)
-        })
-    }, [])
+    // useEffect(() => {
+    //     actions.getMyMessages().then(messages => {
+    //         if (!messages.err)
+    //             setMyMessages(messages)
+    //     })
+    // }, [])
 
     const [loc, setLoc] = useState({});
     useEffect(() => {
@@ -65,22 +65,24 @@ const Profile = props => {
     }
 
     const revealChart = () => {
-        if (user?.chart !== undefined) {
-            console.log(user.chart)
-            return <div className="chart">
-                <p>Sun: {user?.chart?.sun.Sign.label}</p>
-                <p>Moon: {user?.chart?.moon.Sign.label}</p>
-                <p>Rising: {user?.rising?.Sign.label}</p>
-                {friends?.map(a => <p>{a.name}</p>)}
+        return (
+            <div>
+                {user?.chart?.sun ?
+                    <div className="chart">
+                        <p>Sun: {user?.chart?.sun.Sign.label}</p>
+                        <p>Moon: {user?.chart?.moon.Sign.label}</p>
+                        <p>Rising: {user?.rising?.Sign.label}</p>
+                        {friends?.map(a => <p>{a.name}</p>)}
+                    </div>
+                    :
+                    <form onSubmit={handleSubmit}>
+                        <input type="date" onChange={e => setDate(e.target.value)} />
+                        <input type="time" onChange={e => setTime(e.target.value)} />
+                        <input type="text" onChange={e => setPlace(e.target.value)} />
+                        <button>Submit</button>
+                    </form>}
             </div>
-        } else if (user?.chart === undefined) {
-            return <form onSubmit={handleSubmit}>
-                <input type="date" onChange={e => setDate(e.target.value)} />
-                <input type="time" onChange={e => setTime(e.target.value)} />
-                <input type="text" onChange={e => setPlace(e.target.value)} />
-                <button>Submit</button>
-            </form>
-        }
+        )
     }
 
 

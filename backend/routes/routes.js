@@ -18,7 +18,7 @@ router.post(`/add-message`, authorize, (req, res) => {
     Message.create(msg).then(message => res.json(message))
 })
 
-router.get(`/get-user`, authorize, async (req, res) => {
+router.get(`/getUser`, authorize, async (req, res) => {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "X-Requested-With");
     //console.log("in get user after next", res.locals.user._id)

@@ -11,13 +11,13 @@ const createHeaders = () => {
     return {
         headers: {
             authorization: `Bearer ${token}`,
-        },
-    };
-};
+        }
+    }
+}
 const actions = {
 
     getUser: async () => {
-        return await axios.get(`${serverUrl}/get-user`, createHeaders())
+        return await axios.get(`${serverUrl}/getUser`, createHeaders())
     },
     getMessages: async () => {
         let messages = await axios.get(`${serverUrl}/get-messages`)
