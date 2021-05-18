@@ -54,36 +54,36 @@
             "Type": "Mutable Fire",
             "Ruler": "Jupiter",
             "Keywords": "Inspiration, Truth, Expansion, Meaning",
-            "Strengths": "Inspired, seeking knowledge, visionary, fortunate, joyful, purposeful, philosophical, adventurous",
-            "Weaknesses": "Unprincipled, narrow, fanatic, reckless, gluttonous, coarse, rude, amoral"
+            "Strengths": ["Inspired", "seeking knowledge", "visionary", "fortunate", "joyful", "purposeful", "philosophical", "adventurous"],
+            "Weaknesses": ["Unprincipled", "narrow", "fanatic", "reckless", "gluttonous", "coarse", "rude", "amoral"]
         },
         "Aquarius": {
             "Type": "Fixed Air",
             "Ruler": "Saturn",
-            "Keywords": "Idealism, Community, Liberty, Equality, Science",
-            "Strengths": "Socially aware, humanitarian, egalitarian, civilized, impartial, outgoing, unconventional",
-            "Weaknesses": "Cold, critical, aloof, overly rational, erratic, blinded by science and reason"
+            "Keywords": ["Idealism", "Community", "Liberty", "Equality", "Science"],
+            "Strengths": ["Socially aware", "humanitarian", "egalitarian", "civilized", "impartial", "outgoing", "unconventional"],
+            "Weaknesses": ["Cold", "critical", "aloof", "overly rational", "erratic"]
         },
         "Cancer": {
             "Type": "Cardinal Water",
             "Ruler": "The Moon",
             "Keywords": "Nurturing, Enclosing, Protecting, Intuiting",
-            "Strengths": "sensitive, emotional intelligence, nurturing, psychic, family oriented, empathetic, reliable",
-            "Weaknesses": "hyper-sensitive, overly emotional, extreme selfishness, fearful, overprotective, smothering"
+            "Strengths": ["sensitive", "emotional intelligence", "nurturing", "psychic", "family oriented", "empathetic", "reliable"],
+            "Weaknesses": ["hyper-sensitive", "emotional", "selfishness", "fearful", "overprotective", "smothering"]
         },
         "Aries": {
             "Type": "Cardinal Fire",
             "Ruler": "Mars",
-            "Keywords": "Activity, Initiation, Energy, Impulse",
-            "Strengths": "courage, bold, inspiring, intuitive, decisive, direct, devoted to an Ideal",
-            "Weaknesses": "foolhardy, egotistic, selfish, self-oriented, unthinking, impulsive, zealot"
+            "Keywords": ["Activity", "Initiation", "Energy", "Impulse"],
+            "Strengths": ["courage", "bold", "inspiring", "intuitive", "decisive", "direct", "devoted"],
+            "Weaknesses": ["foolhardy", "egotistic", "selfish", "self-oriented", "unthinking", "impulsive", "zealot"]
         },
         "Pisces": {
             "Type": "Mutable Water",
             "Ruler": "Jupiter",
             "Keywords": "Service, Sacrifice, Compassion, Mysticism",
-            "Strengths": "Empathy, intuition, sensitivity, service, imaginative, extremely creative, devotional",
-            "Weaknesses": "Ungrounded, victim, suffering through sacrifice, addictive, critical, afraid, lost"
+            "Strengths": ["Empathy", "intuition", "sensitivity", "service", "imaginative", "creative", "devotional"],
+            "Weaknesses": ["Ungrounded", "victim", "suffering through sacrifice", "addictive", "critical", "afraid", "lost"]
         }
     },
     "Moon": {
