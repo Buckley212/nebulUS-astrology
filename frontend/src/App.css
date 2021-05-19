@@ -1,0 +1,216 @@
+.logo{
+  height: 10vh;
+  width: auto;
+  padding-left: 2%;
+}
+.logobox{
+  float:left;
+}
+.links {
+  font-family: 'Raleway', sans-serif;
+  color: black;
+  padding: 0 10%;
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
+  box-shadow:         3px 3px 5px 6px #ccc; 
+}
+
+nav .links {
+  padding: 0 5%;
+}
+
+.noto{
+  font-family: 'Noto Sans JP', sans-serif;
+}
+.notothin{
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 100;
+}
+.ubuntu{
+  font-family: 'Ubuntu', sans-serif;
+}
+.ubuntulight{
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 300;
+}
+.logobox{
+  display: flex;
+  align-items: center;
+}
+.homecontent{
+  display: flex;
+  background-image: url("./marble.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-size: 35px;
+  font-family: 'Open Sans', sans-serif;
+  justify-content: space-around;
+  align-items: center;
+}
+.txtspan{
+  width:45%;
+}
+
+
+.submit{
+  background-color: white; /* Green */
+  border-radius: 5px ;
+  border: white;
+  align-self: center;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.submit:hover{
+  background: #b3b7bd;
+  cursor: pointer;
+
+}
+.focus:hover {
+  transform: scale(1.1);
+}
+
+.ani {
+  position: relative;
+  overflow: hidden;
+  transition: 1s all ease;
+  z-index: 5;
+}
+
+.ani > a{
+  transition: 0.6s all ease;
+ }
+
+.ani Link:hover {
+  text-decoration: none;
+}
+
+.ani::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #697be0;
+  z-index: -60;
+  width: 100%;
+  height: 0%;
+  transition: all 0.6s ease;
+  overflow: hidden;
+}
+
+.ani:hover > a {
+  color: white !important;
+  z-index: 5;
+  text-decoration: none;
+}
+
+.ani:hover::before {
+  height: 100%;
+  overflow: hidden;
+  z-index: -50;
+}
+
+.middle {
+  display: inline-grid;
+  position: relative;
+  width: 10vw;
+  flex-direction: row;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+}
+
+.middle:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0px;
+  right: 35px;
+  background-color: black;
+  transform-origin: bottom center;
+  transition: transform 0.25s ease-out;
+}
+
+.middle:hover:after {
+  transform: scaleX(0.45);
+  transform-origin: bottom center;
+}
+/* Modal */
+.x{
+  float:right;
+  font-size: 18px;
+ }
+ .x:hover{
+   color: gray;
+   cursor: pointer;
+ }
+.login {
+  position: absolute;
+    width: 40%;
+    height: auto;
+    background: rgba(105, 123, 224, 0.9);
+
+    border-radius: 14px;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5%;
+  z-index: 1001;
+  }
+    .login h1 {
+      margin: 0 auto 46px;
+      padding: 0 0 14px;
+      text-align: center;
+      font-size: 22px;
+      width: 60%;
+      border-bottom: 3px solid #FFF;
+    }
+    .form{
+      display: flex;
+      flex-direction: column;
+      padding-top: 5%;
+      align-items: center;
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+    }
+    .form p {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+      }
+    .form  input {
+        width: 100%;
+        margin-bottom: 20px;
+        
+      }
+      .form input::placeholder{
+        color:white
+      }
+     
+      .form input[type="text"],
+      .form input[type="email"],
+     .form input[type="password"],
+     .form input[type="message"]  {
+        border: none;
+        border-bottom: 1px solid #fff;
+        background: transparent;
+        outline: none;
+        height: 60px;
+        color: #fff;
+        font-size: 16px;
+      }
+     .message{
+       margin-bottom: 2%;
+     }
