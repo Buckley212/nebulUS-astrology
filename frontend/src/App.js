@@ -7,6 +7,7 @@ import Profile from './components/Profile';
 import Blog from './components/Blog';
 import actions from './services/api';
 import Friends from './components/Friends';
+import './index.css'
 
 function App() {
 
@@ -43,9 +44,9 @@ function App() {
             <img className="logo" src="/resources/nebulUS2.png" alt="logo" />
             <span className="noto">Nebul<span className="notothin">US</span></span>
           </section>
-          <Link to='/'>Home</Link>
-          <Link to='/friends'>Friends</Link>
-          <Link to='/profile'>Profile</Link>
+          <Link to='/' className="ani">Home</Link>
+          <Link to='/friends' className="ani">Friends</Link>
+          <Link to='/profile' className="ani">Profile</Link>
         </nav>
 
         <Switch>
