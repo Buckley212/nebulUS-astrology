@@ -7,6 +7,7 @@ import Profile from './components/Profile';
 import Blog from './components/Blog';
 import actions from './services/api';
 import Friends from './components/Friends';
+import Tarot from "./components/Tarot"
 import './index.css'
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/friends" component={Friends} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/tarot" component={Tarot} />
         </Switch>
       </div>
     </TheContext.Provider >
