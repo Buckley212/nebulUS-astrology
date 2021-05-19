@@ -147,6 +147,14 @@ nav .links {
   transform-origin: bottom center;
 }
 /* Modal */
+.x{
+  float:right;
+  font-size: 18px;
+ }
+ .x:hover{
+   color: gray;
+   cursor: pointer;
+ }
 .login {
   position: absolute;
     width: 40%;
