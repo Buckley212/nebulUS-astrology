@@ -8,12 +8,12 @@ const Friends = props => {
 
     const { user, setUser } = useContext(TheContext);
     const [pal, setPal] = useState('');
-    const [friends, setFriends] = useState()
+    const [friends, setFriends] = useState([])
     
     useEffect(() => {
         actions.getFriends({ userId: user?.googleId }).then((res) => {
             console.log(res);
-            setFriends(res);
+            setFriends(res.data);
         })
     }, [])
 
@@ -27,13 +27,11 @@ const Friends = props => {
     console.log(friends)
     return (
         <div>
-        <form onSubmit={handleSubmit}>
-            <input type="text" placeholder="What's poppin'" onChange={e => setPal(e.target.value)}/>
-            <button>Submit</button>
-        </form>
-        <ul>
-            {/* {friends.forEach(buddy => <p>{friends[buddy].map(a => a.name)}</p>)} */}
-        </ul>
+            <form onSubmit={handleSubmit}>
+                <input type="text" placeholder="What's poppin'" onChange={e => setPal(e.target.value)}/>
+                <button>Submit</button>
+            </form>
+                {friends?.map(a => <li><p>{a.name}</p></li>)}
         </div>
     )
 }

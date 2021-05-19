@@ -43,9 +43,29 @@ function App() {
               Nebul<span className="notothin">US</span>
             </span>
           </section>
-          <Link to="/">Home</Link>
-          <Link to="/friends">Friends</Link>
-          <Link to="/profile">Profile</Link>
+          <section className="links">
+            <Link
+              to="/"
+              className="places"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              Home
+            </Link>
+            <Link
+              to="/friends"
+              className="places"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              Friends
+            </Link>
+            <Link
+              to="/profile"
+              className="places"
+              style={{ textDecoration: "none", color: "black" }}
+            >
+              Profile
+            </Link>
+          </section>
         </nav>
         <Switch>
           <Route exact path="/" component={Home} />
