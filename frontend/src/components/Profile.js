@@ -6,14 +6,14 @@ import { Origin, Horoscope } from "circular-natal-horoscope-js";
 import Auth from '../services/Auth';
 
 const Profile = () => {
-    
+
     const { user, setUser } = useContext(TheContext)
     // const [myMessages, setMyMessages] = useState([])
     const [date, setDate] = useState(new Date());
     const [time, setTime] = useState();
     const [place, setPlace] = useState();
     const [friends, setFriends] = useState([]);
-    
+
     useEffect(() => {
         actions.getFriends({ userId: user?.googleId }).then((res) => {
             console.log(res);
@@ -29,13 +29,13 @@ const Profile = () => {
 
     const [loc, setLoc] = useState({});
     useEffect(() => {
-        axios.get(`https://iron-cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?${place}`)
-            .then(res => {
-                setLoc(res.data.results.geometry.location)
-            })
+        // axios.get(`https://iron-cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?${place}`)
+        //     .then(res => {
+        //         setLoc(res.data.results.geometry.location)
+        //     })
     })
     const handleSubmit = e => {
-        
+
         const origin = new Origin({
             year: parseInt(date.slice(0, 4)),
             month: (parseInt(date.slice(5, 7)) - 1), // 0 = January, 11 = December!
@@ -45,9 +45,12 @@ const Profile = () => {
             latitude: loc.lat,
             longitude: loc.lng,
         });
-          
+        axios.get(`https://iron-cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?${place}`)
+            .then(res => {
+                setLoc(res.data.results.geometry.location)
+            })
         //Sample output of date and time object { date: '2021-05-03', time: '13:26' }
-          
+
         const horoscope = new Horoscope({
             origin: origin,
             houseSystem: "whole-sign",
@@ -89,7 +92,7 @@ const Profile = () => {
     return (
         <div>
             <p>Profile</p> {user?.name}
-            
+
             {user?.name ?
                 <section>
                     <img src={user?.imageUrl} alt="profile avi" />
@@ -98,7 +101,7 @@ const Profile = () => {
                     {revealChart()}
                 </section>
                 :
-                <Auth setUser = { setUser } />
+                <Auth setUser={setUser} />
             }
         </div>
     );

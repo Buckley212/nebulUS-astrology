@@ -39,14 +39,16 @@ function App() {
           </div>
         )}
 
-        <nav className="navbar">
+        <nav>
           <section className="logobox">
             <img className="logo" src="/resources/nebulUS2.png" alt="logo" />
             <span className="noto">Nebul<span className="notothin">US</span></span>
           </section>
-          <Link to='/' className="ani">Home</Link>
-          <Link to='/friends' className="ani">Friends</Link>
-          <Link to='/profile' className="ani">Profile</Link>
+          <section className= "links">
+            <Link to='/' className="middle" >Home</Link>
+            <Link to='/friends' className="middle">Friends</Link>
+            <Link to='/profile' className="middle">Profile</Link>
+          </section>
         </nav>
 
         <Switch>
