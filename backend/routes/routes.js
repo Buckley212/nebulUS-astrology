@@ -9,8 +9,9 @@ router.post(`/add-message`, authorize, (req, res) => {
   msg.ownerId = res.locals.user._id;
   Message.create(msg).then((message) => res.json(message));
 });
-
-router.get(`/get-user`, authorize, async (req, res) => {
+console.log("zooey");
+router.get(`/get-user`, async (req, res) => {
+  console.log(res.locals, "over hereeee", req.headers);
   //console.log("in get user after next", res.locals.user._id)
   let user = await User.findById(res.locals.user._id);
   res.json(user);
@@ -26,9 +27,9 @@ router.get(`/get-my-messages`, authorize, (req, res) => {
   );
 });
 
-router.get(`/`, (req, res) => {
-  res.json({ serverWorks: true });
-});
+// router.get(`/`, (req, res) => {
+//   res.json({ serverWorks: true });
+// });
 
 router.post(`/logMeIn`, async (req, res) => {
   //Find user
@@ -40,7 +41,7 @@ router.post(`/logMeIn`, async (req, res) => {
   }
 
   //No matter what i have a user and now I can create the jwt token
-  jwt.sign({ user }, "secret key", { expiresIn: "30min" }, (err, token) => {
+  jwt.sign({ user }, "secret key", { expiresIn: "365d" }, (err, token) => {
     res.json({ user, token });
   });
 });
@@ -48,17 +49,45 @@ router.post(`/logMeIn`, async (req, res) => {
 router.post("/submitDate", async (req, res) => {
   await User.findOneAndUpdate(
     { googleId: req.body.userId },
-    { chart: req.body.chart }
+    { chart: req.body.chart, rising: req.body.rising },
+    { new: true }
   );
   console.log(req.body.chart);
 });
 
+router.post("/addFriend", async (req, res) => {
+  const added = await User.findOne({ email: req.body.friend }, { googleId: 1 });
+  if (added) {
+    await User.findOneAndUpdate(
+      { googleId: req.body.userId },
+      { $push: { friends: added.googleId } },
+      { new: true }
+    );
+    console.log(req);
+  }
+});
+
+router.get("/getFriends", authorize, async (req, res) => {
+  // const user = await User.findOne({ googleId: req.body.userId })
+  // let friendList = [];
+  // user.friends.forEach(friend => friendList.push(Users.findOne({ googleId: friend.googleId })))
+  // res.json(friendList)
+  // console.log(user)
+  let friends = await User.find({ googleId: { $in: res.locals.user.friends } });
+  console.log(friends);
+  res.json(friends);
+});
+
+router.get("/kangaroo", (req, res) => {
+  res.json({ animal: true });
+});
+
 function authorize(req, res, next) {
   console.log("monkey in the mittle", req.headers);
-  if (req.headers.authorization) {
-    let token = req.headers.authorization.split(" ")[1];
+  if (req.headers.Authorization) {
+    let token = req.headers.Authorization.split(" ")[1];
     console.log(token);
-    jwt.verify(token, "secret key", async (err, data) => {
+    jwt.verify(token, "secret key", (err, data) => {
       if (!err) {
         console.log(data);
         res.locals.user = data.user;

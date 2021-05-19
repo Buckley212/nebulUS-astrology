@@ -1,11 +1,10 @@
 import React, { useState, useContext } from 'react';
-import TheContext from './TheContext'
-import axios from 'axios'
-import actions from './api'
-import Auth from './Auth'
+import TheContext from '../services/TheContext';
+import actions from '../services/api';
+import Auth from '../services/Auth';
 
 
-function Blog(props) {
+const Blog = props => {
 
     const [message, setMessage] = useState('')
 
