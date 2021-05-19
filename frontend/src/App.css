@@ -146,3 +146,63 @@ nav .links {
   transform: scaleX(0.45);
   transform-origin: bottom center;
 }
+/* Modal */
+.login {
+  position: absolute;
+    width: 40%;
+    height: auto;
+    background: rgba(0, 0, 0, 0.9);
+  
+    border-radius: 14px;
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 5%;
+  z-index: 1001;
+  }
+    .login h1 {
+      margin: 0 auto 46px;
+      padding: 0 0 14px;
+      text-align: center;
+      font-size: 22px;
+      width: 60%;
+      border-bottom: 3px solid #FFF;
+    }
+    .form{
+      display: flex;
+      flex-direction: column;
+      padding-top: 5%;
+      align-items: center;
+      font-family: 'Raleway', sans-serif;
+      text-align: center;
+    }
+    .form p {
+        margin: 0;
+        padding: 0;
+        font-weight: bold;
+      }
+    .form  input {
+        width: 100%;
+        margin-bottom: 20px;
+        
+      }
+      .form input::placeholder{
+        color:white
+      }
+     
+      .form input[type="text"],
+      .form input[type="email"],
+     .form input[type="password"],
+     .form input[type="message"]  {
+        border: none;
+        border-bottom: 1px solid #fff;
+        background: transparent;
+        outline: none;
+        height: 60px;
+        color: #fff;
+        font-size: 16px;
+      }
+     .message{
+       margin-bottom: 2%;
+     }
