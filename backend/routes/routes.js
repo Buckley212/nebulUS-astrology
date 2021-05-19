@@ -4,11 +4,11 @@ const router = express.Router()
 const Message = require('../models/Message')
 const User = require('../models/User')
 
-router.all('/', function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();
-});
+// router.all('/', function (req, res, next) {
+//     res.header("Access-Control-Allow-Origin", "*");
+//     res.header("Access-Control-Allow-Headers", "X-Requested-With");
+//     next();
+// });
 
 router.post(`/add-message`, authorize, (req, res) => {
     let msg = req.body

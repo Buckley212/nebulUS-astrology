@@ -42,18 +42,28 @@ app.use(express.json())
 //   next();
 // })
 
-app.use(express.static(path.join(__dirname, '../frontend/build')));
 app.use('/api', require('./routes/routes.js'))
 
-app.get('*', (req, res, next) => {
-  console.log('weird', req.headers.host, 'peach', req.url);
 
-  if (req.headers.host.includes('heroku')) {
-    res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
-  } else {
-    next();
-  }
+
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+
+app.get('*', (req, res, next) => {
+  res.sendFile(path.join(__dirname, '../frontend/public/index.html'));
 });
+
+
+
+// app.get('*', (req, res, next) => {
+//   console.log('weird', req.headers.host, 'peach', req.url);
+
+//   if (req.headers.host.includes('heroku')) {
+//     res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
+//   } else {
+//     next();
+//   }
+// });
 
 
 module.exports = app;

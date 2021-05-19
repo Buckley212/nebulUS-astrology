@@ -22,7 +22,7 @@ const Home = props => {
                     </span>
                     <span className="txtspan">Here at nebulUS we want to help you explore the galaxy of yourself and build your very own constellations of friends! Input your birthday to get started ★
                         <br/>
-                        <button className='submit'>
+                        <button className='submit ani'>
                             <Link to='/profile' style={{ textDecoration: "none" , color: "#6D95C4"}}> Login</Link>
                         </button>
                     </span>
