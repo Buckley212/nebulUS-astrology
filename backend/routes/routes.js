@@ -4,11 +4,6 @@ const router = express.Router()
 const Message = require('../models/Message')
 const User = require('../models/User')
 
-// router.all('/', function (req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "*");
-//     res.header("Access-Control-Allow-Headers", "X-Requested-With");
-//     next();
-// });
 
 router.post(`/add-message`, authorize, (req, res) => {
     let msg = req.body
@@ -22,11 +17,6 @@ router.get(`/get-user`, authorize, async (req, res) => {
     let user = await User.findById(res.locals.user._id)
     res.json(user)
 })
-
-
-
-
-
 
 router.get(`/get-messages`, (req, res) => {
     Message.find().then(messages => res.json(messages))
@@ -75,30 +65,11 @@ router.post('/addFriend', async (req, res) => {
 
 router.get('/getFriends', authorize, async (req, res) => {
     console.log(res.local)
-    // const me = await User.findById(res.locals.user._id)
-    // const friends = await User.find({ "googleId": { "$in": me.friends } });
+    const me = await User.findById(res.locals.user._id)
+    const friends = await User.find({ "googleId": { "$in": me.friends } });
 
-    // res.json(friends);
+    res.json(friends);
 })
-
-// function authorize(req, res, next) {
-//     console.log('monkey in the mittle', req.headers)
-//     const bearerHeader = req.headers['authorization'];
-//     // Check if bearer is undefined
-//     if (typeof bearerHeader !== 'undefined') {
-//         // Split at the space
-//         const bearer = bearerHeader.split(' ');
-//         // Get token from array
-//         const bearerToken = bearer[1];
-//         // Set the token
-//         req.token = bearerToken;
-//         // Next middleware
-//         next();
-//     } else {
-//         // Forbidden
-//         res.status(403); //.json({err:'not logged in'});
-//     }
-// }
 
 
 function authorize(req, res, next) {

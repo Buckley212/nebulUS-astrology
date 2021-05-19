@@ -1,16 +1,13 @@
-import './App.css';
 import { useEffect, useState } from 'react';
 import TheContext from './services/TheContext';
 import { Switch, Link, Route } from 'react-router-dom';
 import Home from './components/Home';
 import Profile from './components/Profile';
-import Blog from './components/Blog';
 import actions from './services/api';
 import Friends from './components/Friends';
-import './index.css'
+import './index.css';
 
-function App() {
-
+const App = ()  => {
 
   const [user, setUser] = useState({})
   const context = { user, setUser }
@@ -20,7 +17,6 @@ function App() {
     actions.getUser().then(res => {
       setUser(res.data)
     })
-
   }, [])
 
   const handleLogout = () => {
@@ -57,7 +53,7 @@ function App() {
           <Route exact path="/profile" component={Profile} />
         </Switch>
       </div>
-    </TheContext.Provider >
+    </TheContext.Provider>
   );
 }
 

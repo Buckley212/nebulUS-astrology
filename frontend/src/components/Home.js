@@ -1,8 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
-import actions from '../services/api';
 import TheContext from '../services/TheContext';
 import { Link } from 'react-router-dom';
-import Auth from '../services/Auth';
 
 const Home = props => {
 
