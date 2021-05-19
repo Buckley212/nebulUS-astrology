@@ -53,36 +53,126 @@
             "Type": "Mutable Fire",
             "Ruler": "Jupiter",
             "Keywords": "Inspiration, Truth, Expansion, Meaning",
-            "Strengths": "Inspired, seeking knowledge, visionary, fortunate, joyful, purposeful, philosophical, adventurous",
-            "Weaknesses": "Unprincipled, narrow, fanatic, reckless, gluttonous, coarse, rude, amoral"
+            "Strengths": [
+                "Inspired",
+                "seeking knowledge",
+                "visionary",
+                "fortunate",
+                "joyful",
+                "purposeful",
+                "philosophical",
+                "adventurous"
+            ],
+            "Weaknesses": [
+                "Unprincipled",
+                "narrow",
+                "fanatic",
+                "reckless",
+                "gluttonous",
+                "coarse",
+                "rude",
+                "amoral"
+            ]
         },
         "Aquarius": {
             "Type": "Fixed Air",
             "Ruler": "Saturn",
-            "Keywords": "Idealism, Community, Liberty, Equality, Science",
-            "Strengths": "Socially aware, humanitarian, egalitarian, civilized, impartial, outgoing, unconventional",
-            "Weaknesses": "Cold, critical, aloof, overly rational, erratic, blinded by science and reason"
+            "Keywords": [
+                "Idealism",
+                "Community",
+                "Liberty",
+                "Equality",
+                "Science"
+            ],
+            "Strengths": [
+                "Socially aware",
+                "humanitarian",
+                "egalitarian",
+                "civilized",
+                "impartial",
+                "outgoing",
+                "unconventional"
+            ],
+            "Weaknesses": [
+                "Cold",
+                "critical",
+                "aloof",
+                "overly rational",
+                "erratic"
+            ]
         },
         "Cancer": {
             "Type": "Cardinal Water",
             "Ruler": "The Moon",
             "Keywords": "Nurturing, Enclosing, Protecting, Intuiting",
-            "Strengths": "sensitive, emotional intelligence, nurturing, psychic, family oriented, empathetic, reliable",
-            "Weaknesses": "hyper-sensitive, overly emotional, extreme selfishness, fearful, overprotective, smothering"
+            "Strengths": [
+                "sensitive",
+                "emotional intelligence",
+                "nurturing",
+                "psychic",
+                "family oriented",
+                "empathetic",
+                "reliable"
+            ],
+            "Weaknesses": [
+                "hyper-sensitive",
+                "emotional",
+                "selfishness",
+                "fearful",
+                "overprotective",
+                "smothering"
+            ]
         },
         "Aries": {
             "Type": "Cardinal Fire",
             "Ruler": "Mars",
-            "Keywords": "Activity, Initiation, Energy, Impulse",
-            "Strengths": "courage, bold, inspiring, intuitive, decisive, direct, devoted to an Ideal",
-            "Weaknesses": "foolhardy, egotistic, selfish, self-oriented, unthinking, impulsive, zealot"
+            "Keywords": [
+                "Activity",
+                "Initiation",
+                "Energy",
+                "Impulse"
+            ],
+            "Strengths": [
+                "courage",
+                "bold",
+                "inspiring",
+                "intuitive",
+                "decisive",
+                "direct",
+                "devoted"
+            ],
+            "Weaknesses": [
+                "foolhardy",
+                "egotistic",
+                "selfish",
+                "self-oriented",
+                "unthinking",
+                "impulsive",
+                "zealot"
+            ]
         },
         "Pisces": {
             "Type": "Mutable Water",
             "Ruler": "Jupiter",
             "Keywords": "Service, Sacrifice, Compassion, Mysticism",
-            "Strengths": "Empathy, intuition, sensitivity, service, imaginative, extremely creative, devotional",
-            "Weaknesses": "Ungrounded, victim, suffering through sacrifice, addictive, critical, afraid, lost"
+            "Strengths": [
+                "Empathy",
+                "intuition",
+                "sensitivity",
+                "service",
+                "imaginative",
+                "creative",
+                "devotional"
+            ],
+            "Weaknesses": [
+                "Ungrounded",
+                "victim",
+                "suffering through sacrifice",
+                "addictive",
+                "critical",
+                "afraid",
+                "lost"
+            ]
         }
     },
     "Moon": {
@@ -116,7 +206,16 @@
                 "Born with The Moon in Virgo": "Born with the Moon in Virgo, you are likely to be innately service oriented, analytical and practical. You have an extraordinary ability to offer assistance to others, both from your willingness to serve and your capacity to problem-solve. For you own personal happiness you must find a balance between mind and body, knowing when it is time to process information and when it is time to simply relax. A path of moderation will probably suit you best, and put your on the way to enjoying life long good health by doing those simple things that make your everyday experiences more natural and organized."
             }
         },
-        "Leo": "Whilst your Sun Sign describes qualities you are learning to develop and become, the Moon in Leo describes who you already are. With the Moon in the dramatic, generous and fun-loving sign of Leo, you are likely to have an innate need to approach life from a place of fun, passion and creative self-expression. Leo is a Fire sign, and so pertains to spirit and inspiration. On an emotional level, you are likely to be warm, generous and innately confident. Leo is also a Fixed sign, implying constancy and perseverance. When you love, you love intensely.",
+        "Leo": {
+            "Summary": "Whilst your Sun Sign describes qualities you are learning to develop and become, the Moon in Leo describes who you already are. With the Moon in the dramatic, generous and fun-loving sign of Leo, you are likely to have an innate need to approach life from a place of fun, passion and creative self-expression. Leo is a Fire sign, and so pertains to spirit and inspiration. On an emotional level, you are likely to be warm, generous and innately confident. Leo is also a Fixed sign, implying constancy and perseverance. When you love, you love intensely.",
+            "Description": {
+                "Fixed Fire Sign": "With the Moon in the dramatic, generous and fun-loving sign of Leo, you are likely to have an innate need to approach life from a place of fun, passion and creative self-expression. Leo is a Fire sign, and so pertains to spirit and inspiration. On an emotional level, you are likely to be warm, generous and innately confident. Leo is also a Fixed sign, implying constancy and perseverance. When you love, you love intensely. Moon in Leo can be counted on for your loyalty and level of support. Fire signs are known for an abundance of energy, and you may be ever ready to shine this abundance of emotional warmth toward those you hold near and dear. The sign of Leo is ruled by the Sun, and associated with royalty. Thus, your emotions are likely to possess this solar quality, radiating to those you feel benevolent toward, and perhaps striking out fiercely against those who have lost your favour. With the Moon in Leo, you are likely to have an innate sense of dignity,  and will expect a certain level of treatment and respect from others As a sign of royalty, you may have fairly lavish tastes, and will feel most comfortable when surrounded by people and situations you feel reflect your inner image of yourself.",
+                "Drama and Creativity": "On an instinctive level, you are likely to feel strong emotions. There is often a passionate intensity that needs to be expressed. Leo is a dramatic and creative sign. You may find that you are always seeking outlets to pour your creativity and personal expression into. You will always feel more energized when your natural spontaneity and exuberance can be expressed. This can range from traditional Leonine art forms that involve flamboyance and self-expression such as dance, drama and design. Or you may find your creativity is easily expressed working with children, or at the helm of a business where you  can see your ideas coming into form. You may find that the rituals of religion represent for you deep feelings of reverence and devotion which bring a creative dimension to your life. Whatever you do, you find your day is more colourful when you have some kind of creative outlet, and so finding ways to express yourself is likely to be important for you.",
+                "Fun and Romance": "Leo is a sign of romance. You may find that you specialize in dreaming up vibrant ways to show others that you care. You are likely to be someone who needs reassurance and affection to feel connected with another, and will look for ways to keep your romantic life alive. It is important for you to form relationships with people who will shower you with affection and fun. At this level, it is very important that you find a partner who is demonstrative, and pays attention to your emotional needs. When partners take the time to make you feel special, then you can respond by sharing all your abundance of emotional warmth with them. Win-win scenarios ensue when you are treated with the affection you need, and give others the same in return. The Moon in Leo is associated with children. You are likely to be in many ways a kid at heart. You will enjoy play, fun and spontaneity and can easily get along with children at their level. You may have an innate understanding of where children come from and what their real needs are. Spending time with children helps open up your own creativity and sense of fun. You may also find that life only feels complete for you when you find ways to express your ‘inner child’. Taking time out for fun and adventure is like medicine for you, and will be an important way of  finding ‘food for the soul”.",
+                "Leadership and Organization": "Leo is also a sign of leadership. On an instinctual level, you may feel that you are here to lead others. Thus, you do best when you feel in control of situations. This is the sign of the organizer, and you may have an innate understanding of how to bring an event or opportunity together. You may a gift for social situations, and instinctively know how to bring the fun and flair into any setting. You have natural executive and leadership qualities  that inspire others to follow you. When you lead from a place of confidence and fun, others will happily rally around your sunny disposition, wanting to follow you on the road to the next adventure. Your natural sense of fun and joy unites with your desire to do things well. You can encourage people to join forces and commit to a particular outcome, whilst at the same time enjoying the ride. On another level, the Moon in Leo is associated with pride. You are likely to have an innate pride in yourself and want to do things to the best of your ability. Pride can make you aim high and follow through on your commitments. But when you let this inherent sense of pride take over you, may develop the opinion that you are always right. You may have a tendency to being overly demanding, dismissive or controlling, insisting that you always get your own way. If you try to lead others by thinking only about your own needs or expectations then you will find they rebel. You will then have trouble balancing your innate need for recognition and approval with the fact that your team have turned their back on you. You must be careful not to let your natural sense of authority and dignity become self-centeredness and domination. This will lead to isolation, and the unhappy experience of not having other persons around you to share your creative ideas and abundant emotional energy.",
+                "Born with the Moon in Leo": "At its’ heart, Leo is a sensitive and impressionable sign. You are easily hurt when you don’t get the recognition that you feel you deserve. Moon in Leo needs approval in order to keep the heart fires burning. You need to find ways to express yourself creatively, be with other people, and take up your natural leadership role. For this to happen, you must ensure you do not isolate anyone through snobbery, or make others subject to your, at times petty, emotional demands. Learning to recognize the extent of your passions, and then recognizing that others needs are just as “special” as your own will keep your feet on the ground, your heart in the right place and happy experiences flowing easily into your life."
+            }
+        },
         "Gemini": "Whilst your Sun Sign describes qualities you are learning to develop and become, your Moon Sign describes those that you already are. Born with the Moon in Gemini, you are likely to be a curious individual, with an active, versatile mind. Gemini is an Air sign, governing communication, the exchange of information or ideas, and the protocols with which social organization occurs. Accordingly, you may find that you have an innate need to know as much as possible about the world around you, and may have a talent for numbers, speech or the written word.",
         "Taurus": "With the Moon in the sign of Taurus, you are likely to have an innate need for security and comfort. Taurus is an Earth sign, and so pertains to the tangible, material aspects of life. You are likely to find that you relate easily to the physical plane, and find much comfort in what you can see, hear, smell, touch and taste.",
         "Scorpio": "Born with the Moon in Scorpio, you are likely to be sensitive and loyal, but have intense emotional needs. Scorpio is a Water sign, which relates to the emotional, psychological and spiritual dimensions of life. You are likely to give the impression of being perceptive, powerful, and transformational. Scorpio is also a Fixed sign, suggesting that when you align your emotions with something you desire – be that a friend/lover or an anticipated outcome – you will be constant, enduring and unwilling to let go.",

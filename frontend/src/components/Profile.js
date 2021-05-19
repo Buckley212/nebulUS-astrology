@@ -29,10 +29,10 @@ const Profile = () => {
 
     const [loc, setLoc] = useState({});
     useEffect(() => {
-        axios.get(`https://iron-cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?${place}`)
-            .then(res => {
-                setLoc(res.data.results.geometry.location)
-            })
+        // axios.get(`https://iron-cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?${place}`)
+        //     .then(res => {
+        //         setLoc(res.data.results.geometry.location)
+        //     })
     })
     const handleSubmit = e => {
 
@@ -45,7 +45,10 @@ const Profile = () => {
             latitude: loc.lat,
             longitude: loc.lng,
         });
-
+        axios.get(`https://iron-cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/geocode/json?${place}`)
+            .then(res => {
+                setLoc(res.data.results.geometry.location)
+            })
         //Sample output of date and time object { date: '2021-05-03', time: '13:26' }
 
         const horoscope = new Horoscope({
