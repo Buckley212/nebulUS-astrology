@@ -45,7 +45,7 @@ function App() {
             <span className="noto">Nebul<span className="notothin">US</span></span>
           </section>
           <section className= "links">
-            <Link to='/' className="middle" >Home</Link>
+            <Link to='/' className="middle">Home</Link>
             <Link to='/friends' className="middle">Friends</Link>
             <Link to='/profile' className="middle">Profile</Link>
           </section>
