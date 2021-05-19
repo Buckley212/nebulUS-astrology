@@ -6,15 +6,13 @@ import actions from './api'
 
 function Auth(props) {
 
-
-
     const responseGoogle = (res) => {
         actions.logIn(res).then(user => {
             props?.setUser(user)
         })
     }
+    
     return (
-
 
         <GoogleLogin
             clientId={process.env.REACT_APP_GOOGLE_ID || `956237608940-rkcol4ero2rjnoitf08okr0nbkvjjgq8.apps.googleusercontent.com`}
@@ -23,7 +21,6 @@ function Auth(props) {
             onFailure={responseGoogle}
             cookiePolicy={'single_host_origin'}
         />
-
 
     );
 }
