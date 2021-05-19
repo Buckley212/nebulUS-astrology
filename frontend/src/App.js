@@ -1,14 +1,13 @@
-import "./App.css";
 import { useEffect, useState } from "react";
 import TheContext from "./services/TheContext";
 import { Switch, Link, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Profile from "./components/Profile";
-import Blog from "./components/Blog";
 import actions from "./services/api";
 import Friends from "./components/Friends";
+import "./index.css";
 
-function App() {
+const App = () => {
   const [user, setUser] = useState({});
   const context = { user, setUser };
 
@@ -36,7 +35,7 @@ function App() {
             </button>
           </div>
         )}
-        <nav className="navbar">
+        <nav>
           <section className="logobox">
             <img className="logo" src="/resources/nebulUS2.png" alt="logo" />
             <span className="noto">
@@ -44,25 +43,13 @@ function App() {
             </span>
           </section>
           <section className="links">
-            <Link
-              to="/"
-              className="places"
-              style={{ textDecoration: "none", color: "black" }}
-            >
+            <Link to="/" className="middle">
               Home
             </Link>
-            <Link
-              to="/friends"
-              className="places"
-              style={{ textDecoration: "none", color: "black" }}
-            >
+            <Link to="/friends" className="middle">
               Friends
             </Link>
-            <Link
-              to="/profile"
-              className="places"
-              style={{ textDecoration: "none", color: "black" }}
-            >
+            <Link to="/profile" className="middle">
               Profile
             </Link>
           </section>
@@ -75,6 +62,6 @@ function App() {
       </div>
     </TheContext.Provider>
   );
-}
+};
 
 export default App;

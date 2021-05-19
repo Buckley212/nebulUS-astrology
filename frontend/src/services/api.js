@@ -1,8 +1,7 @@
-//All of your API calls are going to be in here.
+//API calls
 import axios from "axios";
 
-console.log(process.env);
-//Where your server/backend lives
+//Server Location
 const serverUrl =
   process.env.NODE_ENV === "production"
     ? process.env.REACT_APP_SERVER_URL
@@ -36,11 +35,30 @@ const actions = {
     );
   },
 
-  logIn: async ({ profileObj }) => {
-    let res = await axios.post(`${serverUrl}/logMeIn`, profileObj);
-    console.log(res);
-    localStorage.setItem("token", res.data.token);
-    return res.data.user;
+  getUser: async () => {
+    return await axios.get(`${serverUrl}/get-user`, createHeaders());
+  },
+
+  getMessages: async () => {
+    let messages = await axios.get(`${serverUrl}/get-messages`);
+    return messages.data;
+  },
+
+  getMyMessages: async () => {
+    let messages = await axios.get(
+      `${serverUrl}/get-my-messages`,
+      createHeaders()
+    );
+    console.log(messages);
+    return messages.data;
+  },
+
+  addMessage: async ({ message }) => {
+    return await axios.post(
+      `${serverUrl}/add-message`,
+      { message },
+      createHeaders()
+    );
   },
 
   submitDate: async ({ chart, userId, rising }) => {

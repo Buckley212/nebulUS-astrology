@@ -6,16 +6,16 @@ import Auth from '../services/Auth';
 
 const Blog = props => {
 
-    const [message, setMessage] = useState('')
+    const [message, setMessage] = useState('');
 
-    const { user, setUser } = useContext(TheContext)
+    const { user, setUser } = useContext(TheContext);
 
     const handleSubmit = (e) => {
         e.preventDefault()
         actions
             .addMessage({ message })
             .then(res => {
-                props.history.push('/')
+                props.history.push('/');
             })
     }
     return (
@@ -34,6 +34,6 @@ const Blog = props => {
             }
         </div>
     );
-}
+};
 
 export default Blog;
