@@ -1,14 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import actions from '../services/api';
 import TheContext from '../services/TheContext';
-import axios from 'axios';
 import { Origin, Horoscope } from "circular-natal-horoscope-js";
 import Auth from '../services/Auth';
 
 const Profile = () => {
     
     const { user, setUser } = useContext(TheContext)
-    // const [myMessages, setMyMessages] = useState([])
     const [date, setDate] = useState(new Date());
     const [time, setTime] = useState();
     const [place, setPlace] = useState();
@@ -20,15 +18,9 @@ const Profile = () => {
             setFriends(res.data);
         })
     }, [])
-    // useEffect(() => {
-    //     actions.getMyMessages().then(messages => {
-    //         if (!messages.err)
-    //             setMyMessages(messages)
-    //     })
-    // }, [])
 
     const [loc, setLoc] = useState({});
-    
+
     const handleSubmit = e => {
         
         const origin = new Origin({
@@ -47,13 +39,13 @@ const Profile = () => {
             origin: origin,
             houseSystem: "whole-sign",
             zodiac: "tropical",
-            aspectPoints: ['bodies', 'moon', 'sun', 'points', 'angles'],
-            aspectWithPoints: ['bodies', 'moon', 'points', 'angles'],
-            aspectTypes: ["major", "minor"],
+            aspectPoints: ['bodies', 'moon', 'sun'],
+            aspectWithPoints: ['bodies', 'moon'],
+            aspectTypes: [],
             customOrbs: {},
             language: 'en'
         });
-        const userChart = { chart: horoscope.CelestialBodies, userId: user?.googleId, rising: horoscope._ascendant }
+        const userChart = { sun: horoscope.CelestialBodies.sun.Sign.label, moon: horoscope.CelestialBodies.moon.Sign.label, userId: user?.googleId, rising: horoscope._ascendant.Sign.label }
         actions.submitDate(userChart).then(res => {
             console.log(res.data.chart);
         })
@@ -62,11 +54,11 @@ const Profile = () => {
     const revealChart = () => {
         return (
             <div>
-                {user?.chart?.sun ?
+                {user?.sun ?
                     <div className="chart">
-                        <p>Sun: {user?.chart?.sun.Sign.label}</p>
-                        <p>Moon: {user?.chart?.moon.Sign.label}</p>
-                        <p>Rising: {user?.rising?.Sign.label}</p>
+                        <p>Sun: {user?.sun ? user.sun : null}</p>
+                        <p>Moon: {user?.moon ? user.moon : null}</p>
+                        <p>Rising: {user?.rising ? user?.rising : null}</p>
                         {friends?.map(a => <p>{a.name}</p>)}
                     </div>
                     :

@@ -43,8 +43,8 @@ const actions = {
         return res.data.user
     },
 
-    submitDate: async ({ chart, userId, rising }) => {
-        let res = await axios.post(`${serverUrl}/submitDate`, { chart, userId, rising }, createHeaders())
+    submitDate: async ({ sun, moon, userId, rising }) => {
+        let res = await axios.post(`${serverUrl}/submitDate`, { sun, moon, userId, rising }, createHeaders())
         return res.data
     },
 

@@ -32,25 +32,26 @@ router.get(`/`, (req, res) => {
 })
 
 router.post(`/logMeIn`, async (req, res) => {
-
+    console.log(req.body, 'banana123')
     //Find user
     let user = await User.findOne({ email: req.body.email })
-
+    console.log(user, 'banana123')
     //If no user >> Create User
     if (!user) {
         user = await User.create(req.body)
     }
-
+    console.log(user, 'banana123')
     //No matter what i have a user and now I can create the jwt token 
     jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
+        console.log(user, token, 'banana')
         res.json({ user, token })
     })
 
 })
 
 router.post('/submitDate', async (req, res) => {
-    await User.findOneAndUpdate({ googleId: req.body.userId }, { chart: req.body.chart, rising: req.body.rising }, { new: true })
-    console.log(req.body.chart);
+    console.log(req.body, 'WOOOOOOOOO');
+    await User.findOneAndUpdate({ googleId: req.body.userId }, { sun: req.body.sun, moon: req.body.moon, rising: req.body.rising }, { new: true })
 })
 
 router.post('/addFriend', async (req, res) => {
