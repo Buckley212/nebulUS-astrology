@@ -10,7 +10,7 @@ import Friends from "./components/Friends";
 import Tarot from "./components/Tarot";
 import SunDetails from "./components/SunDetails";
 import MoonDetails from "./components/MoonDetails";
-import RisingDetails from "./components/Tarot";
+import RisingDetails from "./components/RisingDetails";
 import "./index.css";
 
 const App = () => {
@@ -99,10 +99,9 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/friends" component={Friends} />
           <Route exact path="/profile" component={Profile} />
-          <Route exact path="/tarot" component={Tarot} />
-          <Route exact path="/tarot/:sun" component={SunDetails} />
-          <Route exact path="/tarot/:moon" component={MoonDetails} />
-          <Route exact path="/tarot/:rising" component={RisingDetails} />
+          <Route exact path="/profile/sun" component={SunDetails} />
+          <Route exact path="/profile/moon" component={MoonDetails} />
+          <Route exact path="/profile/rising" component={RisingDetails} />
         </Switch>
       </div>
     </TheContext.Provider>

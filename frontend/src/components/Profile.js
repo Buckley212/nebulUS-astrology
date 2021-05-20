@@ -3,9 +3,11 @@ import actions from "../services/api";
 import TheContext from "../services/TheContext";
 import { Origin, Horoscope } from "circular-natal-horoscope-js";
 import Auth from "../services/Auth";
+import Tarot from "./Tarot";
 import signs from "../signs.json";
+import Card from './Card.js';
 
-const Profile = () => {
+const Profile = (props) => {
   const { user, setUser } = useContext(TheContext);
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState();
@@ -28,25 +30,27 @@ const Profile = () => {
     });
   };
 
+  const chart = {
+      sunSign: signs[0].Sun[user.sun],
+      moonSign: signs[0].Moon[user.moon],
+      risingSign: signs[0].Rising[user.rising]
+  };
     const revealChart = () => {
-        const sunSign = signs[0].Sun[user.sun];
-        const moonSign = signs[0].Moon[user.moon];
-        const risingSign = signs[0].Rising[user.rising];
         return (
             <div>
                 {user?.sun ?
                     <div className="chart">
                         <div className="Sun">
                             <h3>Sun: {user.sun}</h3>
-                            <p>{sunSign.Description.Summary}</p>
+                            <p>{chart.sunSign.Description.Summary}</p>
                         </div>
                         <div className="Moon">
                             <h3>Moon: {user.moon}</h3>
-                            <p>{moonSign.Summary}</p>
+                            <p>{chart.moonSign.Summary}</p>
                         </div>
                         <div className="Rising">
                             <h3>Rising: {user.rising}</h3>
-                            <p>{risingSign.Summary}</p>
+                            <p>{chart.risingSign.Summary}</p>
                         </div>
                         <ul className="friends">
                             {friends?.map(a => <li><p>{a.name}</p><button value={a.googleId} onClick={e => removeFriend(e)}>x</button></li>)}
@@ -105,9 +109,9 @@ const Profile = () => {
         <section>
           <img src={user?.imageUrl} alt="profile avi" />
           <p>{user?.email}</p>
+          <Tarot {...props} />
           {revealChart()}
-          {/* {hor()} */}
-          {console.log(signs)}
+          {Card(chart)}
         </section>
       ) : (
         <Auth setUser={setUser} />
