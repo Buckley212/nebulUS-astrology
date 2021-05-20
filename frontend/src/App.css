@@ -16,6 +16,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  width: 100vw;
   align-items: center;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
   -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
@@ -50,6 +51,8 @@ nav .links {
   background-repeat: no-repeat;
   background-size: cover;
   font-size: 35px;
+  height: 100vh;
+  width: 100vw;;
   font-family: 'Open Sans', sans-serif;
   justify-content: space-around;
   align-items: center;
@@ -215,8 +218,8 @@ nav .links {
      .message{
        margin-bottom: 2%;
      }
-     /* tarot page */
-     .tarotpage{
+    /* tarot page */
+    .tarotpage{
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -238,4 +241,78 @@ nav .links {
     .tarotcards{
       height: 60vh;
       width: auto;
+    } 
+
+    /* hamburger menu */
+    .hamburger{
+      display: none;
+     }
+     .hamburgerMenu{
+       display:none;
+     }
+     @media (max-width: 500px){
+      .homecontent{
+        display: flex;
+        flex-direction: column;
+        background-image: url("./marble.png");
+        background-repeat: no-repeat;
+        background-size: cover;
+        font-size: 35px;
+        /* padding-top: 3%; */
+        height: 100vh;
+        width: 100vw;
+        font-family: 'Open Sans', sans-serif;
+        justify-content: center;
+        align-items: center;
+
+      }
+      .nightsky{
+        height: 20vh;
+        width: auto;
+      }
+      .txtspan{
+        text-align: center;
+        width:100%;
+      }
+      
+  .links{
+    display:none;
+  }
+      .hamburger{
+        display: block;
+        margin:2%;
+        padding-right: 3%;
+        z-index: 1000;
+      }
+    
+      .hamburgerMenu {
+        z-index: 99;
+        display: inline;
+        width: 100vw;
+        height: 150vh;
+        padding-top: 3%;
+        margin-top:0;
+        background-color:rgba(0,0,0,0.8);
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
+        overflow: scroll;
+        z-index: 999;
+        transform: translate3d(100vh, 0, 0);
+      }
+      .hamburgerMenu li {
+        font-family: 'Open Sans', sans-serif;
+        list-style-type: none;
+        padding: 40px;
+        font-size: 35px;
+        color:  white;
+        text-align: center;
+        list-style-type: none;
+      }
+    
+      #clickedmenu {
+        transform: translate3d(0vw, 0, 0);
+        overflow: hidden;
+      }
     }
