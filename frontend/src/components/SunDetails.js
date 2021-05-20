@@ -15,7 +15,7 @@ function SunDetails(props) {
 
   const showSunDeets = () => {
     let sunObj = signs[0].Sun[user?.sun]?.Description;
-    // console.log(sunObj.Summary);
+
     console.log(Object.keys(sunObj));
     return Object.keys(sunObj).map((key) => {
       console.log(key, sunObj[key]);
