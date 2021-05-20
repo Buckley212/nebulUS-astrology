@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Card from './Card';
 
 function Tarot(props) {
   console.log(props);
@@ -14,6 +15,7 @@ function Tarot(props) {
       <Link to={`/profile/moon`}>Moon Summary</Link>
       <Link to={`/profile/rising`}>Rising Summary</Link>
     </div>
+    
   );
 }
 
