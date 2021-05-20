@@ -4,13 +4,6 @@ const router = express.Router();
 const Message = require("../models/Message");
 const User = require("../models/User");
 
-
-router.all('/', function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();
-});
-
 router.post(`/add-message`, authorize, (req, res) => {
     let msg = req.body;
     msg.ownerId = res.locals.user._id;
@@ -44,7 +37,6 @@ router.post(`/logMeIn`, async (req, res) => {
     }
     //No matter what i have a user and now I can create the jwt token 
     jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
-        console.log(user, token, 'banana')
         res.json({ user, token })
     })
 
