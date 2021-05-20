@@ -10,5 +10,8 @@
     },
     "keywords": [],
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    "dependencies": {
+        "react-hamburger-menu": "^1.2.1"
+    }
 }

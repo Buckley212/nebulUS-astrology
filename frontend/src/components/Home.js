@@ -24,8 +24,8 @@ const Home = props => {
                     </span>
                     <span className="txtspan">Here at nebulUS we want to help you explore the galaxy of yourself and build your very own constellations of friends! Input your birthday to get started ★
                         <br/>
-                        <button className='submit ani'>
-                            <div style={{ textDecoration: "none" , color: "#6D95C4"}} onClick={() => loginClick() }> Login</div>
+                        <button className='submit ani' onClick={() => loginClick() }>
+                            <div style={{ textDecoration: "none" , color: "#6D95C4"}} > Login</div>
                         </button>
                     </span>
                     {modalIsOpen ? (
