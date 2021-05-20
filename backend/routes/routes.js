@@ -5,14 +5,11 @@ const Message = require("../models/Message");
 const User = require("../models/User");
 
 
-route.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "http://nebulus-astrology.netlify.com");
-    res.header(
-      "Access-Control-Allow-Headers",
-      "Origin, X-Requested-With, Content-Type, Accept"
-    );
+router.all('/', function (req, res, next) {
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Headers", "X-Requested-With");
     next();
-  })
+});
 
 router.post(`/add-message`, authorize, (req, res) => {
     let msg = req.body;
@@ -90,14 +87,12 @@ function authorize(req, res, next) {
                 console.log(data);
                 res.locals.user = data.user;
                 next();
-            }
-            else {
+            } else {
                 console.error(err);
                 res.json({ err });
             }
         });
-    }
-    else {
+    } else {
         res.status(403).json({ message: "You dont have no token" });
     }
 }
