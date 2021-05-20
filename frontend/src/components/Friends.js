@@ -23,14 +23,21 @@ const Friends = props => {
         })
     };
 
+    const removeFriend = e => {
+        const requestRemove = { friend: e.target.value, userId: user?.googleId }
+        actions.removeFriend(requestRemove).then((res) => {
+            console.log(res)
+        })
+    }
+
     console.log(friends)
     return (
-        <div>
+        <div className="homecontent">
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="What's poppin'" onChange={e => setPal(e.target.value)} />
-                <button>Submit</button>
+                <button type="submit" className="submit ani">Submit</button>
             </form>
-            {friends?.map(a => <li><p>{a.name}</p></li>)}
+            {friends?.map(a => <li><p>{a.name}</p><button value={a.googleId} onClick={removeFriend}>x</button></li>)}
         </div>
     );
 }

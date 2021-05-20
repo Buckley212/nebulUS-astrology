@@ -66,7 +66,7 @@ const Profile = () => {
                         <input type="date" onChange={e => setDate(e.target.value)} />
                         <input type="time" onChange={e => setTime(e.target.value)} />
                         <input type="text" onChange={e => setPlace(e.target.value)} />
-                        <button>Submit</button>
+                        <button type="submit" className="submit ani">Submit</button>
                     </form>}
             </div>
         )

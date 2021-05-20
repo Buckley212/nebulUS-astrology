@@ -47,22 +47,24 @@ const actions = {
         return messages.data;
     },
 
-    addMessage: async ({ message }) => {
-        return await axios.post(`${serverUrl}/add-message`, { message }, createHeaders());
-    },
-  
     submitDate: async ({ sun, moon, userId, rising }) => {
         let res = await axios.post(`${serverUrl}/submitDate`, { sun, moon, userId, rising }, createHeaders())
+        return res.data
+    },
+
+    addFriend: async ({ friend, userId }) => {
+        let res = await axios.post(`${serverUrl}/addFriend`, { friend, userId }, createHeaders())
+        return res.data
+    },
+    
+    removeFriend: async ({ friend, userId }) => {
+        let res = await axios.post(`${serverUrl}/removeFriend`, { friend, userId }, createHeaders())
         return res.data
     },
 
     getFriends: async ({ userId }) => {
         let res = await axios.get(`${serverUrl}/getFriends`, { userId }, createHeaders())
         return res.data;
-    },
-
-    getUser: async () => {
-        return await axios.get(`${serverUrl}/get-user`, createHeaders());
     },
   
     logIn: async ({ profileObj }) => {

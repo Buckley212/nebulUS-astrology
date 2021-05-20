@@ -6,8 +6,8 @@ import Home from './components/Home';
 import Profile from './components/Profile';
 import actions from './services/api';
 import Friends from './components/Friends';
-import Tarot from "./components/Tarot"
-import './index.css'
+import Tarot from "./components/Tarot";
+import './index.css';
 
 const App = () => {
   const [user, setUser] = useState({});
@@ -28,7 +28,6 @@ const App = () => {
   return (
     <TheContext.Provider value={context}>
       <div className="App">
-        HELLOOOO
         {user?.name && (
           <div>
             <p>Welcome {user?.name}</p>

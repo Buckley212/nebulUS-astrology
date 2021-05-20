@@ -10,6 +10,7 @@ const userSchema = new Schema({
     moon: String,
     rising: String,
     friends: Array
+    
 })
 
 const User = model('User', userSchema)
