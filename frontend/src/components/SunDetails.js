@@ -5,8 +5,22 @@ import signs from "../signs.json";
 function SunDetails(props) {
   const { user, setUser } = useContext(TheContext);
 
-  console.log(signs[0].Sun[user?.sun]?.Type);
-  console.log(signs[0].Sun[user?.sun]?.Ruler);
+  // const sunImages = [];
+
+  const showSunDeets = () => {
+    let sunObj = signs[0].Sun[user?.sun]?.Description;
+    // console.log(sunObj.Summary);
+    console.log(Object.keys(sunObj));
+    return Object.keys(sunObj).map((key) => {
+      console.log(key, sunObj[key]);
+      return (
+        <div>
+          <h1>{key}</h1>
+          <div>{sunObj[key]}</div>
+        </div>
+      );
+    });
+  };
 
   return (
     <div
@@ -18,28 +32,7 @@ function SunDetails(props) {
       }}
     >
       <h1>The Sun Sign: {user.sun}</h1>
-      <div>
-        <div>Type: {signs[0].Sun[user?.sun]?.Type}</div>
-        <div>Ruler: {signs[0].Sun[user?.sun]?.Ruler}</div>
-        <div>
-          KeyWords:{" "}
-          {signs[0].Sun[user?.sun]?.Keywords.map((el, i) => {
-            return <div key={i}>{el}</div>;
-          })}
-        </div>
-        <div>
-          Strengths:{" "}
-          {signs[0].Sun[user?.sun]?.Strengths.map((el) => {
-            return <div>{el}</div>;
-          })}
-        </div>
-        <div>
-          Weaknesses:{" "}
-          {signs[0].Sun[user?.sun]?.Weaknesses.map((el) => {
-            return <div>{el}</div>;
-          })}
-        </div>
-      </div>
+      {showSunDeets()}
     </div>
   );
 }
