@@ -32,15 +32,6 @@ const actions = {
         return await axios.post(`${serverUrl}/add-message`, { message }, createHeaders());
     },
 
-    getUser: async () => {
-        return await axios.get(`${serverUrl}/get-user`, createHeaders());
-    },
-
-    getMessages: async () => {
-        let messages = await axios.get(`${serverUrl}/get-messages`);
-        return messages.data;
-    },
-
     getMyMessages: async () => {
         let messages = await axios.get(`${serverUrl}/get-my-messages`, createHeaders());
         console.log(messages);
