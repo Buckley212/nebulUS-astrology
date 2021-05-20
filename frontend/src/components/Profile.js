@@ -29,8 +29,8 @@ const Profile = () => {
   };
 
     const revealChart = () => {
-        const sunSign = signs[0].Sun[`${user.rising}`];
-        const moonSign = signs[0].Moon[`${user.rising}`];
+        const sunSign = signs[0].Sun[`${user.sun}`];
+        const moonSign = signs[0].Moon[`${user.moon}`];
         const risingSign = signs[0].Rising[`${user.rising}`];
         return (
             <div>

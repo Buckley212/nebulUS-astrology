@@ -37,9 +37,12 @@ const Friends = props => {
                 <input type="text" placeholder="What's poppin'" onChange={e => setPal(e.target.value)} />
                 <button type="submit" className="submit ani">Submit</button>
             </form>
-            <ul className="friends">
-                {friends?.map(a => <li><p>{a.name}</p><button value={a.googleId} onClick={e => removeFriend(e)}>x</button></li>)}
-            </ul>
+            { user.friends ?
+                <ul className="friends">
+                    {friends?.map(a => <li><p>{a.name}</p><button value={a.googleId} onClick={e => removeFriend(e)}>x</button></li>)}
+                </ul> :
+                <></>
+            }
         </div>
     );
 }
