@@ -17,7 +17,7 @@ mongoose
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000", "http://nebulus-astrology.netlify.com"], //Swap this with the client url
+    origin: ["http://localhost:3000", "https://nebulus-astrology.netlify.com"], //Swap this with the client url
   })
 );
 

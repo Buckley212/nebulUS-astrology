@@ -28,50 +28,41 @@ const Profile = () => {
     });
   };
 
-  const revealChart = () => {
-    const sunSign = signs[0].Sun[user.sun];
-    const moonSign = signs[0].Moon[user.moon];
-    const risingSign = signs[0].Rising[user.rising];
-    return (
-      <div>
-        {user?.sun ? (
-          <div className="chart">
-            <div className="Sun">
-              <h3>Sun: {user.sun}</h3>
-              <p>{sunSign.Description.Summary}</p>
+    const revealChart = () => {
+        const sunSign = signs[0].Sun[user.sun];
+        const moonSign = signs[0].Moon[user.moon];
+        const risingSign = signs[0].Rising[user.rising];
+        return (
+            <div>
+                {user?.sun ?
+                    <div className="chart">
+                        <div className="Sun">
+                            <h3>Sun: {user.sun}</h3>
+                            <p>{sunSign.Description.Summary}</p>
+                        </div>
+                        <div className="Moon">
+                            <h3>Moon: {user.moon}</h3>
+                            <p>{moonSign.Summary}</p>
+                        </div>
+                        <div className="Rising">
+                            <h3>Rising: {user.rising}</h3>
+                            <p>{risingSign.Summary}</p>
+                        </div>
+                        <ul className="friends">
+                            {friends?.map(a => <li><p>{a.name}</p><button value={a.googleId} onClick={e => removeFriend(e)}>x</button></li>)}
+                        </ul>
+                    </div>
+                    :
+                    <form onSubmit={handleSubmit}>
+                        <input type="date" onChange={e => setDate(e.target.value)} />
+                        <input type="time" onChange={e => setTime(e.target.value)} />
+                        <input type="text" onChange={e => setPlace(e.target.value)} />
+                        <button type="submit" className="submit ani">Submit</button>
+                    </form>
+                }
             </div>
-            <div className="Moon">
-              <h3>Moon: {user.moon}</h3>
-              <p>{moonSign.Summary}</p>
-            </div>
-            <div className="Rising">
-              <h3>Rising: {user.rising}</h3>
-              <p>{risingSign.Summary}</p>
-            </div>
-            <ul className="friends">
-              {friends?.map((a) => (
-                <li>
-                  <p>{a.name}</p>
-                  <button value={a.googleId} onClick={(e) => removeFriend(e)}>
-                    x
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit}>
-            <input type="date" onChange={(e) => setDate(e.target.value)} />
-            <input type="time" onChange={(e) => setTime(e.target.value)} />
-            <input type="text" onChange={(e) => setPlace(e.target.value)} />
-            <button type="submit" className="submit ani">
-              Submit
-            </button>
-          </form>
-        )}
-      </div>
-    );
-  };
+        )
+    };
 
   const handleSubmit = (e) => {
     const origin = new Origin({
