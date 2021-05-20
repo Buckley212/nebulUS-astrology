@@ -4,13 +4,6 @@ const router = express.Router();
 const Message = require("../models/Message");
 const User = require("../models/User");
 
-
-router.all('/', function (req, res, next) {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header("Access-Control-Allow-Headers", "X-Requested-With");
-    next();
-});
-
 router.post(`/add-message`, authorize, (req, res) => {
     let msg = req.body;
     msg.ownerId = res.locals.user._id;
@@ -42,9 +35,9 @@ router.post(`/logMeIn`, async (req, res) => {
     if (!user) {
         user = await User.create(req.body)
     }
+    console.log("wooo")
     //No matter what i have a user and now I can create the jwt token 
     jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
-        console.log(user, token, 'banana')
         res.json({ user, token })
     })
 
@@ -62,17 +55,16 @@ router.post('/addFriend', async (req, res) => {
     }
 })
 
-router.post('/removeFriend', async (req, res) => {
-    const added = await User.findOne({ googleId: req.body.userId });
-    if (added.friends.includes(req.body.friend)) {
-        await User.findOneAndRemove({ googleId: req.body.userId }, { $pull: {friends: req.body.friend} }, { new: true })
-        console.log(req)
-    }
+router.post('/removeFriend', authorize, async (req, res) => {
+    const me = await User.findById(res.locals.user._id);
+    await User.findOneAndUpdate({ googleId: me.googleId }, { $pull: { friends: { "$in" : req.body.bud}} }, { new: true })
+    
 })
 
 router.get('/getFriends', authorize, async (req, res) => {
     const me = await User.findById(res.locals.user._id)
     const friends = await User.find({ "googleId": { "$in": me.friends } });
+
     res.json(friends);
 })
 

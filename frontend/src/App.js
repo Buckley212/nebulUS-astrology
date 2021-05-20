@@ -1,16 +1,21 @@
-import './App.css';
-import { useEffect, useState } from 'react';
-import TheContext from './services/TheContext';
-import { Switch, Link, Route } from 'react-router-dom';
-import Home from './components/Home';
-import Profile from './components/Profile';
-import actions from './services/api';
-import Friends from './components/Friends';
+import "./App.css";
+import { useEffect, useState } from "react";
+import TheContext from "./services/TheContext";
+import { Switch, Link, Route } from "react-router-dom";
+import HamburgerMenu from "react-hamburger-menu";
+import Home from "./components/Home";
+import Profile from "./components/Profile";
+import actions from "./services/api";
+import Friends from "./components/Friends";
 import Tarot from "./components/Tarot";
-import './index.css';
+import SunDetails from "./components/SunDetails";
+import MoonDetails from "./components/MoonDetails";
+import RisingDetails from "./components/Tarot";
+import "./index.css";
 
 const App = () => {
   const [user, setUser] = useState({});
+  const [open, setOpen] = useState(false);
   const context = { user, setUser };
 
   useEffect(() => {
@@ -24,7 +29,9 @@ const App = () => {
     setUser(null);
     localStorage.removeItem("token");
   };
-
+  const handleClick = () => {
+    setOpen(!open);
+  };
   return (
     <TheContext.Provider value={context}>
       <div className="App">
@@ -38,28 +45,64 @@ const App = () => {
         )}
         <nav>
           <section className="logobox">
-            <img className="logo" src="/resources/nebulUS2.png" alt="logo" />
+            <Link to="/">
+              <img className="logo" src="/resources/nebulUS2.png" alt="logo" />
+            </Link>
             <span className="noto">
               Nebul<span className="notothin">US</span>
             </span>
           </section>
           <section className="links">
-            <Link to="/" className="middle">
+            <Link
+              to="/"
+              className="middle"
+              style={{ textDecoration: "none", color: "black" }}
+            >
               Home
             </Link>
-            <Link to="/friends" className="middle">
+            <Link
+              to="/friends"
+              className="middle"
+              style={{ textDecoration: "none", color: "black" }}
+            >
               Friends
             </Link>
-            <Link to="/profile" className="middle">
+            <Link
+              to="/profile"
+              className="middle"
+              style={{ textDecoration: "none", color: "black" }}
+            >
               Profile
             </Link>
           </section>
+          <HamburgerMenu
+            isOpen={open}
+            menuClicked={() => handleClick()}
+            className="hamburger"
+          />
+          <ul className="hamburgerMenu" id={open ? "clickedmenu" : ""}>
+            <Link to="/" style={{ textDecoration: "none" }}>
+              <li> Home </li>
+            </Link>
+
+            <Link to="/friends" style={{ textDecoration: "none" }}>
+              <li> Friends </li>
+            </Link>
+
+            <Link to="/profile" style={{ textDecoration: "none" }}>
+              <li> Profile </li>
+            </Link>
+          </ul>
         </nav>
+
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/friends" component={Friends} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/tarot" component={Tarot} />
+          <Route exact path="/tarot/:sun" component={SunDetails} />
+          <Route exact path="/tarot/:moon" component={MoonDetails} />
+          <Route exact path="/tarot/:rising" component={RisingDetails} />
         </Switch>
       </div>
     </TheContext.Provider>
