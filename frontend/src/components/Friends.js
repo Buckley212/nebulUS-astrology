@@ -39,9 +39,10 @@ const Friends = props => {
             </form>
             { user.friends ?
                 <ul className="friends">
-                    {friends?.map(a => <li><p>{a.name}</p><button value={a.googleId} onClick={e => removeFriend(e)}>x</button></li>)}
-                </ul> :
-                <></>
+                    {friends.map(a => <li><p>{a.name}</p><button value={a.googleId} onClick={e => removeFriend(e)}>x</button></li>)}
+                </ul>
+                :
+                <p></p>
             }
         </div>
     );

@@ -8,7 +8,9 @@ import Profile from "./components/Profile";
 import actions from "./services/api";
 import Friends from "./components/Friends";
 import Tarot from "./components/Tarot";
-import signs from "./signs.json";
+import SunDetails from "./components/SunDetails";
+import MoonDetails from "./components/MoonDetails";
+import RisingDetails from "./components/Tarot";
 import "./index.css";
 
 const App = () => {
@@ -98,6 +100,9 @@ const App = () => {
           <Route exact path="/friends" component={Friends} />
           <Route exact path="/profile" component={Profile} />
           <Route exact path="/tarot" component={Tarot} />
+          <Route exact path="/tarot/:sun" component={SunDetails} />
+          <Route exact path="/tarot/:moon" component={MoonDetails} />
+          <Route exact path="/tarot/:rising" component={RisingDetails} />
         </Switch>
       </div>
     </TheContext.Provider>
