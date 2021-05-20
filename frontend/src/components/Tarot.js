@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Card from './Card';
 
 function Tarot(props) {
   return (
@@ -13,6 +14,7 @@ function Tarot(props) {
       <Link to={`/tarot/${props.match.params.moon}`}>Moon Summary</Link>
       <Link to={`/tarot/${props.match.params.rising}`}>Rising Summary</Link>
     </div>
+    
   );
 }
 
