@@ -60,13 +60,25 @@ const Profile = () => {
     }
 
     const revealChart = () => {
+        const sunSign = signs[0].Sun[`${user.rising}`];
+        const moonSign = signs[0].Moon[`${user.rising}`];
+        const risingSign = signs[0].Rising[`${user.rising}`];
         return (
             <div>
                 {user?.sun ?  
                     <div className="chart">
-                        <p>Sun: {user.sun}</p>
-                        <p>Moon: {user.moon}</p>
-                        <p>Rising: {user.rising}</p>
+                        <div className="Sun">
+                            <h3>Sun: {user.sun}</h3>
+                            <p>{sunSign.Description.Summary}</p>
+                        </div>
+                        <div className="Moon">
+                            <h3>Moon: {user.moon}</h3>
+                            <p>{ moonSign.Summary }</p>
+                        </div>
+                        <div className="Rising">
+                            <h3>Rising: {user.rising}</h3>
+                            <p>{ risingSign.Summary }</p>
+                        </div>
                         <ul className="friends">
                             {friends?.map(a => <li><p>{a.name}</p><button value={a.googleId} onClick={e => removeFriend(e)}>x</button></li>)}
                         </ul>
@@ -82,14 +94,7 @@ const Profile = () => {
         )
     }
 
-    const rising = user.rising;
-    const sunSign = signs.find(sign => sign.Sun === user?.sun);
-    const moonSign = signs.find(sign => sign.Moon === user?.moon);
-    const risingSign = signs.find(sign => sign.Rising === user?.rising);
 
-    // const hor = () => {
-    //     return <p>{risingSign.Summary}Hey</p>
-    // }
 
     return (
         <div>
@@ -100,8 +105,6 @@ const Profile = () => {
                     <img src={user?.imageUrl} alt="profile avi" />
                     <p>{user?.email}</p>
                     {revealChart()}
-                    {/* {hor()} */}
-                    {console.log(signs)}
                 </section>
                 :
                 <Auth setUser = { setUser } />
