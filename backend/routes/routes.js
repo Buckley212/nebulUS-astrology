@@ -55,17 +55,16 @@ router.post('/addFriend', async (req, res) => {
     }
 })
 
-router.post('/removeFriend', async (req, res) => {
-    const added = await User.findOne({ googleId: req.body.userId });
-    if (added.friends.includes(req.body.friend)) {
-        await User.findOneAndRemove({ googleId: req.body.userId }, { $pull: {friends: req.body.friend} }, { new: true })
-        console.log(req)
-    }
+router.post('/removeFriend', authorize, async (req, res) => {
+    const me = await User.findById(res.locals.user._id);
+    await User.findOneAndUpdate({ googleId: me.googleId }, { $pull: { friends: { "$in" : req.body.bud}} }, { new: true })
+    
 })
 
 router.get('/getFriends', authorize, async (req, res) => {
     const me = await User.findById(res.locals.user._id)
     const friends = await User.find({ "googleId": { "$in": me.friends } });
+
     res.json(friends);
 })
 

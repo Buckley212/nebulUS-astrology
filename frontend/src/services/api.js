@@ -48,14 +48,15 @@ const actions = {
         return res.data
     },
     
-    removeFriend: async ({ friend, userId }) => {
-        let res = await axios.post(`${serverUrl}/removeFriend`, { friend, userId }, createHeaders())
+    removeFriend: async ({ bud, userId }) => {
+        let res = await axios.post(`${serverUrl}/removeFriend`, { bud, userId }, createHeaders())
         return res.data
     },
 
     getFriends: async ({ userId }) => {
-        let res = await axios.get(`${serverUrl}/getFriends`, { userId }, createHeaders())
-        return res.data;
+        let res = await axios.get(`${serverUrl}/getFriends`, createHeaders())
+        console.log(res)
+        return res.data
     },
   
     logIn: async ({ profileObj }) => {
