@@ -100,7 +100,7 @@ const Profile = () => {
                     <img src={user?.imageUrl} alt="profile avi" />
                     <p>{user?.email}</p>
                     {revealChart()}
-                    {hor()}
+                    {/* {hor()} */}
                     {console.log(signs)}
                 </section>
                 :
