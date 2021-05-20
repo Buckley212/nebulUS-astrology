@@ -26,7 +26,6 @@ const App = () => {
   return (
     <TheContext.Provider value={context}>
       <div className="App">
-        HELLOOOO
         {user?.name && (
           <div>
             <p>Welcome {user?.name}</p>
