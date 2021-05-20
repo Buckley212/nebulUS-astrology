@@ -11,7 +11,5 @@
     "keywords": [],
     "author": "",
     "license": "ISC",
-    "dependencies": {
-        "react-hamburger-menu": "^1.2.1"
-    }
+    "dependencies": {}
 }
