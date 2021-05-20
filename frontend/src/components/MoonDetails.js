@@ -6,7 +6,7 @@ function MoonDetails(props) {
   const { user, setUser } = useContext(TheContext);
 
   console.log(signs[0].Moon);
-  return <div></div>;
+  return <div>The Moon Sign</div>;
 }
 
 export default MoonDetails;

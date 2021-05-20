@@ -1,7 +1,7 @@
 import React from "react";
 
 function RisingDetails(props) {
-  return <div></div>;
+  return <div>The Rising Sign</div>;
 }
 
 export default RisingDetails;

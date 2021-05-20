@@ -17,7 +17,7 @@ mongoose
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:3000", "http://nebulus-astrology.netlify.com"], //Swap this with the client url
+    origin: ["http://localhost:3000", "https://nebulus-astrology.netlify.com"], //Swap this with the client url
   })
 );
 
@@ -26,13 +26,6 @@ app.use(express.json());
 app.use("/api", require("./routes/routes.js"));
 
 app.use(express.static(path.join(__dirname, "../frontend/build")));
-
-app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Methods", "GET,POST");
-  // res.header("Access-Control-Allow-Headers", "Content-Type");
-  next();
-});
 
 app.get("*", (req, res, next) => {
   res.sendFile(path.join(__dirname, "../frontend/public/index.html"));

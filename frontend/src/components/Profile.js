@@ -3,9 +3,10 @@ import actions from "../services/api";
 import TheContext from "../services/TheContext";
 import { Origin, Horoscope } from "circular-natal-horoscope-js";
 import Auth from "../services/Auth";
+import Tarot from "./Tarot";
 import signs from "../signs.json";
 
-const Profile = () => {
+const Profile = (props) => {
   const { user, setUser } = useContext(TheContext);
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState();
@@ -114,6 +115,7 @@ const Profile = () => {
         <section>
           <img src={user?.imageUrl} alt="profile avi" />
           <p>{user?.email}</p>
+          <Tarot {...props} />
           {revealChart()}
           {/* {hor()} */}
           {console.log(signs)}
