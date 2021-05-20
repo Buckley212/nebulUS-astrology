@@ -445,7 +445,7 @@
              }
           }
        },
-          "Moon":{
+       "Moon":{
              "Capricorn":{
                 "Summary":"Born with the Moon in Capricorn, you are likely to be innately responsible, pragmatic and measured in the ways that you respond. Capricorn is an Earth sign, and so pertains to the tangible and practical dimensions of life. Capricorn is also known as a Cardinal sign, which implies a need to take action. When practicality and activity combine, the urge to master material resources is usually present. With the Moon in Capricorn, you are likely to have an innately serious and responsible nature, seeking to make the most of whatever resources you have at your disposal.",
                 "Description":{
@@ -572,7 +572,7 @@
                 }
              }
           },
-             "Rising":{
+       "Rising":{
                 "Capricorn":{
                    "Summary":"Born with Capricorn rising (or on the Ascendant), you may notice a duality in your nature between someone who is, on the one hand, serious, organized and capable, and on the other, uncertain about their ability to achieve all the things they want.",
                    "Description":{
@@ -704,5 +704,5 @@
                     }
                 }
         }
-    }
+      }
 ]
