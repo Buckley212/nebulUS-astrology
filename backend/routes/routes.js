@@ -4,6 +4,16 @@ const router = express.Router();
 const Message = require("../models/Message");
 const User = require("../models/User");
 
+
+route.use((req, res, next) => {
+    res.setHeader("Access-Control-Allow-Origin", "http://nebulus-astrology.netlify.com");
+    res.header(
+      "Access-Control-Allow-Headers",
+      "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
+  })
+
 router.post(`/add-message`, authorize, (req, res) => {
     let msg = req.body;
     msg.ownerId = res.locals.user._id;
