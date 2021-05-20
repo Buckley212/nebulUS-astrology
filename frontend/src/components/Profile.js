@@ -28,6 +28,42 @@ const Profile = () => {
     });
   };
 
+    const revealChart = () => {
+        const sunSign = signs[0].Sun[`${user.rising}`];
+        const moonSign = signs[0].Moon[`${user.rising}`];
+        const risingSign = signs[0].Rising[`${user.rising}`];
+        return (
+            <div>
+                {user?.sun ?  
+                    <div className="chart">
+                        <div className="Sun">
+                            <h3>Sun: {user.sun}</h3>
+                            <p>{sunSign.Description.Summary}</p>
+                        </div>
+                        <div className="Moon">
+                            <h3>Moon: {user.moon}</h3>
+                            <p>{ moonSign.Summary }</p>
+                        </div>
+                        <div className="Rising">
+                            <h3>Rising: {user.rising}</h3>
+                            <p>{ risingSign.Summary }</p>
+                        </div>
+                        <ul className="friends">
+                            {friends?.map(a => <li><p>{a.name}</p><button value={a.googleId} onClick={e => removeFriend(e)}>x</button></li>)}
+                        </ul>
+                    </div>
+                    :
+                    <form onSubmit={handleSubmit}>
+                        <input type="date" onChange={e => setDate(e.target.value)} />
+                        <input type="time" onChange={e => setTime(e.target.value)} />
+                        <input type="text" onChange={e => setPlace(e.target.value)} />
+                        <button type="submit" className="submit ani">Submit</button>
+                    </form>}
+            </div>
+        )
+    }
+
+
   const handleSubmit = (e) => {
     const origin = new Origin({
       year: parseInt(date.slice(0, 4)),
@@ -61,58 +97,6 @@ const Profile = () => {
       console.log(res.data.chart);
     });
   };
-
-  const revealChart = () => {
-    return (
-      <div>
-        {user?.sun ? (
-          <div className="chart">
-            <p>Sun: {user.sun}</p>
-            <p>Moon: {user.moon}</p>
-            <p>Rising: {user.rising}</p>
-            <ul className="friends">
-              {friends?.map((a) => (
-                <li>
-                  <p>{a.name}</p>
-                  <button value={a.googleId} onClick={(e) => removeFriend(e)}>
-                    x
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : (
-          <form onSubmit={handleSubmit}>
-            <input type="date" onChange={(e) => setDate(e.target.value)} />
-            <input type="time" onChange={(e) => setTime(e.target.value)} />
-            <input type="text" onChange={(e) => setPlace(e.target.value)} />
-            <button type="submit" className="submit ani">
-              Submit
-            </button>
-          </form>
-        )}
-      </div>
-    );
-  };
-
-  const sunSignType = signs[0].Sun[user.sun]?.Type;
-  const sunSignRuler = signs[0].Sun[user.sun]?.Ruler;
-  const sunSignKeywords = signs[0].Sun[user.sun]?.Keywords;
-  const sunSignStrengths = signs[0].Sun[user.sun]?.Strengths;
-  const sunSignWeaknesses = signs[0].Sun[user.sun]?.Weaknesses;
-  const moonSign = signs[0].Moon[user.moon]?.Summary;
-  const risingSign = signs[0].Rising[user.rising]?.Summary;
-
-  console.log("Sun Type:====>", sunSignType);
-  console.log("Sun Ruler:====>", sunSignRuler);
-  console.log("Sun Keywords:====>", sunSignKeywords);
-  console.log("Sun Strengths:====>", sunSignStrengths);
-  console.log("Sun Weaknesses:====>", sunSignWeaknesses);
-  console.log("Rising:====>", risingSign);
-  console.log("Moon:====>", moonSign);
-  // const hor = () => {
-  //     return <p>{risingSign.Summary}Hey</p>
-  // }
 
   return (
     <div>
