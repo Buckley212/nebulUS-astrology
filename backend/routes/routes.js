@@ -35,6 +35,7 @@ router.post(`/logMeIn`, async (req, res) => {
     if (!user) {
         user = await User.create(req.body)
     }
+    console.log("wooo")
     //No matter what i have a user and now I can create the jwt token 
     jwt.sign({ user }, 'secret key', { expiresIn: '30min' }, (err, token) => {
         res.json({ user, token })
