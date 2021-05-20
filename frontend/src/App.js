@@ -8,7 +8,6 @@ import Profile from "./components/Profile";
 import actions from "./services/api";
 import Friends from "./components/Friends";
 import Tarot from "./components/Tarot";
-import signs from "./signs.json";
 import "./index.css";
 
 const App = () => {
