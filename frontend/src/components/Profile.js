@@ -3,6 +3,7 @@ import actions from '../services/api';
 import TheContext from '../services/TheContext';
 import { Origin, Horoscope } from "circular-natal-horoscope-js";
 import Auth from '../services/Auth';
+import signs from  '../signs.json';
 
 const Profile = () => {
     
@@ -20,6 +21,13 @@ const Profile = () => {
     }, [])
 
     const [loc, setLoc] = useState({});
+
+    const removeFriend = e => {
+        const requestRemove = { bud: e.target.value, userId: user?.googleId }
+        actions.removeFriend(requestRemove).then((res) => {
+            console.log(res)
+        })
+    }
 
     const handleSubmit = e => {
         
@@ -54,12 +62,14 @@ const Profile = () => {
     const revealChart = () => {
         return (
             <div>
-                {user?.sun ?
+                {user?.sun ?  
                     <div className="chart">
                         <p>Sun: {user.sun}</p>
                         <p>Moon: {user.moon}</p>
                         <p>Rising: {user.rising}</p>
-                        {friends?.map(a => <p>{a.name}</p>)}
+                        <ul className="friends">
+                            {friends?.map(a => <li><p>{a.name}</p><button value={a.googleId} onClick={e => removeFriend(e)}>x</button></li>)}
+                        </ul>
                     </div>
                     :
                     <form onSubmit={handleSubmit}>
@@ -72,6 +82,14 @@ const Profile = () => {
         )
     }
 
+    const rising = user.rising;
+    const sunSign = signs.find(sign => sign.Sun === user?.sun);
+    const moonSign = signs.find(sign => sign.Moon === user?.moon);
+    const risingSign = signs.find(sign => sign.Rising === user?.rising);
+
+    // const hor = () => {
+    //     return <p>{risingSign.Summary}Hey</p>
+    // }
 
     return (
         <div>
@@ -81,8 +99,9 @@ const Profile = () => {
                 <section>
                     <img src={user?.imageUrl} alt="profile avi" />
                     <p>{user?.email}</p>
-
                     {revealChart()}
+                    {/* {hor()} */}
+                    {console.log(signs)}
                 </section>
                 :
                 <Auth setUser = { setUser } />
