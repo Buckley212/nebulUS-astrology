@@ -7,7 +7,7 @@ import Profile from "./components/Profile";
 import actions from "./services/api";
 import Friends from "./components/Friends";
 import Tarot from "./components/Tarot";
-import signs from "../docs/signs.json";
+import signs from "./signs.json";
 import "./index.css";
 
 const App = () => {
@@ -26,7 +26,6 @@ const App = () => {
     localStorage.removeItem("token");
   };
 
-  console.log(signs);
   return (
     <TheContext.Provider value={context}>
       <div className="App">
