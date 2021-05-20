@@ -56,9 +56,9 @@ const Profile = () => {
             <div>
                 {user?.sun ?
                     <div className="chart">
-                        <p>Sun: {user?.sun ? user.sun : null}</p>
-                        <p>Moon: {user?.moon ? user.moon : null}</p>
-                        <p>Rising: {user?.rising ? user?.rising : null}</p>
+                        <p>Sun: {user.sun}</p>
+                        <p>Moon: {user.moon}</p>
+                        <p>Rising: {user.rising}</p>
                         {friends?.map(a => <p>{a.name}</p>)}
                     </div>
                     :
