@@ -1,11 +1,13 @@
-import { useEffect, useState } from "react";
-import TheContext from "./services/TheContext";
-import { Switch, Link, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Profile from "./components/Profile";
-import actions from "./services/api";
-import Friends from "./components/Friends";
-import "./index.css";
+import './App.css';
+import { useEffect, useState } from 'react';
+import TheContext from './services/TheContext';
+import { Switch, Link, Route } from 'react-router-dom';
+import Home from './components/Home';
+import Profile from './components/Profile';
+import actions from './services/api';
+import Friends from './components/Friends';
+import Tarot from "./components/Tarot";
+import './index.css';
 
 const App = () => {
   const [user, setUser] = useState({});
@@ -57,6 +59,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/friends" component={Friends} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/tarot" component={Tarot} />
         </Switch>
       </div>
     </TheContext.Provider>

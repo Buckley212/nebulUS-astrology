@@ -54,6 +54,7 @@ nav .links {
   justify-content: space-around;
   align-items: center;
 }
+
 .txtspan{
   width:45%;
 }
@@ -214,3 +215,27 @@ nav .links {
      .message{
        margin-bottom: 2%;
      }
+     /* tarot page */
+     .tarotpage{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-image: url("./marble.png");
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100vh;
+      width: 100vw;
+    }
+    .tarotbox{
+      display: flex;
+      width: 90%;
+      flex-direction: row;
+     justify-content: space-between;
+     align-items: center;
+
+    }
+    .tarotcards{
+      height: 60vh;
+      width: auto;
+    }

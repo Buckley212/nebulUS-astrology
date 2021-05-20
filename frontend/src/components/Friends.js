@@ -12,9 +12,9 @@ const Friends = props => {
     useEffect(() => {
         actions.getFriends({ userId: user?.googleId }).then((res) => {
             console.log(res);
-            setFriends(res.data);
+            setFriends(res);
         })
-    }, []);
+    }, [])
 
     const handleSubmit = e => {
         const requestAdd = { friend: pal, userId: user?.googleId }
@@ -23,14 +23,23 @@ const Friends = props => {
         })
     };
 
+    const removeFriend = e => {
+        const requestRemove = { bud: e.target.value, userId: user?.googleId }
+        actions.removeFriend(requestRemove).then((res) => {
+            console.log(res)
+        })
+    }
+
     console.log(friends)
     return (
-        <div>
+        <div className="homecontent">
             <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="What's poppin'" onChange={e => setPal(e.target.value)} />
-                <button>Submit</button>
+                <button type="submit" className="submit ani">Submit</button>
             </form>
-            {friends?.map(a => <li><p>{a.name}</p></li>)}
+            <ul className="friends">
+                {friends?.map(a => <li><p>{a.name}</p><button value={a.googleId} onClick={e => removeFriend(e)}>x</button></li>)}
+            </ul>
         </div>
     );
 }
