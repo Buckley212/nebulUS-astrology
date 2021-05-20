@@ -1,14 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import actions from '../services/api';
 import TheContext from '../services/TheContext';
-import axios from 'axios';
 import { Origin, Horoscope } from "circular-natal-horoscope-js";
 import Auth from '../services/Auth';
+import signs from  '../signs.json';
 
 const Profile = () => {
     
     const { user, setUser } = useContext(TheContext)
-    // const [myMessages, setMyMessages] = useState([])
     const [date, setDate] = useState(new Date());
     const [time, setTime] = useState();
     const [place, setPlace] = useState();
@@ -20,15 +19,16 @@ const Profile = () => {
             setFriends(res.data);
         })
     }, [])
-    // useEffect(() => {
-    //     actions.getMyMessages().then(messages => {
-    //         if (!messages.err)
-    //             setMyMessages(messages)
-    //     })
-    // }, [])
 
     const [loc, setLoc] = useState({});
-    
+
+    const removeFriend = e => {
+        const requestRemove = { bud: e.target.value, userId: user?.googleId }
+        actions.removeFriend(requestRemove).then((res) => {
+            console.log(res)
+        })
+    }
+
     const handleSubmit = e => {
         
         const origin = new Origin({
@@ -47,13 +47,13 @@ const Profile = () => {
             origin: origin,
             houseSystem: "whole-sign",
             zodiac: "tropical",
-            aspectPoints: ['bodies', 'moon', 'sun', 'points', 'angles'],
-            aspectWithPoints: ['bodies', 'moon', 'points', 'angles'],
-            aspectTypes: ["major", "minor"],
+            aspectPoints: ['bodies', 'moon', 'sun'],
+            aspectWithPoints: ['bodies', 'moon'],
+            aspectTypes: [],
             customOrbs: {},
             language: 'en'
         });
-        const userChart = { chart: horoscope.CelestialBodies, userId: user?.googleId, rising: horoscope._ascendant }
+        const userChart = { sun: horoscope.CelestialBodies.sun.Sign.label, moon: horoscope.CelestialBodies.moon.Sign.label, userId: user?.googleId, rising: horoscope._ascendant.Sign.label }
         actions.submitDate(userChart).then(res => {
             console.log(res.data.chart);
         })
@@ -62,24 +62,34 @@ const Profile = () => {
     const revealChart = () => {
         return (
             <div>
-                {user?.chart?.sun ?
+                {user?.sun ?  
                     <div className="chart">
-                        <p>Sun: {user?.chart?.sun.Sign.label}</p>
-                        <p>Moon: {user?.chart?.moon.Sign.label}</p>
-                        <p>Rising: {user?.rising?.Sign.label}</p>
-                        {friends?.map(a => <p>{a.name}</p>)}
+                        <p>Sun: {user.sun}</p>
+                        <p>Moon: {user.moon}</p>
+                        <p>Rising: {user.rising}</p>
+                        <ul className="friends">
+                            {friends?.map(a => <li><p>{a.name}</p><button value={a.googleId} onClick={e => removeFriend(e)}>x</button></li>)}
+                        </ul>
                     </div>
                     :
                     <form onSubmit={handleSubmit}>
                         <input type="date" onChange={e => setDate(e.target.value)} />
                         <input type="time" onChange={e => setTime(e.target.value)} />
                         <input type="text" onChange={e => setPlace(e.target.value)} />
-                        <button>Submit</button>
+                        <button type="submit" className="submit ani">Submit</button>
                     </form>}
             </div>
         )
     }
 
+    const rising = user.rising;
+    const sunSign = signs.find(sign => sign.Sun === user?.sun);
+    const moonSign = signs.find(sign => sign.Moon === user?.moon);
+    const risingSign = signs.find(sign => sign.Rising === user?.rising);
+
+    // const hor = () => {
+    //     return <p>{risingSign.Summary}Hey</p>
+    // }
 
     return (
         <div>
@@ -89,8 +99,9 @@ const Profile = () => {
                 <section>
                     <img src={user?.imageUrl} alt="profile avi" />
                     <p>{user?.email}</p>
-
                     {revealChart()}
+                    {/* {hor()} */}
+                    {console.log(signs)}
                 </section>
                 :
                 <Auth setUser = { setUser } />

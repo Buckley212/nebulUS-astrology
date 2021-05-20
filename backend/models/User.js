@@ -6,9 +6,11 @@ const userSchema = new Schema({
     email: { type: String, unique: true },
     name: String,
     googleId: String,
-    chart: Object,
-    rising: Object,
+    sun: String,
+    moon: String,
+    rising: String,
     friends: Array
+    
 })
 
 const User = model('User', userSchema)
