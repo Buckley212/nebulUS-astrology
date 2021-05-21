@@ -51,7 +51,7 @@ nav .links {
   align-items: center;
 }
 
-.homecontent{
+/* .homecontent{
   display: flex;
   background-image: url("./marble.png");
   background-repeat: no-repeat;
@@ -60,11 +60,11 @@ nav .links {
   font-family: 'Open Sans', sans-serif;
   justify-content: space-around;
   align-items: center;
-}
-
+} */
+/* 
 .txtspan{
   width: 45%;
-}
+} */
 
 /* .submit {
 font-family: 'Raleway', sans-serif;

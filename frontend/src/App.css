@@ -1,5 +1,6 @@
 body{
   width: 100vw;
+  /* height: 100vh; */
 }
 
 .logo{
@@ -63,18 +64,21 @@ nav .links {
 .homecontent{
   display: flex;
   flex-direction: column;
-  font-size: 35px;
+  background-image: url("./marble.png");
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 100vh;
   width: 100vw;;
+  padding-top: 10%;
   font-family: 'Open Sans', sans-serif;
   justify-content: space-around;
   align-items: center;
 }
 
 
-
 .txtspan{
-  width:45%;
+  width:55%;
+  text-align: center;
 }
 
 .submit{
