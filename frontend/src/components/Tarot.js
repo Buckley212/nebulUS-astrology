@@ -1,21 +1,37 @@
-import React from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Card from './Card';
+import signs from "../signs.json";
+import TheContext from "../services/TheContext";
 
-function Tarot(props) {
-  console.log(props);
+const Tarot = () => {
+  const { user } = useContext(TheContext);
+  const risingChart = {
+    type: 'Rising',
+    sign: signs[0].Rising[user.rising],
+    img: '/risingtarot.png',
+  };
+  
+  const sunChart = {
+      type: 'Sun',
+      sign: signs[0].Sun[user.sun],
+      img: '/suntarot.png'
+  };
+
+  const moonChart = {
+      type: 'Moon',
+      sign: signs[0].Moon[user.moon],
+      img: '/moontarot.png'
+  };
+  
   return (
     <div className="tarotpage">
       <div className="tarotbox">
-        <img className="tarotcards" src="./moontarot.png" />
-        <img className="tarotcards" src="./risingtarot.png" />
-        <img className="tarotcards" src="./suntarot.png" />
+        {Card(moonChart)}
+        {Card(risingChart)}
+        {Card(sunChart)}
       </div>
-      <Link to={`/profile/sun`}>Sun Summary</Link>
-      <Link to={`/profile/moon`}>Moon Summary</Link>
-      <Link to={`/profile/rising`}>Rising Summary</Link>
     </div>
-    
   );
 }
 

@@ -99,9 +99,9 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/friends" component={Friends} />
           <Route exact path="/profile" component={Profile} />
-          <Route exact path="/profile/sun" component={SunDetails} />
-          <Route exact path="/profile/moon" component={MoonDetails} />
-          <Route exact path="/profile/rising" component={RisingDetails} />
+          <Route exact path="/profile/Sun" component={SunDetails} />
+          <Route exact path="/profile/Moon" component={MoonDetails} />
+          <Route exact path="/profile/Rising" component={RisingDetails} />
         </Switch>
       </div>
     </TheContext.Provider>
