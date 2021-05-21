@@ -46,6 +46,8 @@ nav .links {
   align-items: center;
   justify-content: space-around;
   transition: 1s all ease-in-out;
+  color: white;
+  background-color: black;
 }
 
 #location {
@@ -80,8 +82,8 @@ input {
 }
 
 #card:hover{
-  color: white;
-  background-color: black;
+  color: black;
+  background-color: white;
 }
 
 #card h4 {
@@ -93,6 +95,7 @@ input {
 #card p {
   font-size: 14px;
   text-align: center;
+  color: black;
 }
 
 #card img {

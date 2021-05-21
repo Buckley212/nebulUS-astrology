@@ -29,7 +29,7 @@ const Home = props => {
                             <div id="card">
                             <img id="work" src='/resources/work.svg' />
                                 <h4>Work</h4>
-                                <p></p>
+                                <p>You can experience lateness, missed appointments, or certain facets of your day going awry.</p>
                             </div>
                         </div>
                     </div>
