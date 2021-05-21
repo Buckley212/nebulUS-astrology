@@ -36,13 +36,14 @@ const Friends = (props) => {
         <div className="form">
           <input
             type="text"
-            placeholder="What's poppin'"
+            placeholder="Enter friend's email"
             onChange={(e) => setPal(e.target.value)}
           />
           <button type="submit" className="submit ani">
             Submit
           </button>
         </div>
+
         {user.friends ? (
           <table>
             <thead>

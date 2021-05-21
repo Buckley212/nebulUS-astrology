@@ -48,7 +48,6 @@ nav .links {
 .homecontent{
   display: flex;
   flex-direction: column;
-  
   font-size: 35px;
   height: 100vh;
   width: 100vw;;
@@ -57,19 +56,7 @@ nav .links {
   align-items: center;
 }
 
-.profile {
-  background-image: url("./marble.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
-.profileName {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
- 
-}
 
 .txtspan{
   width:45%;
@@ -95,6 +82,7 @@ nav .links {
 .focus:hover {
   transform: scale(1.1);
 }
+
 
 td {
   text-align: center;
@@ -233,7 +221,7 @@ tr{
         
       }
       .form input::placeholder{
-        color:white
+        color:black
       }
      
       .form input[type="text"],
