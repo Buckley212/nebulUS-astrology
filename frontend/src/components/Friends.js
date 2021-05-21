@@ -57,7 +57,7 @@ const Friends = (props) => {
             }
             </form>
         </div>
-    );
-}
+  );
+};
 
 export default Friends;
