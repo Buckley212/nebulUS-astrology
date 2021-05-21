@@ -51,32 +51,11 @@ const Profile = (props) => {
   const revealChart = () => {
     return (
       <div>
-        {user?.sun ? (
-          <div className="chart">
-            <div className="Sun">
-              <h3>Sun: {user.sun}</h3>
-              <p>{sunChart.sign.Description.Summary}</p>
-            </div>
-            <div className="Moon">
-              <h3>Moon: {user.moon}</h3>
-              <p>{moonChart.sign.Summary}</p>
-            </div>
-            <div className="Rising">
-              <h3>Rising: {user.rising}</h3>
-              <p>{risingChart.sign.Summary}</p>
-            </div>
-            <ul className="friends">
-              {friends?.map((a) => (
-                <li>
-                  <p>{a.name}</p>
-                  <button value={a.googleId} onClick={(e) => removeFriend(e)}>
-                    x
-                  </button>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : (
+            {user?.sun ?
+            <div>
+                {Tarot(user)}
+                </div>
+           :
           <form onSubmit={handleSubmit}>
             <input type="date" onChange={(e) => setDate(e.target.value)} />
             <input type="time" onChange={(e) => setTime(e.target.value)} />
@@ -85,7 +64,7 @@ const Profile = (props) => {
               Submit
             </button>
           </form>
-        )}
+        }
       </div>
     );
   };
@@ -126,7 +105,7 @@ const Profile = (props) => {
 
   return (
     <div className="profile">
-      {user?.name ? <section>{Tarot(user)}</section> : <Auth id="log" setUser={setUser} />}
+      {user?.name ? <section>{revealChart()}</section> : <Auth id="log" setUser={setUser} />}
     </div>
   );
 };
