@@ -47,15 +47,28 @@ nav .links {
 }
 .homecontent{
   display: flex;
-  background-image: url("./marble.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  flex-direction: column;
+  
   font-size: 35px;
   height: 100vh;
   width: 100vw;;
   font-family: 'Open Sans', sans-serif;
   justify-content: space-around;
   align-items: center;
+}
+
+.profile {
+  background-image: url("./marble.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profileName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
 }
 
 .txtspan{
@@ -81,6 +94,26 @@ nav .links {
 }
 .focus:hover {
   transform: scale(1.1);
+}
+
+td {
+  text-align: center;
+  width: 200px;
+  font-size: 16px;
+}
+
+tr{
+  border-bottom: 3px solid black;
+}
+
+#delete{
+  background-color:rgba(255, 0, 0, 0);
+  border: none;
+  font-size: 34px;
+  color: red;
+  cursor: pointer;
+  padding: 0px 5px;
+  margin-top: 5px;
 }
 
 .ani {

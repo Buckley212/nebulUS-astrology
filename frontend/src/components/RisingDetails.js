@@ -7,6 +7,13 @@ function RisingDetails(props) {
 
   console.log(signs[0].Rising[user?.rising]?.Summary);
 
+  const risingImages = [
+    "/resources/risingDetail2.jpg",
+    "/resources/risingDetail3.jpg",
+    "/resources/risingDetail4.jpg",
+    "/resources/risingDetail5.jpg",
+  ];
+
   const showRisingDeets = () => {
     let risingObj = signs[0].Rising[user?.rising]?.Description;
 
@@ -17,6 +24,12 @@ function RisingDetails(props) {
         <div>
           <h1>{key}</h1>
           <div>{risingObj[key]}</div>
+          {Object.keys(risingObj).indexOf(key) < risingImages.length ? (
+            <img
+              src={risingImages[Object.keys(risingObj).indexOf(key)]}
+              alt="rising images"
+            />
+          ) : null}
         </div>
       );
     });
@@ -36,11 +49,10 @@ function RisingDetails(props) {
       {/* <div> */}
       {/* <div>Summary: {signs[0].Moon[user?.moon]?.Summary}</div>
       </div> */}
+      <img src="/resources/risingDetail1.jpg" alt="rising image" />
       {showRisingDeets()}
     </div>
-
-  )
-
+  );
 }
 
 export default RisingDetails;

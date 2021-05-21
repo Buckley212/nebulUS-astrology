@@ -10,26 +10,32 @@ const Tarot = () => {
     type: 'Rising',
     sign: signs[0].Rising[user.rising],
     img: '/risingtarot.png',
+    sum: signs[0].Rising[user.rising].Summary
   };
   
   const sunChart = {
       type: 'Sun',
       sign: signs[0].Sun[user.sun],
-      img: '/suntarot.png'
+      img: '/suntarot.png',
+      sum: signs[0].Sun[user.sun].Description.Summary
   };
 
   const moonChart = {
       type: 'Moon',
       sign: signs[0].Moon[user.moon],
-      img: '/moontarot.png'
+      img: '/moontarot.png',
+      sum: signs[0].Moon[user.moon].Summary
   };
   
   return (
     <div className="tarotpage">
+        <p>{user?.name}</p>
+        <img src={user?.imageUrl} alt="profile avi" />
+        <p>{user?.email}</p>
       <div className="tarotbox">
-        {Card(moonChart)}
-        {Card(risingChart)}
         {Card(sunChart)}
+        {Card(risingChart)}
+        {Card(moonChart)}
       </div>
     </div>
   );
