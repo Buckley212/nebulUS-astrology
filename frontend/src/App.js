@@ -87,10 +87,11 @@ const App = () => {
             </Link>
           </ul>
         {user?.name && (
-          <div className={user}>
-            <p>Welcome {user?.name}</p>
+          <div className='user'>
+              <p>Welcome</p>
+              <p>{user?.name}</p>
             <button onClick={handleLogout}>
-              <Link to="/home">Log out</Link>
+              <Link to="/home"><p>Log out</p></Link>
             </button>
           </div>
         )}
@@ -105,6 +106,15 @@ const App = () => {
           <Route exact path="/profile/Rising" component={RisingDetails} />
           <Route exact path="/friend/:googleId" component={Friend} />
         </Switch>
+        <footer>
+          <div class='foot'>
+          <h2 id="footerFamily">Connect with Us</h2>
+            <div class="iconsPad">
+              <img class="sizeIMG" src="./resources/intagram-icon.svg"/>
+              <img class="sizeIMG" src="./resources/linkedin-icon.svg"/>
+            </div>
+          </div>
+        </footer>
       </div>
     </TheContext.Provider>
   );

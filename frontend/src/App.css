@@ -21,6 +21,39 @@ body{
 
 .user {
   position: absolute;
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  flex-direction: column;
+  right: 2%;
+  top: 3px;
+  font-size: 14px;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: auto;
+}
+
+.user button >* {
+  box-shadow: none;
+  padding: none;
+  height: 30px;
+  margin: none;
+  text-decoration: none;
+  color: white;
+}
+
+.user button {
+  border: none;
+  background: rgba(105, 123, 224, 0.9);
+  border-radius: 15px;
+  color: white;
+  padding: 3px 7px;
+  margin: 0 10px;
+}
+
+.user p {
+  padding: 3px 0;
+  margin: 0;
 }
 
 nav {
@@ -382,4 +415,39 @@ tr{
     transform: translate3d(0vw, 0, 0);
     overflow: hidden;
   }
+}
+
+footer{
+  position: relative;
+  color: white;
+  width: 100vw;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  bottom: -10px;
+  margin-top: -1%;
+}
+
+#footerFamily h2{
+  display: flex;
+  justify-content: center;
+  color: white
+}
+
+footer img {
+  width: 4vw;
+  padding-bottom: 10%;
+}
+
+
+a {
+  color: #F5F5F5;
+}
+
+/*Social media Icons*/
+
+.iconsPad{
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
 }

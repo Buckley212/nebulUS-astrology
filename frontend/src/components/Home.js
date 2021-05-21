@@ -11,8 +11,7 @@ const Home = props => {
       
       }
     return (
-        <div className="Home">    
-            {user?.name}
+        <div className="Home">
             {user?.name ?
                 <section>
                     <h1>Hey</h1>
