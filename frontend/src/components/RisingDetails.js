@@ -21,9 +21,9 @@ function RisingDetails(props) {
     return Object.keys(risingObj).map((key) => {
       console.log(key, risingObj[key]);
       return (
-        <div>
-          <h1>{key}</h1>
-          <div>{risingObj[key]}</div>
+        <div className="signPageContent">
+          <h1 style={{ paddingTop: "30px" }}>{key}</h1>
+          <div className="signDetails">{risingObj[key]}</div>
           {Object.keys(risingObj).indexOf(key) < risingImages.length ? (
             <img
               src={risingImages[Object.keys(risingObj).indexOf(key)]}

@@ -21,9 +21,9 @@ function MoonDetails(props) {
     return Object.keys(moonObj).map((key) => {
       console.log(key, moonObj[key]);
       return (
-        <div>
-          <h1>{key}</h1>
-          <div>{moonObj[key]}</div>
+        <div className="signPageContent">
+          <h1 style={{ paddingTop: "30px" }}>{key}</h1>
+          <div className="signDetails">{moonObj[key]}</div>
           {Object.keys(moonObj).indexOf(key) < moonImages.length ? (
             <img
               src={moonImages[Object.keys(moonObj).indexOf(key)]}

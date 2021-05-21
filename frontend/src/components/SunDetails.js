@@ -21,9 +21,9 @@ const SunDetails = () => {
     return Object.keys(sunObj).map((key) => {
       console.log(key, sunObj[key]);
       return (
-        <div>
-          <h1>{key}</h1>
-          <div>{sunObj[key]}</div>
+        <div className="signPageContent">
+          <h1 style={{ paddingTop: "30px" }}>{key}</h1>
+          <div className="signDetails">{sunObj[key]}</div>
           {Object.keys(sunObj).indexOf(key) < sunImages.length ? (
             <img
               src={sunImages[Object.keys(sunObj).indexOf(key)]}
@@ -49,6 +49,6 @@ const SunDetails = () => {
       {showSunDeets()}
     </div>
   );
-}
+};
 
 export default SunDetails;
