@@ -1,34 +1,33 @@
-import React, { useEffect, useState, useContext } from 'react';
-import actions from '../services/api';
-import TheContext from '../services/TheContext';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState, useContext } from "react";
+import actions from "../services/api";
+import TheContext from "../services/TheContext";
+import { Link } from "react-router-dom";
 
-const Friends = props => {
+const Friends = (props) => {
+  const { user, setUser } = useContext(TheContext);
+  const [pal, setPal] = useState("");
+  const [friends, setFriends] = useState([]);
 
-    const { user, setUser } = useContext(TheContext);
-    const [pal, setPal] = useState('');
-    const [friends, setFriends] = useState([]);
-    
-    useEffect(() => {
-        actions.getFriends({ userId: user?.googleId }).then((res) => {
-            console.log(res);
-            setFriends(res);
-        })
-    }, [])
+  useEffect(() => {
+    actions.getFriends({ userId: user?.googleId }).then((res) => {
+      console.log(res);
+      setFriends(res);
+    });
+  }, []);
 
-    const handleSubmit = e => {
-        const requestAdd = { friend: pal, userId: user?.googleId }
-        actions.addFriend(requestAdd).then((res) => {
-            console.log(res)
-        })
-    };
+  const handleSubmit = (e) => {
+    const requestAdd = { friend: pal, userId: user?.googleId };
+    actions.addFriend(requestAdd).then((res) => {
+      console.log(res);
+    });
+  };
 
-    const removeFriend = e => {
-        const requestRemove = { bud: e.target.value, userId: user?.googleId }
-        actions.removeFriend(requestRemove).then((res) => {
-            console.log(res)
-        })
-    }
+  const removeFriend = (e) => {
+    const requestRemove = { bud: e.target.value, userId: user?.googleId };
+    actions.removeFriend(requestRemove).then((res) => {
+      console.log(res);
+    });
+  };
 
     console.log(friends)
     return (
