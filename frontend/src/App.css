@@ -7,6 +7,7 @@ body{
   align-items: center;
   margin-top: 25vh;
   justify-content: center;
+  height: 100vh;
 }
 
 .links {
@@ -288,6 +289,10 @@ tr{
 .form input::placeholder{
   color:white;
 }
+
+.avi {
+  border-radius: 100%;
+}
  
 .form input[type="text"],
 .form input[type="email"],
@@ -320,7 +325,7 @@ tr{
   background-size: cover;
   height: 100vh;
   width: 100vw;
-  z-index: -1;
+  z-index: 1;
 }
 
 .tarotbox{
@@ -352,7 +357,8 @@ tr{
   line-height: 2;
   font-size: 18px;
   width: 90vw;
-  padding: 50px
+  padding: 50px;
+  z-index: 5;
 }
 
 
@@ -466,7 +472,7 @@ tr{
 }
 
 footer{
-  position: absolute;
+  position: relative;
   color: white;
   width: 100vw;
   left: 0;
@@ -476,7 +482,7 @@ footer{
   bottom: 0;
   margin-bottom: -100vh;
   padding: 3% 0;
-  z-index: 5;
+  z-index: -90;
   height: 120px;
 }
 
@@ -490,6 +496,10 @@ h4 {
   display: flex;
   justify-content: center;
   color: white;
+}
+
+footer > * {
+  z-index: -5;
 }
 
 footer img {

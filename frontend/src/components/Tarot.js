@@ -30,7 +30,7 @@ const Tarot = person => {
   return (
     <div className="tarotpage">
         <p>{person?.name}</p>
-        <img src={person?.imageUrl} alt="profile avi" />
+        <img src={person?.imageUrl} className="avi" alt="profile avi" />
         <p>{person?.email}</p>
       <div className="tarotbox">
         {Card(sunChart)}
