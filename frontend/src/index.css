@@ -21,11 +21,46 @@ nav {
   align-items: center;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
   -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
-  box-shadow:         3px 3px 5px 6px #ccc; 
+  box-shadow:         3px 3px 5px 6px #ccc;
 }
 
 nav .links {
   padding: 0 5%;
+}
+
+#cards {
+  padding: -40% 0 ;
+  margin: -40% 0 ;
+  flex-direction: row;
+  border: none;
+  justify-content: space-around;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#card {
+  height: 25%!important;
+  padding: 5% 0 7% 0;
+  width: 28%!important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+#card h4 {
+  margin: 0px 0 0 0;
+  padding: 0;
+  font-size: 18px;
+}
+
+#card p {
+  font-size: 14px;
+  text-align: center;
+}
+
+#card img {
+  padding-top: 25%;
+  height: 30%;
 }
 
 .noto{

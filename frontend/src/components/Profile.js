@@ -85,7 +85,7 @@ const Profile = (props) => {
 
   return (
     <div className="profile">
-      {user?.name ? <section>{revealChart()}</section> : <Auth id="log" setUser={setUser} />}
+      {user?.name ? <section>{revealChart()}</section> : <Auth setUser={setUser} />}
     </div>
   );
 };

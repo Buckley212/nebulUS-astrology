@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="83" height="82" viewBox="0 0 83 82">
+    <g fill="none" fill-rule="evenodd">
+        <g>
+            <g>
+                <g>
+                    <g>
+                        <g stroke="black" stroke-linecap="round" stroke-linejoin="round">
+                            <g>
+                                <path stroke-dasharray="2.04" stroke-width="1.02" d="M39.78 0v39.78l33.887-19.897" transform="translate(-785 -402) translate(627 393) translate(129 10) translate(30) translate(1)"/>
+                                <path stroke-dasharray="2.04" stroke-width="1.02" d="M44.99 8.103L39.78 39.78l16.943-29.04" transform="translate(-785 -402) translate(627 393) translate(129 10) translate(30) translate(1)"/>
+                                <path stroke-width=".765" d="M57.46 17.515L39.78 39.78 47.7 16.207M57.982 25.783L39.78 39.78 61.88 33.08" transform="translate(-785 -402) translate(627 393) translate(129 10) translate(30) translate(1)"/>
+                                <path stroke-dasharray="2.04" stroke-width="1.02" d="M67.377 36.097L39.78 39.78h39.78M39.78 39.78L5.893 19.89M34.558 8.103L39.78 39.78 22.837 10.74" transform="translate(-785 -402) translate(627 393) translate(129 10) translate(30) translate(1)"/>
+                                <path stroke-width=".765" d="M22.1 17.515L39.78 39.78 31.848 16.207M21.588 25.783L39.78 39.78 17.68 33.08" transform="translate(-785 -402) translate(627 393) translate(129 10) translate(30) translate(1)"/>
+                                <path stroke-dasharray="2.04" stroke-width="1.02" d="M12.192 36.097L39.78 39.78H0" transform="translate(-785 -402) translate(627 393) translate(129 10) translate(30) translate(1)"/>
+                            </g>
+                            <g>
+                                <path stroke-dasharray="2.04" stroke-width="1.02" d="M39.78 0v39.78l33.887-19.897" transform="translate(-785 -402) translate(627 393) translate(129 10) translate(30) rotate(-180 40.28 39.78)"/>
+                                <path stroke-dasharray="2.04" stroke-width="1.02" d="M44.99 8.103L39.78 39.78l16.943-29.04" transform="translate(-785 -402) translate(627 393) translate(129 10) translate(30) rotate(-180 40.28 39.78)"/>
+                                <path stroke-width=".765" d="M57.46 17.515L39.78 39.78 47.7 16.207M57.982 25.783L39.78 39.78 61.88 33.08" transform="translate(-785 -402) translate(627 393) translate(129 10) translate(30) rotate(-180 40.28 39.78)"/>
+                                <path stroke-dasharray="2.04" stroke-width="1.02" d="M67.377 36.097L39.78 39.78h39.78M39.78 39.78L5.893 19.89M34.558 8.103L39.78 39.78 22.837 10.74" transform="translate(-785 -402) translate(627 393) translate(129 10) translate(30) rotate(-180 40.28 39.78)"/>
+                                <path stroke-width=".765" d="M22.1 17.515L39.78 39.78 31.848 16.207M21.588 25.783L39.78 39.78 17.68 33.08" transform="translate(-785 -402) translate(627 393) translate(129 10) translate(30) rotate(-180 40.28 39.78)"/>
+                                <path stroke-dasharray="2.04" stroke-width="1.02" d="M12.192 36.097L39.78 39.78H0" transform="translate(-785 -402) translate(627 393) translate(129 10) translate(30) rotate(-180 40.28 39.78)"/>
+                            </g>
+                        </g>
+                        <path fill="black" d="M48.444 26.52c2.232-.033 4.383.844 5.962 2.432 1.976 1.61 2.972 4.142 2.627 6.676l-.173.965c-1.112 5.634-7.573 12.62-14.206 16.015l-.652.309c-.372.164-.796.164-1.17 0l-.804-.29h-.154C33.3 49.251 26.82 42.266 25.726 36.71l-.173-.984c-.361-2.533.63-5.07 2.608-6.676 1.612-1.61 3.787-2.517 6.058-2.528 2.496.185 4.862 1.196 6.729 2.875l.307.29.402-.348c.288-.25.595-.482.901-.714 1.693-1.308 3.753-2.044 5.886-2.103z" transform="translate(-785 -402) translate(627 393) translate(129 10) translate(30)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

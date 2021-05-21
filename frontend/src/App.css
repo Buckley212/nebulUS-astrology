@@ -1,16 +1,12 @@
 body{
   width: 100vw;
-  /* height: 100vh; */
 }
 
-.logo{
-  height: 10vh;
-  width: auto;
-  padding-left: 2%;
-}
-
-.logobox{
-  float:left;
+.profile {
+  display: flex;
+  align-items: center;
+  margin-top: 25vh;
+  justify-content: center;
 }
 
 .links {
@@ -57,7 +53,7 @@ body{
 }
 
 nav {
-  position: relative;
+  position: fixed;
   left: 0;
   top: 0;
   display: flex;
@@ -68,7 +64,8 @@ nav {
   align-items: center;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
   -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
-  box-shadow:         3px 3px 5px 6px #ccc; 
+  box-shadow:         3px 3px 5px 6px #ccc;
+  z-index: 15;
 }
 
 nav .links {
@@ -93,20 +90,14 @@ nav .links {
   font-weight: 300;
 }
 
-.logobox{
-  display: flex;
-  align-items: center;
-}
-
 .homecontent{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   background-image: url("./marble.png");
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
-  width: 100vw;;
-  padding-top: 10%;
+  width: 100vw;
   font-family: 'Open Sans', sans-serif;
   justify-content: space-around;
   align-items: center;
@@ -114,8 +105,10 @@ nav .links {
 
 
 .txtspan{
-  width:55%;
+  width:50%;
   text-align: center;
+  font-size: 36px;
+  color: rgba(44, 55, 118, 0.9)
 }
 
 .submit{
@@ -167,7 +160,7 @@ tr{
   z-index: 5;
 }
 
-.ani > a{
+.ani > *{
   transition: 0.6s all ease;
 }
 
@@ -189,7 +182,7 @@ tr{
   overflow: hidden;
 }
 
-.ani:hover > a {
+.ani:hover > * {
   color: white !important;
   z-index: 5;
   text-decoration: none;
@@ -315,6 +308,9 @@ tr{
 
 /* tarot page */
 .tarotpage{
+  top:0;
+  left: 0;
+  position: absolute;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -324,6 +320,7 @@ tr{
   background-size: cover;
   height: 100vh;
   width: 100vw;
+  z-index: -1;
 }
 
 .tarotbox{
@@ -358,7 +355,7 @@ tr{
     background-size: cover;
     font-size: 35px;
     /* padding-top: 3%; */
-    height: 100vh;
+    height: auto;
     width: 100vw;
     font-family: 'Open Sans', sans-serif;
     justify-content: center;
@@ -417,31 +414,70 @@ tr{
   }
 }
 
+.horo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(./marble.png);
+  background-size: cover;
+  height: 1400px;
+  width: 100vw;
+}
+
+.horo div {
+  border: 1px black solid;
+  border-radius: 25px;
+  background-color: rgba(255, 255, 255, 0.734);
+  z-index: 5;
+  width: 70%;
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 0 0 ;
+  height: 1100px;
+}
+
+.horo div p {
+  width: 85%;
+  font-size: 20px;
+}
+
+.horo img {
+  width: 60vw;
+}
+
 footer{
-  position: relative;
+  position: absolute;
   color: white;
   width: 100vw;
+  left: 0;
   background-color: black;
   display: flex;
   justify-content: center;
-  bottom: -10px;
-  margin-top: -1%;
+  bottom: 0;
+  margin-bottom: -100vh;
+  padding: 3% 0;
+  z-index: 5;
+  height: 120px;
+}
+
+h4 {
+  font-size: 26px;
+  padding: 2% 0 0 0;
+  margin: 0;
 }
 
 #footerFamily h2{
   display: flex;
   justify-content: center;
-  color: white
+  color: white;
 }
 
 footer img {
   width: 4vw;
   padding-bottom: 10%;
-}
-
-
-a {
-  color: #F5F5F5;
 }
 
 /*Social media Icons*/
