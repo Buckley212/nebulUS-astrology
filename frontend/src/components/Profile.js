@@ -30,24 +30,6 @@ const Profile = (props) => {
     });
   };
 
-  const risingChart = {
-    type: "rising",
-    sign: signs[0].Rising[user.rising],
-    img: "/risingtarot.png",
-  };
-
-  const sunChart = {
-    type: "sun",
-    sign: signs[0].Sun[user.sun],
-    img: "/suntarot.png",
-  };
-
-  const moonChart = {
-    type: "moon",
-    sign: signs[0].Moon[user.moon],
-    img: "/moontarot.png",
-  };
-
   const revealChart = () => {
     return (
       <div>
@@ -60,9 +42,7 @@ const Profile = (props) => {
             <input type="date" onChange={(e) => setDate(e.target.value)} />
             <input type="time" onChange={(e) => setTime(e.target.value)} />
             <input type="text" onChange={(e) => setPlace(e.target.value)} />
-            <button type="submit" className="submit ani">
-              Submit
-            </button>
+            <button type="submit" className="submit ani">Submit</button>
           </form>
         }
       </div>

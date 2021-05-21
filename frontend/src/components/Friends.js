@@ -37,23 +37,23 @@ const Friends = (props) => {
                 <input type="text" placeholder="friend@email.com" onChange={e => setPal(e.target.value)} />
                 <button type="submit" className="submit ani">Submit</button>
                 </div>
-            { user.friends ?
-                    <table>
-                        <thead>
-                            <tr>
-                                <td><h4>Name</h4></td>
-                                <td><h4>Sun Sign</h4></td>
-                                <td><h4>Moon Sign</h4></td>
-                                <td><h4>Rising Sign</h4></td>
-                                <td><h4>Remove Friend</h4></td>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {friends.map(a => <tr><Link to={`/friend/${a.googleId}`}><td><p>{a.name}</p></td></Link><td>{a.sun}</td><td>{a.moon}</td><td>{a.rising}</td><td><button id="delete" value={a.googleId} onClick={e => removeFriend(e)}>x</button></td></tr>)}
-                        </tbody>
-                </table>
-                :
-                <p></p>
+            { user?.friends ?
+              <table>
+                <thead>
+                    <tr>
+                        <td><h4>Name</h4></td>
+                        <td><h4>Sun Sign</h4></td>
+                        <td><h4>Moon Sign</h4></td>
+                        <td><h4>Rising Sign</h4></td>
+                        <td><h4>Remove Friend</h4></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {friends.map(a => <tr><Link to={`/friend/${a?.googleId}`}><td><p>{a?.name}</p></td></Link><td>{a.sun}</td><td>{a?.moon}</td><td>{a?.rising}</td><td><button id="delete" value={a?.googleId} onClick={e => removeFriend(e)}>x</button></td></tr>)}
+                </tbody>
+              </table>
+              :
+              <p></p>
             }
             </form>
         </div>

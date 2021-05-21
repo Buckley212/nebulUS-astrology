@@ -14,7 +14,7 @@ const Friend = props => {
         actions.getFriends({ userId: user?.googleId }).then((res) => {
           console.log(res);
           setFriends(res)
-          setFriend(friends?.find(e=> e.googleId === props.match.params.googleId))
+          setFriend(res?.find(e=> e?.googleId === props.match.params.googleId))
         });
     }, []);
     console.log(friend)
