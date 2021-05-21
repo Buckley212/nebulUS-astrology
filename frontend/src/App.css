@@ -1,11 +1,17 @@
+body{
+  width: 100vw;
+}
+
 .logo{
   height: 10vh;
   width: auto;
   padding-left: 2%;
 }
+
 .logobox{
   float:left;
 }
+
 .links {
   font-family: 'Raleway', sans-serif;
   color: black;
@@ -13,10 +19,14 @@
 }
 
 nav {
+  position: fixed;
+  left: 0;
+  top: 0;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100vw;
+  background: white;
   align-items: center;
   -webkit-box-shadow: 3px 3px 5px 6px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
   -moz-box-shadow:    3px 3px 5px 6px #ccc;  /* Firefox 3.5 - 3.6 */
@@ -30,21 +40,26 @@ nav .links {
 .noto{
   font-family: 'Noto Sans JP', sans-serif;
 }
+
 .notothin{
   font-family: 'Noto Sans JP', sans-serif;
   font-weight: 100;
 }
+
 .ubuntu{
   font-family: 'Ubuntu', sans-serif;
 }
+
 .ubuntulight{
   font-family: 'Ubuntu', sans-serif;
   font-weight: 300;
 }
+
 .logobox{
   display: flex;
   align-items: center;
 }
+
 .homecontent{
   display: flex;
   flex-direction: column;
@@ -63,7 +78,6 @@ nav .links {
   width:45%;
 }
 
-
 .submit{
   background-color: white; /* Green */
   border-radius: 5px ;
@@ -80,6 +94,7 @@ nav .links {
   cursor: pointer;
 
 }
+
 .focus:hover {
   transform: scale(1.1);
 }
@@ -113,7 +128,7 @@ tr{
 
 .ani > a{
   transition: 0.6s all ease;
- }
+}
 
 .ani Link:hover {
   text-decoration: none;
@@ -175,169 +190,184 @@ tr{
 .x{
   float:right;
   font-size: 18px;
- }
- .x:hover{
-   color: gray;
-   cursor: pointer;
- }
+}
+.x:hover{
+  color: gray;
+  cursor: pointer;
+}
 .login {
   position: absolute;
-    width: 40%;
-    height: auto;
-    background: rgba(105, 123, 224, 0.9);
-
-    border-radius: 14px;
-    color: #fff;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    padding: 5%;
+  width: 40%;
+  height: auto;
+  background: rgba(105, 123, 224, 0.9);
+  border-radius: 14px;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 5%;
   z-index: 1001;
+}
+
+.login h1 {
+  margin: 0 auto 46px;
+  padding: 0 0 14px;
+  text-align: center;
+  font-size: 22px;
+  width: 60%;
+  border-bottom: 3px solid #FFF;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  padding-top: 5%;
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+}
+
+#friendsForm input::placeholder {
+  color: rgb(82, 81, 81);
+}
+
+#friendsForm input[type="text"] {
+  color: black;
+  border-bottom: 1px black solid ;
+}
+    
+.form p {
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
+.form  input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.form input::placeholder{
+  color:white;
+}
+ 
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"],
+.form input[type="message"]  {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 60px;
+  color: #fff;
+  font-size: 16px;
+}
+
+.message{
+  margin-bottom: 2%;
+}
+
+/* tarot page */
+.tarotpage{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("./marble.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+}
+
+.tarotbox{
+  display: flex;
+  width: 90%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.tarotcards{
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 60vh;
+  width: auto;
+} 
+
+/* hamburger menu */
+.hamburger{
+  display: none;
+}
+.hamburgerMenu{
+  display:none;
+}
+@media (max-width: 500px){
+  .homecontent{
+    display: flex;
+    flex-direction: column;
+    background-image: url("./marble.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-size: 35px;
+    /* padding-top: 3%; */
+    height: 100vh;
+    width: 100vw;
+    font-family: 'Open Sans', sans-serif;
+    justify-content: center;
+    align-items: center;
   }
-    .login h1 {
-      margin: 0 auto 46px;
-      padding: 0 0 14px;
-      text-align: center;
-      font-size: 22px;
-      width: 60%;
-      border-bottom: 3px solid #FFF;
-    }
-    .form{
-      display: flex;
-      flex-direction: column;
-      padding-top: 5%;
-      align-items: center;
-      font-family: 'Raleway', sans-serif;
-      text-align: center;
-    }
-    .form p {
-        margin: 0;
-        padding: 0;
-        font-weight: bold;
-      }
-    .form  input {
-        width: 100%;
-        margin-bottom: 20px;
-        
-      }
-      .form input::placeholder{
-        color:white
-      }
-     
-      .form input[type="text"],
-      .form input[type="email"],
-     .form input[type="password"],
-     .form input[type="message"]  {
-        border: none;
-        border-bottom: 1px solid #fff;
-        background: transparent;
-        outline: none;
-        height: 60px;
-        color: #fff;
-        font-size: 16px;
-      }
-     .message{
-       margin-bottom: 2%;
-     }
-    /* tarot page */
-    .tarotpage{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background-image: url("./marble.png");
-      background-repeat: no-repeat;
-      background-size: cover;
-      height: 100vh;
-      width: 100vw;
-    }
-    .tarotbox{
-      display: flex;
-      width: 90%;
-      flex-direction: row;
-     justify-content: space-between;
-     align-items: center;
-
-    }
-    .tarotcards{
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      display: flex;
-      height: 60vh;
-      width: auto;
-    } 
-
-    /* hamburger menu */
-    .hamburger{
-      display: none;
-     }
-     .hamburgerMenu{
-       display:none;
-     }
-     @media (max-width: 500px){
-      .homecontent{
-        display: flex;
-        flex-direction: column;
-        background-image: url("./marble.png");
-        background-repeat: no-repeat;
-        background-size: cover;
-        font-size: 35px;
-        /* padding-top: 3%; */
-        height: 100vh;
-        width: 100vw;
-        font-family: 'Open Sans', sans-serif;
-        justify-content: center;
-        align-items: center;
-
-      }
-      .nightsky{
-        height: 20vh;
-        width: auto;
-      }
-      .txtspan{
-        text-align: center;
-        width:100%;
-      }
+  .nightsky{
+    height: 20vh;
+    width: auto;
+  }
+  .txtspan{
+    text-align: center;
+    width:100%;
+  }
       
   .links{
     display:none;
   }
-      .hamburger{
-        display: block;
-        margin:2%;
-        padding-right: 3%;
-        z-index: 1000;
-      }
+  
+  .hamburger{
+    display: block;
+    margin:2%;
+    padding-right: 3%;
+    z-index: 1000;
+  }
     
-      .hamburgerMenu {
-        z-index: 99;
-        display: inline;
-        width: 100vw;
-        height: 150vh;
-        padding-top: 3%;
-        margin-top:0;
-        background-color:rgba(0,0,0,0.8);
-        position: fixed;
-        top: 0px;
-        right: 0px;
-        transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
-        overflow: scroll;
-        z-index: 999;
-        transform: translate3d(100vh, 0, 0);
-      }
-      .hamburgerMenu li {
-        font-family: 'Open Sans', sans-serif;
-        list-style-type: none;
-        padding: 40px;
-        font-size: 35px;
-        color:  white;
-        text-align: center;
-        list-style-type: none;
-      }
+  .hamburgerMenu {
+    z-index: 99;
+    display: inline;
+    width: 100vw;
+    height: 150vh;
+    padding-top: 3%;
+    margin-top:0;
+    background-color:rgba(0,0,0,0.8);
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
+    overflow: scroll;
+    z-index: 999;
+    transform: translate3d(100vh, 0, 0);
+  }
+
+  .hamburgerMenu li {
+    font-family: 'Open Sans', sans-serif;
+    list-style-type: none;
+    padding: 40px;
+    font-size: 35px;
+    color:  white;
+    text-align: center;
+    list-style-type: none;
+  }
     
-      #clickedmenu {
-        transform: translate3d(0vw, 0, 0);
-        overflow: hidden;
-      }
-    }
+  #clickedmenu {
+    transform: translate3d(0vw, 0, 0);
+    overflow: hidden;
+  }
+}

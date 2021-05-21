@@ -33,8 +33,8 @@ const Friends = (props) => {
     return (
         <div className="homecontent friends">
             <form onSubmit={handleSubmit}>
-                <div className="form">
-                <input type="text" placeholder="What's poppin'" onChange={e => setPal(e.target.value)} />
+                <div className="form" id="friendsForm">
+                <input type="text" placeholder="friend@email.com" onChange={e => setPal(e.target.value)} />
                 <button type="submit" className="submit ani">Submit</button>
                 </div>
             { user.friends ?
