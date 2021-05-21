@@ -11,11 +11,28 @@ const Home = props => {
       
       }
     return (
-        <div className="Home">    
-            {user?.name}
+        <div className="Home">
             {user?.name ?
-                <section>
-                    <h1>Hey</h1>
+                <section className="horo">
+                    <div>
+                        <h2>Hey {user.name.split(' ')[0]}!</h2>
+                        <h2>Here's your Daily Horoscope for {user.sun}</h2>
+                        <img src='/resources/daily.png' />
+                        <h4>Overview</h4>
+                        <p>You’re hungry to learn new things, Capricorn. Yet, you can sometimes stand in your own way of doing that out of fear. The illuminating sun’s square with dream-big Jupiter today reminds you to stay optimistic and make room for new opportunities that boost your self-expression. Elsewhere, reality is hard to find and a longing for escape is strong, as the capable Virgo moon dances with dreamy Neptune.</p>
+                        <div id="cards">
+                        <div id="card">
+                            <img src='/resources/love.svg' />
+                            <h4>Love</h4>
+                            <p>You will certainly still feel the effects of today’s transiting planets, so keep your head on straight.</p>
+                        </div>
+                            <div id="card">
+                            <img id="work" src='/resources/work.svg' />
+                                <h4>Work</h4>
+                                <p>You can experience lateness, missed appointments, or certain facets of your day going awry.</p>
+                            </div>
+                        </div>
+                    </div>
                 </section>
                 :
                 <div className="homecontent">

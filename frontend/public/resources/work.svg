@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="89" height="71" viewBox="0 0 89 71">
+    <g fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g stroke="black">
+            <g>
+                <g>
+                    <g>
+                        <path stroke-dasharray="1.8" stroke-width=".9" d="M46.688 34.2c8.947 0 16.2-7.656 16.2-17.1 0-9.444-7.253-17.1-16.2-17.1-8.948 0-16.2 7.656-16.2 17.1 0 9.444 7.252 17.1 16.2 17.1z" transform="translate(-235 -611) translate(77 598) translate(129 10) translate(29 4)"/>
+                        <path stroke-width=".675" d="M78.188 69.3L46.688 16.2M45.788 69.3L45.788 16.2 67.388 69.3" transform="translate(-235 -611) translate(77 598) translate(129 10) translate(29 4)"/>
+                        <path stroke-width=".675" d="M53.438 69.3L46.688 16.2 60.188 69.3M39.038 69.3L45.788 16.2 32.288 69.3M18.302 69.3L45.788 16.2 7.987 69.3M.787 69.3L46.688 16.2" transform="translate(-235 -611) translate(77 598) translate(129 10) translate(29 4)"/>
+                        <path stroke-width=".675" d="M24.792 69.3L45.788 16.2 14.287 69.3M4.388 69.3L45.788 16.2" transform="translate(-235 -611) translate(77 598) translate(129 10) translate(29 4)"/>
+                        <path stroke-width=".675" d="M21.84 69.3L45.788 16.2 11.588 69.3M34.985 69.3L45.788 16.2 27.788 69.3M43.087 69.3L46.695 16.2 50.288 69.3" transform="translate(-235 -611) translate(77 598) translate(129 10) translate(29 4)"/>
+                        <path stroke-width=".675" d="M56.576 69.3L45.788 16.2 63.788 69.3M70.193 69.3L45.788 16.2 73.688 69.3M81.045 69.3L46.688 16.2 84.487 69.3M46.688 16.2L88.088 69.3" transform="translate(-235 -611) translate(77 598) translate(129 10) translate(29 4)"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
