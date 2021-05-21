@@ -1,5 +1,7 @@
 body{
   width: 100vw;
+  background-image: url('./marble.png');
+  background-size: cover;
 }
 
 .profile {
@@ -94,9 +96,6 @@ nav .links {
 .homecontent{
   display: flex;
   flex-direction: row;
-  background-image: url("./marble.png");
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 100vh;
   width: 100vw;
   font-family: 'Open Sans', sans-serif;
@@ -320,9 +319,6 @@ tr{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-image: url("./marble.png");
-  background-repeat: no-repeat;
-  background-size: cover;
   height: 100vh;
   width: 100vw;
   z-index: 1;
@@ -373,9 +369,6 @@ tr{
   .homecontent{
     display: flex;
     flex-direction: column;
-    background-image: url("./marble.png");
-    background-repeat: no-repeat;
-    background-size: cover;
     font-size: 35px;
     /* padding-top: 3%; */
     height: auto;
@@ -396,7 +389,26 @@ tr{
   .links{
     display:none;
   }
+  .tarotcards{
+    margin: 5% 0 ;
+  }
+  .tarotbox{
+    flex-direction: column;
+    padding: 5%;
+    margin-right: 25%;
+  }
+  footer {
+    padding: 5%;
+    margin-right: 25%;
+  }
+  .user>* {
+    margin-left: -90%!important;
+  }
   
+  nav{
+    width: 100vw;
+  }
+
   .hamburger{
     display: block;
     margin:2%;

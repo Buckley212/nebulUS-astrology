@@ -61,8 +61,6 @@ nav .links {
 }
 
 #input {
-  background-image: url('./marble.png');
-  background-size: cover;
   width: 100vw;
   margin-top:-80px;
   height: 850px;
