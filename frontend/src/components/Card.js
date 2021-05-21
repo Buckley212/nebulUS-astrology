@@ -4,41 +4,37 @@ import TheContext from "../services/TheContext";
 import Auth from "../services/Auth";
 import signs from "../signs.json";
 import './Card.css';
+import { Link } from 'react-router-dom';
 
 const Card = chart => {
+
+    const { user, setUser } = useContext(TheContext);
+
     return (
         <section>
-			<div class="col-sm-6 col-lg-4">
-				<div class="card-flip">
-					<div class="flip">
-              <div class="front">
+			<div className="card">
+				<div className="card-flip">
+					<div className="flip">
                 {/* Front */}
+                <div className="front">
 							<div class="card">
-							  <img class="card-img-top" data-src="holder.js/100px180/"/>
-							  <div class="card-block">
-							    <h4 class="card-title">Tarot</h4>
-							    <p class="card-text">Lore ipsum</p>
-							    <a href="#" class="btn btn-primary">Go somewhere</a>
-							  </div>
+								<img src={`${chart.img}`} alt="sign"/>
 							</div>
 						</div>
-						<div class="back">
-            {/* Back */}
-							<div class="card">
-							  <div class="card-block">
-							    <h4 class="card-title">Back</h4>
-							    <h6 class="card-subtitle text-muted">blah blah blah</h6>
-							  </div>
-							  <img data-src="holder.js/100px180/?text=Image"/>
-							  <div class="card-block">
-							    <p class="card-text">blah blah</p>
-							    <a href="#" class="card-link">Learn More</a>
-							  </div>
+                {/* Back */}
+						<div className="back">
+							<div className="card">
+							    <div className="card-block">
+							        <h4 className="card-title">{chart.type}</h4>
+							        <h6 className="card-subtitle text-muted">{chart?.sign.Type}</h6>
+							        <p className="card-text">{chart.sign.Summary || chart.sign.Description.Summary.slice(0, 350)+'...'}</p>
+									<Link to={`/profile/${chart.type}`}>Learn more...</Link>
+							    </div>
 							</div>
 						</div>
 					</div>
-				</div>
-	    </div>
+			    </div>
+	        </div>
         </section>)
 }
 

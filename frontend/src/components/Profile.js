@@ -30,11 +30,24 @@ const Profile = (props) => {
     });
   };
 
-  const chart = {
-      sunSign: signs[0].Sun[user.sun],
-      moonSign: signs[0].Moon[user.moon],
-      risingSign: signs[0].Rising[user.rising]
-  };
+    const risingChart = {
+      type: 'rising',
+      sign: signs[0].Rising[user.rising],
+      img: '/risingtarot.png',
+    };
+    
+    const sunChart = {
+        type: 'sun',
+        sign: signs[0].Sun[user.sun],
+        img: '/suntarot.png'
+    };
+
+    const moonChart = {
+        type: 'moon',
+        sign: signs[0].Moon[user.moon],
+        img: '/moontarot.png'
+    };
+    
     const revealChart = () => {
         return (
             <div>
@@ -42,15 +55,15 @@ const Profile = (props) => {
                     <div className="chart">
                         <div className="Sun">
                             <h3>Sun: {user.sun}</h3>
-                            <p>{chart.sunSign.Description.Summary}</p>
+                            <p>{sunChart.sign.Description.Summary}</p>
                         </div>
                         <div className="Moon">
                             <h3>Moon: {user.moon}</h3>
-                            <p>{chart.moonSign.Summary}</p>
+                            <p>{moonChart.sign.Summary}</p>
                         </div>
                         <div className="Rising">
                             <h3>Rising: {user.rising}</h3>
-                            <p>{chart.risingSign.Summary}</p>
+                            <p>{risingChart.sign.Summary}</p>
                         </div>
                         <ul className="friends">
                             {friends?.map(a => <li><p>{a.name}</p><button value={a.googleId} onClick={e => removeFriend(e)}>x</button></li>)}
@@ -104,18 +117,16 @@ const Profile = (props) => {
 
   return (
     <div>
-      <p>Profile</p> {user?.name}
-      {user?.name ? (
+      {user?.name ?
         <section>
-          <img src={user?.imageUrl} alt="profile avi" />
-          <p>{user?.email}</p>
-          <Tarot {...props} />
-          {revealChart()}
-          {Card(chart)}
+        {Tarot()}
+            <p>Profile {user?.name}</p>
+            <img src={user?.imageUrl} alt="profile avi" />
+            <p>{user?.email}</p>
         </section>
-      ) : (
+      : 
         <Auth setUser={setUser} />
-      )}
+      }
     </div>
   );
 };
