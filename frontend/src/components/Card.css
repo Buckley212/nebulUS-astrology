@@ -1,3 +1,10 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .card-flip {
     perspective: 1000px;
 }
@@ -24,8 +31,18 @@
     left: 0;
 }
 
-.card-text {
-    padding: 10px;
+.card-text, .card-block {
+    max-height: 150px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card-subtitle, .card-title {
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
 
 .front {
@@ -37,6 +54,7 @@
     border: 2px solid black;
     transform: rotateY(180deg);
     border-radius: 20px;
+    background-color: white;
 }
 
 .card-flip img {

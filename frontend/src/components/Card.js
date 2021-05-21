@@ -12,7 +12,7 @@ const Card = chart => {
 
     return (
         <section>
-			<div className="col-sm-6 col-lg-4">
+			<div className="card">
 				<div className="card-flip">
 					<div className="flip">
                 {/* Front */}
@@ -25,12 +25,10 @@ const Card = chart => {
 						<div className="back">
 							<div className="card">
 							    <div className="card-block">
-							        <h4 className="card-title">Back</h4>
+							        <h4 className="card-title">{chart.type}</h4>
 							        <h6 className="card-subtitle text-muted">{chart?.sign.Type}</h6>
-							    </div>
-							    <div className="card-block">
 							        <p className="card-text">{chart.sign.Summary || chart.sign.Description.Summary.slice(0, 350)+'...'}</p>
-									<Link to={`/tarot/${user.sign}`}>Learn more...</Link>
+									<Link to={`/profile/${chart.type}`}>Learn more...</Link>
 							    </div>
 							</div>
 						</div>

@@ -239,6 +239,10 @@ nav .links {
 
     }
     .tarotcards{
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      display: flex;
       height: 60vh;
       width: auto;
     } 

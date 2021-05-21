@@ -3,10 +3,11 @@ import actions from "../services/api";
 import TheContext from "../services/TheContext";
 import { Origin, Horoscope } from "circular-natal-horoscope-js";
 import Auth from "../services/Auth";
+import Tarot from "./Tarot";
 import signs from "../signs.json";
 import Card from './Card.js';
 
-const Profile = () => {
+const Profile = (props) => {
   const { user, setUser } = useContext(TheContext);
   const [date, setDate] = useState(new Date());
   const [time, setTime] = useState();
@@ -29,20 +30,24 @@ const Profile = () => {
     });
   };
 
-  const risingChart = {
+    const risingChart = {
+      type: 'rising',
       sign: signs[0].Rising[user.rising],
       img: '/risingtarot.png',
     };
     
     const sunChart = {
+        type: 'sun',
         sign: signs[0].Sun[user.sun],
-        img : '/suntarot.png'
-    }
+        img: '/suntarot.png'
+    };
 
     const moonChart = {
+        type: 'moon',
         sign: signs[0].Moon[user.moon],
         img: '/moontarot.png'
-    }
+    };
+    
     const revealChart = () => {
         return (
             <div>
@@ -112,19 +117,16 @@ const Profile = () => {
 
   return (
     <div>
-      <p>Profile</p> {user?.name}
-      {user?.name ? (
-              <section>
+      {user?.name ?
+        <section>
+        {Tarot()}
+            <p>Profile {user?.name}</p>
             <img src={user?.imageUrl} alt="profile avi" />
             <p>{user?.email}</p>
-            {revealChart()}
-            {Card(moonChart)}
-            {Card(sunChart)}
-            {Card(risingChart)}
         </section>
-      ) : (
+      : 
         <Auth setUser={setUser} />
-      )}
+      }
     </div>
   );
 };
