@@ -11,6 +11,8 @@ function SunDetails(props) {
     "/resources/sunDetail4.jpg",
     "/resources/sunDetail5.jpg",
     "/resources/sunDetail6.jpg",
+    "/resources/sunDetail7.jpg",
+    "/resources/sunDetail8.jpg",
   ];
 
   const showSunDeets = () => {

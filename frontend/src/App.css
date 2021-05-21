@@ -47,6 +47,7 @@ nav .links {
 }
 .homecontent{
   display: flex;
+  flex-direction: column;
   background-image: url("./marble.png");
   background-repeat: no-repeat;
   background-size: cover;
