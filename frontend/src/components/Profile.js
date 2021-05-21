@@ -126,22 +126,7 @@ const Profile = (props) => {
 
   return (
     <div className="profile">
-      {user?.name ? (
-        <section>
-          <div className="profileName">
-            <p>Profile {user?.name}</p>
-            <img
-              style={{ borderRadius: "100%", height: "20vw" }}
-              src={user?.imageUrl}
-              alt="profile avi"
-            />
-            <p>{user?.email}</p>
-          </div>
-          <Tarot />
-        </section>
-      ) : (
-        <Auth setUser={setUser} />
-      )}
+      {user?.name ? <section>{Tarot()}</section> : <Auth setUser={setUser} />}
     </div>
   );
 };

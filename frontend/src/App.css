@@ -96,6 +96,26 @@ nav .links {
   transform: scale(1.1);
 }
 
+td {
+  text-align: center;
+  width: 200px;
+  font-size: 16px;
+}
+
+tr{
+  border-bottom: 3px solid black;
+}
+
+#delete{
+  background-color:rgba(255, 0, 0, 0);
+  border: none;
+  font-size: 34px;
+  color: red;
+  cursor: pointer;
+  padding: 0px 5px;
+  margin-top: 5px;
+}
+
 .ani {
   position: relative;
   overflow: hidden;

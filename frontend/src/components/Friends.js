@@ -29,33 +29,67 @@ const Friends = (props) => {
     });
   };
 
-  //   console.log(friends);
+  console.log(friends);
   return (
-    <div className="homecontent">
+    <div className="homecontent friends">
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Enter friend's email"
-          onChange={(e) => setPal(e.target.value)}
-        />
-        <button type="submit" className="submit ani">
-          Submit
-        </button>
+        <div className="form">
+          <input
+            type="text"
+            placeholder="What's poppin'"
+            onChange={(e) => setPal(e.target.value)}
+          />
+          <button type="submit" className="submit ani">
+            Submit
+          </button>
+        </div>
+        {user.friends ? (
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <h4>Name</h4>
+                </td>
+                <td>
+                  <h4>Sun Sign</h4>
+                </td>
+                <td>
+                  <h4>Moon Sign</h4>
+                </td>
+                <td>
+                  <h4>Rising Sign</h4>
+                </td>
+                <td>
+                  <h4>Remove Friend</h4>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+              {friends.map((a) => (
+                <tr>
+                  <td>
+                    <p>{a.name}</p>
+                  </td>
+                  <td>{a.sun}</td>
+                  <td>{a.moon}</td>
+                  <td>{a.rising}</td>
+                  <td>
+                    <button
+                      id="delete"
+                      value={a.googleId}
+                      onClick={(e) => removeFriend(e)}
+                    >
+                      x
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p></p>
+        )}
       </form>
-      {user.friends ? (
-        <ul className="friends">
-          {friends.map((a) => (
-            <li>
-              <p>{a.name}</p>
-              <button value={a.googleId} onClick={(e) => removeFriend(e)}>
-                x
-              </button>
-            </li>
-          ))}
-        </ul>
-      ) : (
-        <p></p>
-      )}
     </div>
   );
 };
