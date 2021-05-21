@@ -48,15 +48,27 @@ nav .links {
 .homecontent{
   display: flex;
   flex-direction: column;
-  background-image: url("./marble.png");
-  background-repeat: no-repeat;
-  background-size: cover;
+  
   font-size: 35px;
   height: 100vh;
   width: 100vw;;
   font-family: 'Open Sans', sans-serif;
   justify-content: space-around;
   align-items: center;
+}
+
+.profile {
+  background-image: url("./marble.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.profileName {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ 
 }
 
 .txtspan{

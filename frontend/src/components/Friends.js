@@ -29,7 +29,7 @@ const Friends = (props) => {
     });
   };
 
-  console.log(friends);
+  //   console.log(friends);
   return (
     <div className="homecontent">
       <form onSubmit={handleSubmit}>
