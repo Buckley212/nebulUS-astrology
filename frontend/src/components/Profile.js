@@ -38,10 +38,10 @@ const Profile = (props) => {
                 {Tarot(user)}
                 </div>
            :
-          <form onSubmit={handleSubmit}>
+          <form className="form" id="input" onSubmit={handleSubmit}>
             <input type="date" onChange={(e) => setDate(e.target.value)} />
             <input type="time" onChange={(e) => setTime(e.target.value)} />
-            <input type="text" onChange={(e) => setPlace(e.target.value)} />
+            <input id="location" placeholder="Place Of Birth" type="text" onChange={(e) => setPlace(e.target.value)} />
             <button type="submit" className="submit ani">Submit</button>
           </form>
         }

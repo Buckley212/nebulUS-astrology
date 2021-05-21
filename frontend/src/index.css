@@ -45,6 +45,44 @@ nav .links {
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  transition: 1s all ease-in-out;
+}
+
+#location {
+  margin: 0 0 10px 0;
+  padding: 0 0 0 5px;
+  border: black 1px solid;
+  height: 25px;
+  background-color: white;
+  color: black;
+  font-size: 14px;
+}
+
+#input {
+  background-image: url('./marble.png');
+  background-size: cover;
+  width: 100vw;
+  height: 1000px;
+  margin-top: -120px;
+  padding:200px;
+}
+
+input {
+  border-radius: 10px;
+  border: black 1px solid;
+  width: 200px!important;
+}
+
+#location::placeholder {
+  margin: -10px 0;
+  padding: 0 0 0 5px;
+  color: black;
+  font-size: 14px;
+}
+
+#card:hover{
+  color: white;
+  background-color: black;
 }
 
 #card h4 {
@@ -172,7 +210,7 @@ li > button {
   margin: 20px;
 }
 
-.ani:hover > a {
+.ani:hover {
   color: white !important;
   z-index: 5;
   text-decoration: none;

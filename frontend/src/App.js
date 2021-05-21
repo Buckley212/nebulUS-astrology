@@ -91,7 +91,7 @@ const App = () => {
               <p>Welcome</p>
               <p>{user?.name}</p>
             <button onClick={handleLogout}>
-              <Link to="/home"><p>Log out</p></Link>
+              <Link to="/"><p>Log out</p></Link>
             </button>
           </div>
         )}
