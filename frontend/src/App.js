@@ -11,6 +11,7 @@ import Tarot from "./components/Tarot";
 import SunDetails from "./components/SunDetails";
 import MoonDetails from "./components/MoonDetails";
 import RisingDetails from "./components/RisingDetails";
+import Friend from './components/Friend';
 import "./index.css";
 
 const App = () => {
@@ -35,14 +36,6 @@ const App = () => {
   return (
     <TheContext.Provider value={context}>
       <div className="App">
-        {user?.name && (
-          <div>
-            <p>Welcome {user?.name}</p>
-            <button onClick={handleLogout}>
-              <Link to="/home">Log out</Link>
-            </button>
-          </div>
-        )}
         <nav>
           <section className="logobox">
             <Link to="/">
@@ -93,6 +86,14 @@ const App = () => {
               <li> Profile </li>
             </Link>
           </ul>
+        {user?.name && (
+          <div className={user}>
+            <p>Welcome {user?.name}</p>
+            <button onClick={handleLogout}>
+              <Link to="/home">Log out</Link>
+            </button>
+          </div>
+        )}
         </nav>
 
         <Switch>
@@ -102,6 +103,7 @@ const App = () => {
           <Route exact path="/profile/Sun" component={SunDetails} />
           <Route exact path="/profile/Moon" component={MoonDetails} />
           <Route exact path="/profile/Rising" component={RisingDetails} />
+          <Route exact path="/friend/:googleId" component={Friend} />
         </Switch>
       </div>
     </TheContext.Provider>

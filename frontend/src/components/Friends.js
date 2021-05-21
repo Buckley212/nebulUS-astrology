@@ -49,7 +49,7 @@ const Friends = (props) => {
                             </tr>
                         </thead>
                         <tbody>
-                            {friends.map(a => <tr><td><p>{a.name}</p></td><td>{a.sun}</td><td>{a.moon}</td><td>{a.rising}</td><td><button id="delete" value={a.googleId} onClick={e => removeFriend(e)}>x</button></td></tr>)}
+                            {friends.map(a => <tr><Link to={`/friend/${a.googleId}`}><td><p>{a.name}</p></td></Link><td>{a.sun}</td><td>{a.moon}</td><td>{a.rising}</td><td><button id="delete" value={a.googleId} onClick={e => removeFriend(e)}>x</button></td></tr>)}
                         </tbody>
                 </table>
                 :

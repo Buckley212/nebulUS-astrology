@@ -126,7 +126,7 @@ const Profile = (props) => {
 
   return (
     <div className="profile">
-      {user?.name ? <section>{Tarot()}</section> : <Auth setUser={setUser} />}
+      {user?.name ? <section>{Tarot(user)}</section> : <Auth id="log" setUser={setUser} />}
     </div>
   );
 };

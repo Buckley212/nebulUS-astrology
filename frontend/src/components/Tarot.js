@@ -4,34 +4,34 @@ import Card from './Card';
 import signs from "../signs.json";
 import TheContext from "../services/TheContext";
 
-const Tarot = () => {
+const Tarot = person => {
   const { user } = useContext(TheContext);
   const risingChart = {
     type: 'Rising',
-    sign: signs[0].Rising[user.rising],
+    sign: signs[0].Rising[person?.rising],
     img: '/risingtarot.png',
-    sum: signs[0].Rising[user.rising].Summary
+    sum: signs[0].Rising[person?.rising].Summary
   };
   
   const sunChart = {
       type: 'Sun',
-      sign: signs[0].Sun[user.sun],
+      sign: signs[0].Sun[person?.sun],
       img: '/suntarot.png',
-      sum: signs[0].Sun[user.sun].Description.Summary
+      sum: signs[0].Sun[person?.sun].Description.Summary
   };
 
   const moonChart = {
       type: 'Moon',
-      sign: signs[0].Moon[user.moon],
+      sign: signs[0].Moon[person?.moon],
       img: '/moontarot.png',
-      sum: signs[0].Moon[user.moon].Summary
+      sum: signs[0].Moon[person?.moon].Summary
   };
   
   return (
     <div className="tarotpage">
-        <p>{user?.name}</p>
-        <img src={user?.imageUrl} alt="profile avi" />
-        <p>{user?.email}</p>
+        <p>{person?.name}</p>
+        <img src={person?.imageUrl} alt="profile avi" />
+        <p>{person?.email}</p>
       <div className="tarotbox">
         {Card(sunChart)}
         {Card(risingChart)}

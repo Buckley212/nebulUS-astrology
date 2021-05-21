@@ -18,8 +18,12 @@ body{
   padding: 0 10%;
 }
 
+.user {
+  position: absolute;
+}
+
 nav {
-  position: fixed;
+  position: relative;
   left: 0;
   top: 0;
   display: flex;
@@ -216,6 +220,10 @@ tr{
   font-size: 22px;
   width: 60%;
   border-bottom: 3px solid #FFF;
+}
+
+.log > *{
+  padding-top: 200px
 }
 
 .form{
