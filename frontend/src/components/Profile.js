@@ -120,9 +120,6 @@ const Profile = (props) => {
       {user?.name ?
         <section>
         {Tarot()}
-            <p>Profile {user?.name}</p>
-            <img src={user?.imageUrl} alt="profile avi" />
-            <p>{user?.email}</p>
         </section>
       : 
         <Auth setUser={setUser} />

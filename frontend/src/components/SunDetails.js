@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import TheContext from "../services/TheContext";
 import signs from "../signs.json";
 
-function SunDetails(props) {
+const SunDetails = () => {
   const { user, setUser } = useContext(TheContext);
 
   const sunImages = [
@@ -16,7 +16,6 @@ function SunDetails(props) {
   const showSunDeets = () => {
     let sunObj = signs[0].Sun[user?.sun]?.Description;
 
-    console.log(Object.keys(sunObj));
     return Object.keys(sunObj).map((key) => {
       console.log(key, sunObj[key]);
       return (

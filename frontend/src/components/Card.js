@@ -27,8 +27,8 @@ const Card = chart => {
 							    <div className="card-block">
 							        <h4 className="card-title">{chart.type}</h4>
 							        <h6 className="card-subtitle text-muted">{chart?.sign.Type}</h6>
-							        <p className="card-text">{chart.sign.Summary || chart.sign.Description.Summary.slice(0, 350)+'...'}</p>
-									<Link to={`/profile/${chart.type}`}>Learn more...</Link>
+							        <p className="card-text">{chart.sum?.slice(0, 350) + '...'}</p>
+									<Link className="highlight" to={`/profile/${chart.type}`}><p>Learn more...</p></Link>
 							    </div>
 							</div>
 						</div>
