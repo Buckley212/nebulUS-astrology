@@ -21,7 +21,7 @@ const Friend = props => {
     return (
         <div>
             {friend ?
-                <div>
+                <div className="profile">
                     {Tarot(friend)}
                 </div>
                 :
