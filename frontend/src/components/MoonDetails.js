@@ -1,11 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import signs from "../signs.json";
+import actions from "../services/api";
 import TheContext from "../services/TheContext";
 
-function MoonDetails(props) {
+const MoonDetails = props => {
   const { user, setUser } = useContext(TheContext);
 
-  console.log(signs[0].Moon[user?.moon]?.Summary);
+  const [bud, setBud] = useState();
+
+  useEffect(() => {
+    actions.getUsers().then((res) => {
+      console.log(res)
+      setBud(res?.find(e => e?.googleId === props.match.params.googleId))
+    });
+  }, []);
 
   const moonImages = [
     "/resources/moonDetail2.jpg",
@@ -16,7 +24,7 @@ function MoonDetails(props) {
   ];
 
   const showMoonDeets = () => {
-    let moonObj = signs[0].Moon[user?.moon]?.Description;
+    let moonObj = signs[0].Moon[bud?.moon]?.Description;
 
     return Object.keys(moonObj).map((key) => {
       console.log(key, moonObj[key]);
@@ -45,12 +53,16 @@ function MoonDetails(props) {
         paddingTop: "20px",
       }}
     >
-      <h1>The Moon Sign: {user.moon}</h1>
+      <h1>The Moon Sign: {bud?.moon}</h1>
       {/* <div> */}
-      {/* <div>Summary: {signs[0].Moon[user?.moon]?.Summary}</div>
+      {/* <div>Summary: {signs[0].Moon[bud?.moon]?.Summary}</div>
       </div> */}
       <img src="/resources/moonDetail1.jpg" alt="moon image" />
-      {showMoonDeets()}
+      { bud ? 
+        <div>{showMoonDeets()}</div>
+        :
+        <p></p>
+      }
     </div>
   );
 }

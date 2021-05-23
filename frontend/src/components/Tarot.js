@@ -10,21 +10,24 @@ const Tarot = person => {
     type: 'Rising',
     sign: signs[0].Rising[person?.rising],
     img: '/risingtarot.png',
-    sum: signs[0].Rising[person?.rising].Summary
+    sum: signs[0].Rising[person?.rising].Summary,
+    a: person.googleId
   };
   
   const sunChart = {
-      type: 'Sun',
-      sign: signs[0].Sun[person?.sun],
-      img: '/suntarot.png',
-      sum: signs[0].Sun[person?.sun].Description.Summary
+    type: 'Sun',
+    sign: signs[0].Sun[person?.sun],
+    img: '/suntarot.png',
+    sum: signs[0].Sun[person?.sun].Description.Summary,
+    a: person.googleId
   };
 
   const moonChart = {
-      type: 'Moon',
-      sign: signs[0].Moon[person?.moon],
-      img: '/moontarot.png',
-      sum: signs[0].Moon[person?.moon].Summary
+    type: 'Moon',
+    sign: signs[0].Moon[person?.moon],
+    img: '/moontarot.png',
+    sum: signs[0].Moon[person?.moon].Summary,
+    a: person.googleId
   };
   
   return (

@@ -23,6 +23,11 @@ const actions = {
         return await axios.get(`${serverUrl}/get-user`, createHeaders());
     },
 
+    getUsers: async () => {
+        let res = await axios.get(`${serverUrl}/get-users`);
+        return res.data
+    },
+
     getMessages: async () => {
         let messages = await axios.get(`${serverUrl}/get-messages`);
         return messages.data;

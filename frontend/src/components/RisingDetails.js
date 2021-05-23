@@ -1,11 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import signs from "../signs.json";
+import actions from "../services/api";
 import TheContext from "../services/TheContext";
 
-function RisingDetails(props) {
-  const { user, setUser } = useContext(TheContext);
+const RisingDetails = props => {
 
-  console.log(signs[0].Rising[user?.rising]?.Summary);
+  const { user, setUser } = useContext(TheContext);
+  const [bud, setBud] = useState();
+
+  useEffect(() => {
+    actions.getUsers().then((res) => {
+      console.log(res)
+      setBud(res?.find(e => e?.googleId === props.match.params.googleId))
+    });
+  }, []);
 
   const risingImages = [
     "/resources/risingDetail2.jpg",
@@ -15,7 +23,7 @@ function RisingDetails(props) {
   ];
 
   const showRisingDeets = () => {
-    let risingObj = signs[0].Rising[user?.rising]?.Description;
+    let risingObj = signs[0].Rising[bud?.rising]?.Description;
 
     console.log(Object.keys(risingObj));
     return Object.keys(risingObj).map((key) => {
@@ -45,12 +53,16 @@ function RisingDetails(props) {
         paddingTop: "20px",
       }}
     >
-      <h1>The Rising Sign: {user.rising}</h1>
+      <h1>The Rising Sign: {bud?.rising}</h1>
       {/* <div> */}
       {/* <div>Summary: {signs[0].Moon[user?.moon]?.Summary}</div>
       </div> */}
       <img src="/resources/risingDetail1.jpg" alt="rising image" />
-      {showRisingDeets()}
+      {bud ?
+        <div>{showRisingDeets()}</div>
+        :
+        <p></p>
+      }
     </div>
   );
 }

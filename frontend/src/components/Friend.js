@@ -8,12 +8,10 @@ const Friend = props => {
 
     const { user, setUser } = useContext(TheContext);
     const [friend, setFriend] = useState();
-    const [friends, setFriends] = useState([]);
 
     useEffect(() => {
         actions.getFriends({ userId: user?.googleId }).then((res) => {
           console.log(res);
-          setFriends(res)
           setFriend(res?.find(e=> e?.googleId === props.match.params.googleId))
         });
     }, []);

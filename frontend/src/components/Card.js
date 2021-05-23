@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 
 const Card = chart => {
 
-    const { user, setUser } = useContext(TheContext);
+	const { user, setUser } = useContext(TheContext);
 
     return (
         <section>
@@ -28,7 +28,7 @@ const Card = chart => {
 							        <h4 className="card-title">{chart.type}</h4>
 							        <h6 className="card-subtitle text-muted">{chart?.sign.Type}</h6>
 							        <p className="card-text">{chart.sum?.slice(0, 350) + '...'}</p>
-									<Link className="highlight" to={`/profile/${chart.type}`}><p>Learn more...</p></Link>
+									<Link className="highlight" to={`/profile/${chart.type}/${chart.a}`}><p>Learn more...</p></Link>
 							    </div>
 							</div>
 						</div>

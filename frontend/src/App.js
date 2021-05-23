@@ -101,17 +101,17 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route exact path="/friends" component={Friends} />
           <Route exact path="/profile" component={Profile} />
-          <Route exact path="/profile/Sun" component={SunDetails} />
-          <Route exact path="/profile/Moon" component={MoonDetails} />
-          <Route exact path="/profile/Rising" component={RisingDetails} />
+          <Route exact path="/profile/Sun/:googleId" component={SunDetails} />
+          <Route exact path="/profile/Moon/:googleId" component={MoonDetails} />
+          <Route exact path="/profile/Rising/:googleId" component={RisingDetails} />
           <Route exact path="/friend/:googleId" component={Friend} />
         </Switch>
         <footer>
           <div class='foot'>
           <h2 id="footerFamily">Connect with Us</h2>
             <div class="iconsPad">
-              <img class="sizeIMG" src="./resources/intagram-icon.svg"/>
-              <img class="sizeIMG" src="./resources/linkedin-icon.svg"/>
+              <img class="sizeIMG" src="/resources/intagram-icon.svg"/>
+              <img class="sizeIMG" src="/resources/linkedin-icon.svg"/>
             </div>
           </div>
         </footer>

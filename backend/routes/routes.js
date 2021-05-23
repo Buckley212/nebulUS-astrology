@@ -16,6 +16,12 @@ router.get(`/get-user`, authorize, async (req, res) => {
     res.json(user);
 });
 
+router.get(`/get-users`, async (req, res) => {
+    console.log("Getting Budd!!!!!");
+    let users = await User.find();
+    res.json(users);
+});
+
 router.get(`/get-messages`, (req, res) => {
     Message.find().then((messages) => res.json(messages));
 });
